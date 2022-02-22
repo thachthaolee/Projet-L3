@@ -1,0 +1,11 @@
+﻿li {
+    list-style-type: none;
+    background-color: #E8EDFF;
+    width: 80px;
+    height: 90px;
+    padding : 2px;
+}
+li+li{
+    margin-left : 50%;
+    margin-top : -92px;
+}
