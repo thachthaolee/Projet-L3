@@ -8,20 +8,20 @@
         <title>HAPMAP</title>
         <meta http-equiv="Content-Type" 
             content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" href="Styles/StyleHapmap.css" type="text/css"
+        <link rel="stylesheet" href="Style/StyleHapmap.css?" type="text/css"
             media="screen" />
 
     </head>
     <body>
         <!-- menu bandeau début -->
         <header>
-            <h1><a href="Accueil.php" >Hapmap</a></h1>
+            <img src = "../HapMap/image/logo.png" alt = "Logo"/> 
             <nav>
-                <!--rajouter logo qq part ici-->
+            
                 <ul>
-                    <li><a href="#">Accueil</a></li>
+                    <li><a href="index.php">Accueil</a></li>
                     <li><a href="#" >Continent</a></li>
-                    <li><a href="#">Comparer</a></li>
+                    <li><a href="comparer.php">Comparer</a></li>
                     <li><a href="#">Score</a></li>
                     <li><a href="#" >A propos</a></li>
                     <!--Rajouter la fonction rechercher-->

@@ -2,7 +2,7 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 html{
-    background-color: #E5E5E5;
+    background-color: rgb(246, 247, 255);
 }
 header {
     height:130px;
@@ -82,3 +82,85 @@ table{
     line-height: 25px;
     border-spacing: 8px;
 }
+
+/*CSS de la page comparer : */
+html{
+    background-color: rgb(246, 247, 255);
+}
+
+
+#libelle{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.casepays{
+    width : 330px;
+    height: 40px;
+    margin: 0;
+    padding-left: 7px;
+    border-radius: 18px;
+    font-size: large;
+    
+  
+    margin-left: auto;
+    margin-right: auto;
+}
+#annee{
+    padding-right: 0px;
+    width: 65px;
+    height: 23px;
+    text-align: center;
+    border-radius: 8px;
+}
+#comparer{
+    width: 90px;
+    height: 30px;
+    text-align: center;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#pays{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+#pays1{
+    float: left;
+}
+#pays2{
+    float: right;
+}
+#conteneur{
+    overflow: hidden;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.colp{
+    font-size: x-large;
+    width: 20%;
+    float: left;
+    display: inline;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 46px;
+}
+#conteneur1{
+    overflow: hidden;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 100px;
+}
+.colp1{
+    width: 33%;
+    float: left;
+    display: inline;
+    text-align: center;
+}
+#bouton{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+/* fin du css de la page comparer*/
