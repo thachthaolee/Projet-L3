@@ -34,25 +34,31 @@
         <!--<h2>Famille</h2> Pour mettre au point css-->
 
         <!--formulaire pour filtres-->
-<!--
-        <form action="Accueil.php" method="get" autocomplete="off">
+
+        <form action="index.php" method="get" autocomplete="off">
         <p>
             <INPUT type="number"name="annee"value=""min="2015"max="2019"placeholder="année">
         </p>
+        <p>
+            <INPUT type="text" name="FiltreScore" value="<?php echo $SCORE?>"placeholder="Sélectionner">
+        </p>
             
         <p>
-            <input type="submit" value="Envoyer">
+            <input type="submit" value="Appliquer filtre(s)">
         </p>
         </form>
--->
+
         <?php
-        #$annee = $_GET['annee'];
+        $annee = $_GET['annee'];
+        $SCORE = $_GET['FiltreScore'];
         ?>
 <!--Mettre des filtres ici : année, score, continent...-->
 
         <table>
         <tr><td>Identifiant pays</td><td>Pays</td><!--En fonction d'un filtre, un score--><td>Valeur Score</td><td>Rang</td></tr>
-                <? $rep = $bdd->query('SELECT * FROM avoir, pays');
+                <? $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score  FROM avoir, pays, annee,score 
+                                        WHERE avoir.Id_Pays=pays.Id_Pays AND avoir.annee=annee.Annee AND avoir.Id_Score=score.Id_Score
+                                        AND score.Nom_Score="'.$SCORE.'" AND avoir.annee="'.$annee.'" ORDER BY avoir.rang ASC');
                 while ($ligne = $rep ->fetch()) {
                     echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."Scores/scores.php?id_Pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$ligne['rang']."</td></tr>";
                     }
