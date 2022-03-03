@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Feb 22, 2022 at 06:52 PM
--- Server version: 5.7.24
--- PHP Version: 7.4.16
+-- Hôte : localhost:8889
+-- Généré le : jeu. 03 mars 2022 à 09:47
+-- Version du serveur :  5.7.34
+-- Version de PHP : 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hapmap`
+-- Base de données : `HapMap`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `annee`
+-- Structure de la table `annee`
 --
 
 CREATE TABLE `annee` (
@@ -32,7 +32,7 @@ CREATE TABLE `annee` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `annee`
+-- Déchargement des données de la table `annee`
 --
 
 INSERT INTO `annee` (`Annee`) VALUES
@@ -45,10 +45,10 @@ INSERT INTO `annee` (`Annee`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `avoir2`
+-- Structure de la table `avoir`
 --
 
-CREATE TABLE `avoir2` (
+CREATE TABLE `avoir` (
   `Id_Pays` int(3) NOT NULL,
   `annee` int(4) NOT NULL,
   `Id_Score` int(1) NOT NULL,
@@ -57,10 +57,10 @@ CREATE TABLE `avoir2` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `avoir2`
+-- Déchargement des données de la table `avoir`
 --
 
-INSERT INTO `avoir2` (`Id_Pays`, `annee`, `Id_Score`, `valeur_score`, `rang`) VALUES
+INSERT INTO `avoir` (`Id_Pays`, `annee`, `Id_Score`, `valeur_score`, `rang`) VALUES
 (1, 2015, 1, '153.00', 153),
 (1, 2015, 2, '3.58', 153),
 (1, 2015, 3, '0.32', 136),
@@ -2031,7 +2031,7 @@ INSERT INTO `avoir2` (`Id_Pays`, `annee`, `Id_Score`, `valeur_score`, `rang`) VA
 (52, 2019, 9, '1.45', 39),
 (53, 2015, 1, '114.00', 114),
 (53, 2015, 2, '4.63', 114);
-INSERT INTO `avoir2` (`Id_Pays`, `annee`, `Id_Score`, `valeur_score`, `rang`) VALUES
+INSERT INTO `avoir` (`Id_Pays`, `annee`, `Id_Score`, `valeur_score`, `rang`) VALUES
 (53, 2015, 3, '0.55', 119),
 (53, 2015, 4, '0.68', 138),
 (53, 2015, 5, '0.40', 124),
@@ -3984,7 +3984,7 @@ INSERT INTO `avoir2` (`Id_Pays`, `annee`, `Id_Score`, `valeur_score`, `rang`) VA
 (102, 2019, 9, '1.23', 88),
 (103, 2015, 1, '7.00', 7),
 (103, 2015, 2, '7.38', 7);
-INSERT INTO `avoir2` (`Id_Pays`, `annee`, `Id_Score`, `valeur_score`, `rang`) VALUES
+INSERT INTO `avoir` (`Id_Pays`, `annee`, `Id_Score`, `valeur_score`, `rang`) VALUES
 (103, 2015, 3, '1.33', 16),
 (103, 2015, 4, '1.28', 20),
 (103, 2015, 5, '0.89', 21),
@@ -5874,9 +5874,9 @@ INSERT INTO `avoir2` (`Id_Pays`, `annee`, `Id_Score`, `valeur_score`, `rang`) VA
 (158, 2015, 1, '111.00', 111),
 (158, 2015, 2, '4.68', 111),
 (158, 2015, 3, '0.80', 94),
-(158, 2015, 4, '1.20', 43);
-INSERT INTO `avoir2` (`Id_Pays`, `annee`, `Id_Score`, `valeur_score`, `rang`) VALUES
-(158, 2015, 5, '0.67', 85),
+(158, 2015, 4, '1.20', 43),
+(158, 2015, 5, '0.67', 85);
+INSERT INTO `avoir` (`Id_Pays`, `annee`, `Id_Score`, `valeur_score`, `rang`) VALUES
 (158, 2015, 6, '0.25', 135),
 (158, 2015, 7, '0.03', 141),
 (158, 2015, 8, '0.15', 118),
@@ -6316,7 +6316,7 @@ INSERT INTO `avoir2` (`Id_Pays`, `annee`, `Id_Score`, `valeur_score`, `rang`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `continent`
+-- Structure de la table `continent`
 --
 
 CREATE TABLE `continent` (
@@ -6325,7 +6325,7 @@ CREATE TABLE `continent` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `continent`
+-- Déchargement des données de la table `continent`
 --
 
 INSERT INTO `continent` (`Id_Continent`, `Nom_Continent`) VALUES
@@ -6339,7 +6339,7 @@ INSERT INTO `continent` (`Id_Continent`, `Nom_Continent`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pays`
+-- Structure de la table `pays`
 --
 
 CREATE TABLE `pays` (
@@ -6350,7 +6350,7 @@ CREATE TABLE `pays` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `pays`
+-- Déchargement des données de la table `pays`
 --
 
 INSERT INTO `pays` (`Id_Pays`, `Nom_Pays`, `Id_Continent`, `Id_Region`) VALUES
@@ -6527,7 +6527,7 @@ INSERT INTO `pays` (`Id_Pays`, `Nom_Pays`, `Id_Continent`, `Id_Region`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `region`
+-- Structure de la table `region`
 --
 
 CREATE TABLE `region` (
@@ -6536,7 +6536,7 @@ CREATE TABLE `region` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `region`
+-- Déchargement des données de la table `region`
 --
 
 INSERT INTO `region` (`Nom_Region`, `Id_Region`) VALUES
@@ -6555,7 +6555,7 @@ INSERT INTO `region` (`Nom_Region`, `Id_Region`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `score`
+-- Structure de la table `score`
 --
 
 CREATE TABLE `score` (
@@ -6564,46 +6564,46 @@ CREATE TABLE `score` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `score`
+-- Déchargement des données de la table `score`
 --
 
 INSERT INTO `score` (`Id_Score`, `Nom_Score`) VALUES
 (1, 'Hapiness Rank'),
 (2, 'Hapiness Score'),
-(3, 'Economy (GDP per Capita)'),
+(3, 'Economy'),
 (4, 'Family'),
-(5, 'Health (Life Expectancy)'),
+(5, 'Health'),
 (6, 'Freedom'),
-(7, 'Trust (Government Corruption)'),
+(7, 'Trust'),
 (8, 'Generosity'),
 (9, 'Social support');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `annee`
+-- Index pour la table `annee`
 --
 ALTER TABLE `annee`
   ADD PRIMARY KEY (`Annee`);
 
 --
--- Indexes for table `avoir2`
+-- Index pour la table `avoir`
 --
-ALTER TABLE `avoir2`
+ALTER TABLE `avoir`
   ADD PRIMARY KEY (`Id_Pays`,`annee`,`Id_Score`),
   ADD KEY `annee` (`annee`),
   ADD KEY `Id_Score` (`Id_Score`);
 
 --
--- Indexes for table `continent`
+-- Index pour la table `continent`
 --
 ALTER TABLE `continent`
   ADD PRIMARY KEY (`Id_Continent`);
 
 --
--- Indexes for table `pays`
+-- Index pour la table `pays`
 --
 ALTER TABLE `pays`
   ADD PRIMARY KEY (`Id_Pays`),
@@ -6611,31 +6611,31 @@ ALTER TABLE `pays`
   ADD KEY `Id_Region` (`Id_Region`);
 
 --
--- Indexes for table `region`
+-- Index pour la table `region`
 --
 ALTER TABLE `region`
   ADD PRIMARY KEY (`Id_Region`);
 
 --
--- Indexes for table `score`
+-- Index pour la table `score`
 --
 ALTER TABLE `score`
   ADD PRIMARY KEY (`Id_Score`);
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `avoir2`
+-- Contraintes pour la table `avoir`
 --
-ALTER TABLE `avoir2`
-  ADD CONSTRAINT `avoir2_ibfk_1` FOREIGN KEY (`Id_Pays`) REFERENCES `pays` (`Id_Pays`),
-  ADD CONSTRAINT `avoir2_ibfk_2` FOREIGN KEY (`annee`) REFERENCES `annee` (`Annee`),
-  ADD CONSTRAINT `avoir2_ibfk_3` FOREIGN KEY (`Id_Score`) REFERENCES `score` (`Id_Score`);
+ALTER TABLE `avoir`
+  ADD CONSTRAINT `avoir_ibfk_1` FOREIGN KEY (`Id_Pays`) REFERENCES `pays` (`Id_Pays`),
+  ADD CONSTRAINT `avoir_ibfk_2` FOREIGN KEY (`annee`) REFERENCES `annee` (`Annee`),
+  ADD CONSTRAINT `avoir_ibfk_3` FOREIGN KEY (`Id_Score`) REFERENCES `score` (`Id_Score`);
 
 --
--- Constraints for table `pays`
+-- Contraintes pour la table `pays`
 --
 ALTER TABLE `pays`
   ADD CONSTRAINT `pays_ibfk_1` FOREIGN KEY (`Id_Continent`) REFERENCES `continent` (`Id_Continent`),
