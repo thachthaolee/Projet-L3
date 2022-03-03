@@ -1,0 +1,21 @@
+body{
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	background-color: #F6F7FF;
+}
+li {
+    list-style-type: none;
+    background-color: #E8EDFF;
+    width: 80px;
+    height: 105px;
+    padding : 2px;
+    margin: 2px;
+    text-align: center;
+    background-image: url(earth-logo.png);
+    background-size: auto;
+    float: left;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-position: center bottom;
+}
