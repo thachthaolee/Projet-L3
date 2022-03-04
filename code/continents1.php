@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<ul>
+<div class="continents1">
 <?php
     require ('bd.php');
     $bdd = getBD();
@@ -20,6 +20,6 @@
     $rep -> closeCursor();
 
 ?>
-</ul>
+</div>
 </body>
 </html>

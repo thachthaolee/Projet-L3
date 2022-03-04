@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
-		<title>Continents</title>
-	</head>
-	
-	<body>
-	<?php
-	require("bd.php");
-	$bdd = getBD();
-	$id = $_GET['Id_Continent'];
 
-	$rep = $bdd->query('SELECT * FROM continent WHERE Id_Continent= $id');
+<html>
+<head>
+    <meta  http-equiv="Content-Type" content="text/html; charset="utf-8" />
+    <link rel="stylesheet" href="Style/continent1.css" type="text/css" media="screen" />
+    <title>Continent</title>
+</head>
+
+<body>
+<?php
+	require ('bd.php');
+	$bdd = getBD();
+
+	$id = $_GET['id_continent'];
+
+	$rep = $bdd->query("SELECT * FROM continent WHERE Id_Continent= $id");
 	
-	while ($mat=$rep-> fetch())
-	{	
-		echo $mat['Nom_Continent']."</br>";
+	while ($mat=$rep-> fetch()){	
+		echo "<h1>".$mat['Nom_Continent']."</h1></br>";
 	}
-	$rep -> closeCursor();
-	?>
+?>
 		<center>
 			</br>
 			</br>
@@ -67,8 +68,17 @@
 							echo "<pa>".$ligne['moyenne']."</pa>";
 						}
 
-						$rep -> closeCursor();
-					?>
+	echo '<div class="continents2">';
+	$rep = $bdd->query("SELECT Nom_Pays, Id_Pays FROM pays WHERE Id_Continent = $id");
+	while ($ligne = $rep -> fetch()) {
+        echo "<li><a href=continents3.php?id_pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a></li>";
+    }
+
+
+   
+	$rep -> closeCursor();
+	echo "</div>";
+?>
 	
 	</body>
 </html>
