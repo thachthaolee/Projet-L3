@@ -6,6 +6,19 @@
 	</head>
 	
 	<body>
+	<?php
+	require("bd.php");
+	$bdd = getBD();
+	$id = $_GET['Id_Continent'];
+
+	$rep = $bdd->query('SELECT * FROM continent WHERE Id_Continent= $id');
+	
+	while ($mat=$rep-> fetch())
+	{	
+		echo $mat['Nom_Continent']."</br>";
+	}
+	$rep -> closeCursor();
+	?>
 		<center>
 			</br>
 			</br>
