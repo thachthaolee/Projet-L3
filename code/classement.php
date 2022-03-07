@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <?php include('bd_wamp.php'); 
+    <?php include('bd.php'); 
     $bdd = getBD();?>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="Style/StyleHapmap.css" type="text/css" media="screen" /> -->
@@ -13,20 +13,20 @@
 <body>
 
 <header>
-    <img src = "../HapMap/image/logo.png" alt = "Logo"/> 
-    <nav>
-            
-        <ul>
-            <li><a href="index.php">Accueil</a></li>
-            <li><a href="#" >Continent</a></li>
-            <li><a href="comparer.php">Comparer</a></li>
-            <li><a href="#">Score</a></li>
-            <li><a href="#" >A propos</a></li>
-            <!--Rajouter la fonction rechercher-->
-        </ul>
-    </nav>
+        <img src = "../HapMap/image/logo.png" alt = "Logo"/> 
+        <nav>
+        
+            <ul>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="#" >Continent</a></li>
+                <li><a href="comparer.php">Comparer</a></li>
+                <li><a href="scores.php">Score</a></li>
+                <li><a href="apropos.html" >A propos</a></li>
+                <!--Rajouter la fonction rechercher-->
+            </ul>
+        </nav>
 
-</header> 
+    </header>
 
 <h2> Classement </h2>
 

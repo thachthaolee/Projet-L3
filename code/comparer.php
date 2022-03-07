@@ -2,7 +2,7 @@
 
 <html>
     <?php
-        require('../HapMap/bd.php');
+        require('bd.php');
         $bdd = getBD();
     ?>
     <head>
