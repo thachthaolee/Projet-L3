@@ -82,16 +82,6 @@ table{
     line-height: 25px;
     border-spacing: 8px;
 }
-.formulaire_filtres{
-    margin-left: 4%;
-    background-color: none;
-    position: relative;
-}
-#index_tab{
-    margin-top: 2%;
-    margin-left: 25%;
-    border-spacing: 35px;
-}
 
 /*CSS de la page comparer : */
 html{
