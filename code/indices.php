@@ -27,7 +27,7 @@
 </header> 
 
 <?php
-require('bd_wamp.php');
+require('bd.php');
 $PDO = getBD();
 
 $id_Score = $_GET['id_Score'];
