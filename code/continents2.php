@@ -24,7 +24,32 @@
 				echo '<img src="graphe.php?id_continent='.$_GET["id_continent"].'&annee='.$_GET["annee"].'">' // call the fonction graphe
 		?>
 				
-		
+		<?php
+			 $rep = $bdd -> query('SELECT AVG(avoir.valeur_score) as moyenne, score.Nom_Score as nom
+												FROM score, avoir, pays, continent, annee
+												WHERE score.Id_Score = avoir.Id_Score
+												AND avoir.Id_Pays = pays.Id_Pays
+												AND pays.Id_Continent = continent.Id_Continent
+												AND annee.Annee= avoir.annee
+												AND score.Id_Score != 1
+												AND continent.Id_Continent="'. $_GET["id_continent"] . '"
+												AND annee.Annee ="' . $_GET["annee"] . '"
+												GROUP by score.Id_Score
+												order by score.Id_Score');
+												
+												
+			 $score = array();
+			 $moyenne = array();
+			 while ($ligne =$rep ->fetch()){
+				 $score[]=$ligne['nom'];
+				 $moyenne[]=$ligne['moyenne'];
+				 echo "<pa>".$ligne['nom']."</pa>";
+				 echo "<pa>".$ligne['moyenne']."</pa>";
+			 }
+			 
+			 $rep -> closeCursor();
+			 
+			?>
 		
 		
 		<?php			
@@ -37,47 +62,6 @@
 				echo "</div>";
 			?>
 					
-		
-		<?php
-				require ('bd.php');
-				$bdd = getBD();		
 					
-					
-						$rep = $bdd -> query('SELECT AVG(avoir.valeur_score) as moyenne, score.Nom_Score as nom
-												FROM score, avoir, pays, continent, annee
-												WHERE score.Id_Score = avoir.Id_Score
-												AND avoir.Id_Pays = pays.Id_Pays
-												AND pays.Id_Continent = continent.Id_Continent
-												AND annee.Annee= avoir.annee
-												AND score.Id_Score != 1
-												AND continent.Id_Continent="'. $_GET["continent"] . '"
-												AND annee.Annee ="' . $_GET["annee"] . '"
-												GROUP by score.Id_Score
-												order by score.Id_Score');
-												
-						
-												
-						$score = array();
-						$moyenne = array();
-						while ($ligne = $rep ->fetch()) {
-							array_push($score,$linge['nom']);
-							array_push($moyenne,$ligne['moyenne'];
-							}
-							
-							afficher_tab($score);
-							function afficher_tab($tab){
-								$taille = count($tab);
-								for($i = 0; $i < $taille; $i++){
-									echo $tab[$i];
-								}
-							}
-							
-							afficher_tab($moyenne);
-							
-					
-						$rep -> closeCursor();
-			?>
-					
-	
 	</body>
 </html>

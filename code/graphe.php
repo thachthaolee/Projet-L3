@@ -12,7 +12,8 @@ $donnees = $bdd -> query('SELECT score.Nom_Score, AVG(avoir.valeur_score)
 				AND avoir.Id_Pays = pays.Id_Pays
 				AND pays.Id_Continent = continent.Id_Continent
 				AND annee.Annee= avoir.annee
-				AND continent.Nom_Continent="'. $_GET["continent"] . '"
+				AND score.Id_Score != 1
+				AND continent.Id_Continent="'. $_GET["id_continent"] . '"
 				AND annee.Annee = ' . $_GET["annee"] . '
 				GROUP by score.Id_Score
 				order by score.Id_Score');
