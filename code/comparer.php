@@ -15,7 +15,7 @@
 
     <body>
         <header>
-            <img src = "../HapMap/image/logo.png" alt = "Logo"/> 
+            <img src = "image/logo.png" alt = "Logo"/> 
             <nav>
             
                 <ul>
@@ -33,13 +33,21 @@
         <form action="comparer.php" method="post" autocomplete="off">
             <div id = "conteneur1">
                 <p class = "colp1">
-                <INPUT class="casepays" id ="pays1" type="text"name="pays1"value="<?php echo $pays1?>"placeholder="Sélectionner">
+                <INPUT class="casepays" id ="pays1" type="text"name="pays1" placeholder="Sélectionner" value=
+                <?php if(isset($_GET['pays1']))
+			            echo "'".$_GET['pays1']."'";
+		            else
+			            echo "''"; ?> >
                 </p>
                 <p class = "colp1">
                 <INPUT id = "annee" type="number"name="annee"value=""min="2015"max="2019"placeholder="année">
                 </p>
                 <p class = "colp1">
-                <INPUT class="casepays" id ="pays2" type="text"name="pays2"value="<?php echo $pays2?>"placeholder="Sélectionner">
+                <INPUT class="casepays" id ="pays2" type="text"name="pays1" placeholder="Sélectionner" value=
+                <?php if(isset($_GET['pays2']))
+			            echo "'".$_GET['pays2']."'";
+		            else
+			            echo "''"; ?> >
                 </p>
             </div>
             <br/><br/><br/><br/>

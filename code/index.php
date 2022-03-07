@@ -13,6 +13,11 @@
 
     </head>
     <body>
+
+
+    
+
+
         <!-- menu bandeau début -->
         <header>
             <img src = "../HapMap/image/logo.png" alt = "Logo"/> 
@@ -27,6 +32,8 @@
                     <!--Rajouter la fonction rechercher-->
                 </ul>
             </nav>
+
+            
 
         </header>
         <!-- menu bandeau fin -->
@@ -54,6 +61,8 @@
                 <option valeur="<?php echo $SCORE?>">Generosity</option>
                 <option valeur="<?php echo $SCORE?>">Social Support</option>
             </SELECT>
+
+            <?php echo "toto" ?>
 <!--La on va avoir 2 pbs : comment on fait si on veut séléctionner sur le monde + les rang seront les généraux meme si on demande un continent-->
             <SELECT name="Continent">
                 <option valeur="">--Please choose a <strong>continent</strong>--</option>
