@@ -4,27 +4,27 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="Style/StyleHapmap.css" type="text/css" media="screen" /> -->
+    <link rel="stylesheet" href="Style/StyleHapmap.css" type="text/css" media="screen" />
     <title> Indices </title>
 </head>
 
 <body>
 
 <header>
-        <img src = "image/logo.png" alt = "Logo"/> 
-        <nav>
-        
-            <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="#" >Continent</a></li>
-                <li><a href="comparer.php">Comparer</a></li>
-                <li><a href="scores.php">Score</a></li>
-                <li><a href="apropos.html" >A propos</a></li>
-                <!--Rajouter la fonction rechercher-->
-            </ul>
-        </nav>
+            <img src = "../HapMap/image/logo.png" alt = "Logo"/> 
+            <nav>
+            
+                <ul>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="#" >Continent</a></li>
+                    <li><a href="comparer.php">Comparer</a></li>
+                    <li><a href="scores.php">Score</a></li>
+                    <li><a href="apropos.html" >A propos</a></li>
+                    <!--Rajouter la fonction rechercher-->
+                </ul>
+            </nav>
 
-    </header>
+        </header>
 
 <?php
 require('bd.php');

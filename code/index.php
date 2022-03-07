@@ -15,7 +15,7 @@
     <body>
         <!-- menu bandeau début -->
         <header>
-            <img src = "image/logo.png" alt = "Logo"/> 
+            <img src = "../HapMap/image/logo.png" alt = "Logo"/> 
             <nav>
             
                 <ul>
