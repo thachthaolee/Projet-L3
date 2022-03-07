@@ -38,11 +38,11 @@
 
         <form class="formulaire_filtres" action="index.php" method="get" autocomplete="off">
         <p>
-            <INPUT type="number"name="annee"value=""min="2015"max="2019"placeholder="année">
+            <INPUT type="number"name="annee"value=""min="2015"max="2019"placeholder="Année">
         
             <!--<INPUT type="text" name="FiltreScore" value="<?php echo $SCORE?>"placeholder="Sélectionner">-->
 <!--Je prefererais passer par l'id score que le nom du score-->
-            <SELECT name="test">
+            <SELECT name="score">
                 <option valeur="">--Please choose a Score--</option>
                 <option valeur="<?php echo $SCORE?>">Hapiness Rank</option>
                 <option valeur="<?php echo $SCORE?>">Hapiness Score</option>
@@ -63,7 +63,6 @@
                 <option valeur="<?php echo $CONTINENT?>">Europe</option>
                 <option valeur="<?php echo $CONTINENT?>">North America</option>
                 <option valeur="<?php echo $CONTINENT?>">South America</option>
-                <option valeur="<?php echo $CONTINENT?>">Monde ????</option>
             </SELECT>
         
             <input type="submit" value="Appliquer filtres">
@@ -73,25 +72,56 @@
         <?php
         $annee = $_GET['annee'];
         //$SCORE = $_GET['FiltreScore'];
-        $SCORE = $_GET['test'];
+        $SCORE = $_GET['score'];
         $CONTINENT = $_GET['Continent'];
         ?>
 <!--Mettre des filtres ici : année, score, continent...-->
 
-        <table id="index_tab">
-        <tr><td>Identifiant pays</td><td>Pays</td><!--En fonction d'un filtre, un score--><td>Valeur Score</td><td>Rang</td></tr>
-                <?php $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent  FROM avoir, pays, annee, score, continent 
-                                            WHERE avoir.Id_Pays=pays.Id_Pays AND avoir.annee=annee.Annee 
-                                            AND avoir.Id_Score=score.Id_Score AND continent.Id_Continent=pays.Id_Continent
-                                            AND score.Nom_Score="'.$SCORE.'" AND avoir.annee="'.$annee.'"
-                                            AND continent.Nom_Continent="'.$CONTINENT.'" 
-                                            ORDER BY avoir.rang ASC');
-                while ($ligne = $rep ->fetch()) {
-                    echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."Scores/scores.php?id_Pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$ligne['rang']."</td></tr>";
-                    }
-                    $rep ->closeCursor(); 
-                    ?>
-        </table>
+<?php
+if($annee==""){
+    echo "<div>";
+    echo "<p>Veuillez sélectionner une année à observer</p>";
+    echo "</div>";
+}
+elseif($SCORE=="--Please choose a Score--"){
+    echo "<div>";
+    echo "<p>Veuillez choisir un score à observer</p>";
+    echo "</div>";
+}
+ elseif($CONTINENT=="--Please choose a continent--"){
+    echo '<table id="index_tab">';
+    echo "<tr><td>Identifiant pays</td><td>Pays</td><!--En fonction d'un filtre, un score--><td>Valeur Score</td><td>Rang</td></tr>";
+             $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent  FROM avoir, pays, annee, score, continent 
+                                        WHERE avoir.Id_Pays=pays.Id_Pays AND avoir.annee=annee.Annee 
+                                        AND avoir.Id_Score=score.Id_Score AND continent.Id_Continent=pays.Id_Continent
+                                        AND score.Nom_Score="'.$SCORE.'" AND avoir.annee="'.$annee.'"
+                                        ORDER BY avoir.rang ASC');
+            while ($ligne = $rep ->fetch()) {
+                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."Scores/scores.php?id_Pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$ligne['rang']."</td></tr>";
+                }
+                $rep ->closeCursor(); 
+                
+    echo "</table>";
+
+ }
+ else{
+    echo '<table id="index_tab">';
+    echo "<tr><td>Identifiant pays</td><td>Pays</td><!--En fonction d'un filtre, un score--><td>Valeur Score</td><td>Rang</td></tr>";
+             $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent  FROM avoir, pays, annee, score, continent 
+                                        WHERE avoir.Id_Pays=pays.Id_Pays AND avoir.annee=annee.Annee 
+                                        AND avoir.Id_Score=score.Id_Score AND continent.Id_Continent=pays.Id_Continent
+                                        AND score.Nom_Score="'.$SCORE.'" AND avoir.annee="'.$annee.'"
+                                        AND continent.Nom_Continent="'.$CONTINENT.'" 
+                                        ORDER BY avoir.rang ASC');
+            while ($ligne = $rep ->fetch()) {
+                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."Scores/scores.php?id_Pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$ligne['rang']."</td></tr>";
+                }
+                $rep ->closeCursor(); 
+                
+    echo "</table>";
+ }
+?>
+
 
 
     </body>
