@@ -3,6 +3,8 @@
 <html>
     <?php
         require('../HapMap/bd.php');
+        require_once ('jpgraph/src/jpgraph.php');
+        require_once ('jpgraph/src/jpgraph_bar.php');
         $bdd = getBD();
     ?>
     <head>
@@ -31,7 +33,7 @@
         </header>
         
         <form action="comparer.php" method="post" autocomplete="off">
-            <div id = "conteneur1">
+            <div class = "conteneur1">
                 <p class = "colp1">
                 <INPUT class="casepays" id ="pays1" type="text"name="pays1"value="<?php echo $pays1?>"placeholder="Sélectionner">
                 </p>
@@ -87,12 +89,12 @@
             echo "<p>".$pays2."  n'existe pas dans la base de données</p>";
             echo "</div>";
             echo '<meta http-equiv="refresh" content="2; url=../HapMap/comparer.php">';
-        }/*elseif(isset($annee)){
+        }elseif($annee==""){
             echo "<div class ='indication'>";
             echo "<p>Veuillez sélectionner l'année pour laquelle vous souhaitez effecturer une comparaison.</p>";
             echo "</div>";
             echo '<meta http-equiv="refresh" content="4; url=../HapMap/comparer.php">';
-        }*/else{
+        }else{
             //recuperation vecteur nom des indices pays 1 :
             $req = $bdd->query('SELECT score.Nom_Score
             FROM pays, avoir, score, annee
@@ -138,9 +140,13 @@
 	            array_push($val_pays2, $ligne['valeur_score']."<br/>\n");
 		    }
 	        $req ->closeCursor();
-
-
-
+            echo "<div class = 'conteneur2'>";
+            echo "<p class = 'colp2' id = 'pays_gauche'>";
+            echo $pays1;
+            echo "</p><p class = 'colp2' id = 'pays_droit'>";
+            echo $pays2;
+            echo "</p>";
+            echo "</div>";
 
             //Fonction pour afficher les elements d'un tableau :
             function afficher_tab($tab){
@@ -208,9 +214,15 @@
             afficher_tab($val_pays2);
             echo '</p>';
             echo '</div>';
-        }
-        ?>
 
+           
+
+
+
+        }
+        
+        ?>
+    <script src = "app.js"></script>
 
     </body>
 </html>

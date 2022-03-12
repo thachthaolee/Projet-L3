@@ -146,14 +146,33 @@ html{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 46px;
 }
-#conteneur1{
+.conteneur1{
     overflow: hidden;
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 100px;
 }
+.conteneur2{
+    overflow: hidden;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#pays_gauche{
+    text-align: left;
+    font-size: xx-large;
+}
+#pays_droit{
+    text-align: right;
+    font-size: xx-large;
+}
 .colp1{
     width: 33%;
+    float: left;
+    display: inline;
+    text-align: center;
+}
+.colp2{
+    width: 50%;
     float: left;
     display: inline;
     text-align: center;
