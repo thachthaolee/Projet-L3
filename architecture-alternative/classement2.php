@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <?php;
+    <?php
     include('bd.php'); 
     $bdd = getBD();?>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -35,12 +35,34 @@
     <INPUT type="number" name="annee" value="" min="2015" max="2019">
 </form>
 
-
 <table border="1">
 <tr><th>Rang</th>
 <th>Pays</th>
 <th>Score</th>
 </tr>
+
+<?php 
+
+$annee = $_GET['annee'];
+
+$rep = $bdd->query('SELECT avoir.rang, pays.Nom_Pays, avoir.valeur_score
+                    FROM avoir, pays, score 
+                    WHERE pays.Id_Pays=avoir.Id_Pays
+                    AND score.Id_Score=avoir.Id_Score
+                    AND avoir.annee="'.$annee.'"
+                    AND score.Id_Score=2
+                    ORDER BY avoir.valeur_score DESC');
+
+
+while ($ligne = $rep ->fetch()) {
+    echo "<tr><td>".
+    $ligne['rang']."</td><td>".
+    $ligne['Nom_Pays']."</td><td>".
+    $ligne['valeur_score']."</td></tr>";
+}
+
+$rep ->closeCursor();
+?>
 
 </body>
 
