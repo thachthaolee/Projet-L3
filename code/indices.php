@@ -6,6 +6,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="Style/StyleHapmap.css" type="text/css" media="screen" />
     <title> Indices </title>
+    <style>
+            #ici{
+    color: #148EFF;
+    border-bottom: 2px solid #148EFF;
+}
+        </style>
 </head>
 
 <body>
@@ -18,7 +24,7 @@
                     <li><a href="index.php">Accueil</a></li>
                     <li><a href="#" >Continent</a></li>
                     <li><a href="comparer.php">Comparer</a></li>
-                    <li><a href="scores.php">Score</a></li>
+                    <li><a id = "ici" href="scores.php">Score</a></li>
                     <li><a href="apropos.html" >A propos</a></li>
                     <!--Rajouter la fonction rechercher-->
                 </ul>

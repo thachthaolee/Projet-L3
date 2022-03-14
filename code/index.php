@@ -10,6 +10,12 @@
             content="text/html; charset=UTF-8" />
         <link rel="stylesheet" href="Style/StyleHapmap.css" type="text/css"
             media="screen" />
+            <style>
+            #ici{
+    color: #148EFF;
+    border-bottom: 2px solid #148EFF;
+}
+        </style>
 
     </head>
     <body>
@@ -20,7 +26,7 @@
             <nav>
             
                 <ul>
-                    <li><a href="index.php">Accueil</a></li>
+                    <li><a id = "ici" href="index.php">Accueil</a></li>
                     <li><a href="#" >Continent</a></li>
                     <li><a href="comparer.php">Comparer</a></li>
                     <li><a href="scores.php">Score</a></li>
