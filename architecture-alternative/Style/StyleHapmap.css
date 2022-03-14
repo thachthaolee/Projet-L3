@@ -56,6 +56,9 @@ nav a:hover{
   margin: 0px 20px;
   height: 1500px;
 }
+#form_index{
+    text-align: center;
+}
 /*h2 pour la page score avec en titre le nom des scores*/
 h2{
     background-color: #A8BBFF;
@@ -68,11 +71,20 @@ h2{
     text-transform: uppercase;
 }
 #ScoreLeaders{
-    margin-left: 20%;
+    margin-top: 30px;
+    margin-left: 28px;
     color: #a5a5a5;
     background-color: #E5E5E5;
     text-transform :none;
-    line-height: normal;
+    line-height: 20px;
+    height: min-content;
+    width: 135px;
+}
+#Score{
+    height: 41px;
+    width: 50px;
+    margin-top:30px;
+    float: left;
 }
 /*Classement accueil dans un table*/
 table{
@@ -82,11 +94,46 @@ table{
     line-height: 25px;
     border-spacing: 8px;
 }
-
-/*CSS de la page comparer : */
-html{
+#index_tab{
+    /*margin-top: 2%;
+    margin-left: 25%;
+    border-spacing: 35px;*/
+    table-layout:fixed;
+    width: 80%;
+    border-collapse:collapse;
+    border: 3px solid #A8BBFF;
+    margin-left: auto;
+    margin-right: auto;
+}
+#index_tab tr:nth-child(odd){
     background-color: rgb(246, 247, 255);
 }
+#index_tab tr:nth-child(even){
+    background-color: rgb(214, 219, 253);
+}
+/*J'arrive pas à séléctionner ligne des titres*/
+#champs{
+    text-decoration:double underline;
+}
+.formulaire_filtres{
+    width: 20%;
+    background-color: none;
+    position: relative;
+}
+.àremplir{
+    margin-left: auto;
+    margin-right: auto;
+    width:350px;
+    text-align: center;
+    top : -85px;
+    left: auto;
+    position:relative;
+    background-color: #A8BBFF;
+    font-style: oblique;
+}
+
+/*CSS de la page comparer : */
+
 
 
 #libelle{
@@ -96,7 +143,7 @@ html{
 }
 
 .casepays{
-    width : 330px;
+    width: 100%;
     height: 40px;
     margin: 0;
     padding-left: 7px;
@@ -146,14 +193,33 @@ html{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 46px;
 }
-#conteneur1{
+.conteneur1{
     overflow: hidden;
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 100px;
 }
+.conteneur2{
+    overflow: hidden;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#pays_gauche{
+    text-align: left;
+    font-size: xx-large;
+}
+#pays_droit{
+    text-align: right;
+    font-size: xx-large;
+}
 .colp1{
     width: 33%;
+    float: left;
+    display: inline;
+    text-align: center;
+}
+.colp2{
+    width: 50%;
     float: left;
     display: inline;
     text-align: center;

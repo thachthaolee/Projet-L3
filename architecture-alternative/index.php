@@ -8,7 +8,7 @@
         <title>HAPMAP</title>
         <meta http-equiv="Content-Type" 
             content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" href="Style/StyleHapmap.css" type="text/css"
+        <link rel="stylesheet" href="Style/StyleHapmap.css?" type="text/css"
             media="screen" />
 
     </head>

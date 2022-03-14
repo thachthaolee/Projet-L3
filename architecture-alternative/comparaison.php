@@ -7,7 +7,7 @@
     ?>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" href="Style/StyleHapmap.css?" type="text/css" media="screen" />
+        <link rel="stylesheet" href="Style/StyleHapmap.css" type="text/css" media="screen" />
         <title>
             Comparer
         </title>
@@ -91,18 +91,18 @@
             echo "<div class ='indication'>";
             echo "<p>".$pays1."  n'existe pas dans la base de données</p>";
             echo "</div>";
-            echo '<meta http-equiv="refresh" content="2; url=comparer.php">';
+            echo '<meta http-equiv="refresh" content="2; url= ../HapMap/comparer.php">';
         }elseif($pays2_existe == 0){
             echo "<div class ='indication'>";
             echo "<p>".$pays2."  n'existe pas dans la base de données</p>";
             echo "</div>";
-            echo '<meta http-equiv="refresh" content="2; url=comparer.php">';
-        }/*elseif(isset($annee)){
+            echo '<meta http-equiv="refresh" content="2; url=../HapMap/comparer.php">';
+        }elseif($annee==""){
             echo "<div class ='indication'>";
             echo "<p>Veuillez sélectionner l'année pour laquelle vous souhaitez effecturer une comparaison.</p>";
             echo "</div>";
             echo '<meta http-equiv="refresh" content="4; url=../HapMap/comparer.php">';
-        }*/else{
+        }else{
             //recuperation vecteur nom des indices pays 1 :
             $req = $bdd->query('SELECT score.Nom_Score
             FROM pays, avoir, score, annee
@@ -148,9 +148,13 @@
 	            array_push($val_pays2, $ligne['valeur_score']."<br/>\n");
 		    }
 	        $req ->closeCursor();
-
-
-
+            echo "<div class = 'conteneur2'>";
+            echo "<p class = 'colp2' id = 'pays_gauche'>";
+            echo $pays1;
+            echo "</p><p class = 'colp2' id = 'pays_droit'>";
+            echo $pays2;
+            echo "</p>";
+            echo "</div>";
 
             //Fonction pour afficher les elements d'un tableau :
             function afficher_tab($tab){
@@ -218,9 +222,15 @@
             afficher_tab($val_pays2);
             echo '</p>';
             echo '</div>';
-        }
-        ?>
 
+           
+
+
+
+        }
+        
+        ?>
+    <script src = "app.js"></script>
 
     </body>
 </html>

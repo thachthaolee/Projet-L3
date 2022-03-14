@@ -8,7 +8,7 @@
         <title>HAPMAP</title>
         <meta http-equiv="Content-Type" 
             content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" href="Style/StyleHapmap.css" type="text/css"
+        <link rel="stylesheet" href="Style/StyleHapmap.css?" type="text/css"
             media="screen" />
 
     </head>
@@ -33,6 +33,7 @@
 
         </header>
         <!-- menu bandeau fin -->
+        <img id= "Score"src = "image/ScoreLeaders.png" alt = "Photo ScoreLeaders"/> 
         <h2 id="ScoreLeaders">Score Leaders</h2>
         <!--<h2>Famille</h2> Pour mettre au point css-->
 
@@ -43,13 +44,13 @@
         $CONTINENT = "";
         ?>
 
-        <form class="formulaire_filtres" action="filtres.php" method="get" autocomplete="off">
-        <p>
-            <INPUT type="number"name="annee"value=""min="2015"max="2019"placeholder="Année">
+        <form action="filtres.php" method="get" autocomplete="off">
+        <p id= "form_index">
+            <INPUT class="formulaire_filtres" type="number"name="annee"value=""min="2015"max="2019"placeholder="Année">
         
             <!--<INPUT type="text" name="FiltreScore" value="<?php echo $SCORE?>"placeholder="Sélectionner">-->
 <!--Je prefererais passer par l'id score que le nom du score-->
-            <SELECT name="score">
+            <SELECT class="formulaire_filtres" name="score">
                 <option valeur="">--Please choose a Score--</option>
                 <option valeur="<?php echo $SCORE?>">Hapiness Rank</option>
                 <option valeur="<?php echo $SCORE?>">Hapiness Score</option>
@@ -63,7 +64,7 @@
             </SELECT>
 
 <!--La on va avoir 2 pbs : comment on fait si on veut séléctionner sur le monde + les rang seront les généraux meme si on demande un continent-->
-            <SELECT name="Continent">
+            <SELECT class="formulaire_filtres" name="Continent">
                 <option valeur="">--Please choose a <strong>continent</strong>--</option>
                 <option valeur="<?php echo $CONTINENT?>">Africa</option>
                 <option valeur="<?php echo $CONTINENT?>">Asia</option>
@@ -73,7 +74,7 @@
                 <option valeur="<?php echo $CONTINENT?>">South America</option>
             </SELECT>
         
-            <input type="submit" value="Appliquer filtres">
+            <input class="formulaire_filtres" type="submit" value="Appliquer filtres">
         </p>
         </form>
 
@@ -96,9 +97,12 @@ elseif($SCORE=="--Please choose a Score--"){
     echo "<p>Veuillez choisir un score à observer</p>";
     echo "</div>";
 }
- elseif($CONTINENT=="--Please choose a continent--"){
+elseif($CONTINENT=="--Choose a continent--"){
+    echo "<p>Indice sélctionné : ".$SCORE."</p>";
+    echo "<p>Année sélctionnée : ".$annee."</p>";
+    echo "<p>Continent sélctionné : Aucun</p>";
     echo '<table id="index_tab">';
-    echo "<tr><td>Identifiant pays</td><td>Pays</td><!--En fonction d'un filtre, un score--><td>Valeur Score</td><td>Rang</td></tr>";
+    echo "<tr id='champs'><td>Identifiant pays</td><td>Pays</td><!--En fonction d'un filtre, un score--><td>Valeur Score</td><td>Rang</td></tr>";
              $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent  FROM avoir, pays, annee, score, continent 
                                         WHERE avoir.Id_Pays=pays.Id_Pays AND avoir.annee=annee.Annee 
                                         AND avoir.Id_Score=score.Id_Score AND continent.Id_Continent=pays.Id_Continent
@@ -113,6 +117,10 @@ elseif($SCORE=="--Please choose a Score--"){
 
  }
  else{
+    echo "<p>Indice sélctionné : ".$SCORE."</p>";
+    echo "<p>Année sélctionnée : ".$annee."</p>";
+    echo "<p>Continent sélctionné : ".$CONTINENT."</p>";
+    echo "<p>Notez que les rangs sont les rangs pour le monde entier t'as vu, leur classement est défini par leur ordre</p>";
     echo '<table id="index_tab">';
     echo "<tr><td>Identifiant pays</td><td>Pays</td><!--En fonction d'un filtre, un score--><td>Valeur Score</td><td>Rang</td></tr>";
              $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent  FROM avoir, pays, annee, score, continent 
@@ -129,7 +137,6 @@ elseif($SCORE=="--Please choose a Score--"){
     echo "</table>";
  }
 ?>
-
 
 
     </body>
