@@ -103,9 +103,9 @@ elseif($SCORE=="--Please choose a Score--"){
     //echo "<meta http-equiv='Refresh' content='0; url=index.php?annee=".$annee."&Continent=".$CONTINENT."'/>";
 }
  elseif($CONTINENT=="--Choose a continent--"){
-    echo "<p>Indice sélctionné : ".$SCORE."</p>";
-    echo "<p>Année sélctionnée : ".$annee."</p>";
-    echo "<p>Continent sélctionné : Aucun</p>";
+    echo "<p>Indice séléctionné : ".$SCORE."</p>";
+    echo "<p>Année séléctionnée : ".$annee."</p>";
+    echo "<p>Continent séléctionné : Aucun</p>";
     echo '<table id="index_tab">';
     echo "<tr id='champs'><td>Identifiant pays</td><td>Pays</td><!--En fonction d'un filtre, un score--><td>Valeur Score</td><td>Rang</td></tr>";
              $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent  FROM avoir, pays, annee, score, continent 
@@ -122,12 +122,12 @@ elseif($SCORE=="--Please choose a Score--"){
 
  }
  else{
-    echo "<p>Indice sélctionné : ".$SCORE."</p>";
-    echo "<p>Année sélctionnée : ".$annee."</p>";
-    echo "<p>Continent sélctionné : ".$CONTINENT."</p>";
+    echo "<p>Indice séléctionné : ".$SCORE."</p>";
+    echo "<p>Année séléctionnée : ".$annee."</p>";
+    echo "<p>Continent séléctionné : ".$CONTINENT."</p>";
     echo "<p>Notez que les rangs sont les rangs pour le monde entier t'as vu, leur classement est défini par leur ordre</p>";
     echo '<table id="index_tab">';
-    echo "<tr><td>Identifiant pays</td><td>Pays</td><!--En fonction d'un filtre, un score--><td>Valeur Score</td><td>Rang</td></tr>";
+    echo "<tr id='champs'><td>Identifiant pays</td><td>Pays</td><!--En fonction d'un filtre, un score--><td>Valeur Score</td><td>Rang</td></tr>";
              $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent  FROM avoir, pays, annee, score, continent 
                                         WHERE avoir.Id_Pays=pays.Id_Pays AND avoir.annee=annee.Annee 
                                         AND avoir.Id_Score=score.Id_Score AND continent.Id_Continent=pays.Id_Continent
