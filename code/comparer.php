@@ -226,9 +226,8 @@
 
 
         }
-        echo '<img src = "graphe1.php?id_pays=4&annee='.$annee.'">';
         ?>
-    <script src = "app.js"></script>
+    
 
     </body>
 </html>
