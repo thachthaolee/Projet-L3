@@ -24,8 +24,8 @@
                     <li><a href="index.php">Accueil</a></li>
                     <li><a href="#" >Continent</a></li>
                     <li><a href="comparer.php">Comparer</a></li>
-                    <li><a href="#">Score</a></li>
-                    <li><a href="#" >A propos</a></li>
+                    <li><a href="scores.php">Score</a></li>
+                    <li><a href="apropos.html" >A propos</a></li>
                     <!--Rajouter la fonction rechercher-->
                 </ul>
             </nav>

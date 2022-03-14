@@ -41,7 +41,7 @@
     
 
         <form action="index.php" method="get" autocomplete="off">
-        <p>
+        <p id = "form_index">
             <INPUT class="formulaire_filtres" type="number"name="annee"value=""min="2015"max="2019"placeholder="Année">
         
             <!--<INPUT type="text" name="FiltreScore" value="<?php echo $SCORE?>"placeholder="Sélectionner">-->

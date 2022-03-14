@@ -56,6 +56,9 @@ nav a:hover{
   margin: 0px 20px;
   height: 1500px;
 }
+#form_index{
+    text-align: center;
+}
 /*h2 pour la page score avec en titre le nom des scores*/
 h2{
     background-color: #A8BBFF;
@@ -113,7 +116,7 @@ table{
     text-decoration:double underline;
 }
 .formulaire_filtres{
-    margin-left: 8%;
+    width: 20%;
     background-color: none;
     position: relative;
 }
