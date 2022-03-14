@@ -168,7 +168,7 @@
                 $afficher = array();
                 for($i = 0; $i < $taille; $i++){
                     if($i == 0){
-                        if ($pays1[$i]>$pays2[$i]) {
+                        if (intval($pays1[$i])>intval($pays2[$i])) {
                             array_push($afficher, "<br/>");
                         }else{
                             array_push($afficher, "< <br/>");
@@ -188,7 +188,7 @@
                 $afficher = array();
                 for($i = 0; $i < $taille; $i++){
                     if($i == 0){
-                        if ($pays1[$i]<$pays2[$i]) {
+                        if (intval($pays1[$i])<intval($pays2[$i])) {
                             array_push($afficher, "<br/>");
                         }else{
                             array_push($afficher, "> <br/>");
@@ -226,7 +226,7 @@
 
 
         }
-        
+        echo '<img src = "graphe1.php?id_pays=4&annee='.$annee.'">';
         ?>
     <script src = "app.js"></script>
 
