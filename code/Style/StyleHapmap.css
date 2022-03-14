@@ -241,4 +241,15 @@ table{
     position: relative;
     bottom : 245px;
 }
+#graphe_comparer{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#img_graphe_comp{
+    border-radius: 15px;
+    box-shadow: 7px 7px 7px grey;
+}
 /* fin du css de la page comparer*/

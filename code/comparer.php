@@ -2,9 +2,7 @@
 
 <html>
     <?php
-        require('../HapMap/bd.php');
-        require_once ('jpgraph/src/jpgraph.php');
-        require_once ('jpgraph/src/jpgraph_bar.php');
+        require('bd.php');
         $bdd = getBD();
     ?>
     <head>
@@ -226,6 +224,26 @@
 
 
         }
+        $req = $bdd->query('SELECT pays.id_pays
+            FROM pays
+            WHERE pays.Nom_Pays ="'.$pays1.'"');
+            $id_pays1;
+            while ($ligne = $req ->fetch()) {
+	            $id_pays1 = $ligne[0];
+		    }
+	        $req ->closeCursor();
+            $req = $bdd->query('SELECT pays.id_pays
+            FROM pays
+            WHERE pays.Nom_Pays ="'.$pays2.'"');
+            $id_pays2;
+            while ($ligne = $req ->fetch()) {
+	            $id_pays2 = $ligne[0];
+		    }
+	        $req ->closeCursor();
+        
+        echo '<div id =  "graphe_comparer">';
+        echo '<img id = "img_graphe_comp" src = "graphe_comparer.php?id_pays1='.$id_pays1.'&id_pays2='.$id_pays2.'&annee='.$annee.'">';
+        echo '</div>';
         ?>
     
 
