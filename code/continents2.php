@@ -2,11 +2,29 @@
 <html>
 	<head>
 		<meta  http-equiv="Content-Type" content="text/html; charset="utf-8" />
-		<link rel="stylesheet" href="Style/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="Style/StyleHapMap.css" type="text/css" media="screen" />
 		<title>Continents</title>
 	</head>
 	
-	<body>
+<body>
+	
+	<header>
+            <img src = "image/logo.png" alt = "Logo"/> 
+            <nav>
+            
+                <ul>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="continents1.php" >Continent</a></li>
+                    <li><a id = "ici" href="comparer.php">Comparer</a></li>
+                    <li><a href="scores.php">Score</a></li>
+                    <li><a href="apropos.html" >A propos</a></li>
+                    <!--Rajouter la fonction rechercher-->
+                </ul>
+            </nav>
+
+    </header>
+	
+	<div class="test">
 		
 		<?php 	require ('bd.php');
 				$bdd = getBD();
@@ -21,7 +39,7 @@
 		?>		
 		
 		<?php
-				echo '<img src="graphe.php?id_continent='.$_GET["id_continent"].'&annee='.$_GET["annee"].'">' // call the fonction graphe
+				echo '<img src="graphe.php?id_continent='.$_GET["id_continent"].'&annee='.$_GET["annee"].'">' // call the fonction graphe as photo
 		?>
 				
 		<?php
@@ -43,8 +61,8 @@
 			 while ($ligne =$rep ->fetch()){
 				 $score[]=$ligne['nom'];
 				 $moyenne[]=$ligne['moyenne'];
-				 echo "<pa>".$ligne['nom']."</pa>";
-				 echo "<pa>".$ligne['moyenne']."</pa>";
+				 echo '<div class="indice"><p>'.$ligne['nom']."</p>";
+				 echo "<p>".$ligne['moyenne']."</p></div>";
 			 }
 			 
 			 $rep -> closeCursor();
@@ -62,6 +80,7 @@
 				echo "</div>";
 			?>
 					
-					
-	</body>
+	</div>		
+	
+</body>
 </html>
