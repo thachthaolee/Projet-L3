@@ -278,12 +278,12 @@ table{
     display: inline-table;
 }
 
-    .continents1 li a {
-        display: table-cell;
-        height: inherit;
-        vertical-align: bottom;
-        margin-bottom: 2px;
-    }
+.continents1 li a {
+    display: table-cell;
+    height: inherit;
+    vertical-align: bottom;
+    margin-bottom: 2px;
+ }
 
 .indice {
     background-color: white;
@@ -294,6 +294,8 @@ table{
     border: 1px gray solid;
     text-align: center;
     border-radius: 20px;
+    margin:5px;
+    
 }
 
 h1 {

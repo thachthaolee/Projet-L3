@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="Style/StyleHapMap.css" type="text/css" media="screen" />
     <title>Continent</title>
 </head>
+
 <style>
 	#ici{
-    color: #148EFF;
-    border-bottom: 2px solid #148EFF;
+		color: #148EFF;
+		border-bottom: 2px solid #148EFF;
     }
 </style>
+
 <body>
 	<header>
             <img src = "image/logo.png" alt = "Logo"/> 

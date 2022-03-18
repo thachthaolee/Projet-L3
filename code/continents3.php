@@ -5,8 +5,14 @@
 		<link rel="stylesheet" href="Style/StyleHapMap.css" type="text/css" media="screen" />
 		<title>Continents</title>
 	</head>
+<style>
+	#ici{
+		color: #148EFF;
+		border-bottom: 2px solid #148EFF;
+    }
+</style>
 	
-	<body>
+<body>
 	
 	<header>
             <img src = "image/logo.png" alt = "Logo"/> 
@@ -14,8 +20,8 @@
             
                 <ul>
                     <li><a href="index.php">Accueil</a></li>
-                    <li><a href="continents1.php" >Continent</a></li>
-                    <li><a id = "ici" href="comparer.php">Comparer</a></li>
+                    <li><a id = "ici" href="continents1.php" >Continent</a></li>
+                    <li><a href="comparer.php">Comparer</a></li>
                     <li><a href="scores.php">Score</a></li>
                     <li><a href="apropos.html" >A propos</a></li>
                     <!--Rajouter la fonction rechercher-->
@@ -44,7 +50,7 @@
 				echo '<img src="graphe1.php?id_pays='.$_GET["id_pays"].'&annee='.$_GET["annee"].'">' // call the fonction graphe1 as photo
 		?>
 		
-				
+		</br>	
 		<?php
 			 $rep = $bdd -> query('SELECT AVG(avoir.valeur_score) as moyenne, score.Nom_Score as nom
 												FROM score, avoir, pays, continent, annee
