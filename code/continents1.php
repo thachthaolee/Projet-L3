@@ -6,7 +6,12 @@
     <link rel="stylesheet" href="Style/StyleHapMap.css" type="text/css" media="screen" />
     <title>Continent</title>
 </head>
-
+<style>
+	#ici{
+    color: #148EFF;
+    border-bottom: 2px solid #148EFF;
+    }
+</style>
 <body>
 	<header>
             <img src = "image/logo.png" alt = "Logo"/> 
@@ -14,8 +19,8 @@
             
                 <ul>
                     <li><a href="index.php">Accueil</a></li>
-                    <li><a href="continents1.php" >Continent</a></li>
-                    <li><a id = "ici" href="comparer.php">Comparer</a></li>
+                    <li><a id = "ici" href="continents1.php" >Continent</a></li>
+                    <li><a href="comparer.php">Comparer</a></li>
                     <li><a href="scores.php">Score</a></li>
                     <li><a href="apropos.html" >A propos</a></li>
                     <!--Rajouter la fonction rechercher-->
