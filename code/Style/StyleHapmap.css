@@ -253,3 +253,71 @@ table{
     box-shadow: 7px 7px 7px grey;
 }
 /* fin du css de la page comparer*/
+/* css de la page continents */
+.test {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background-color: #F6F7FF;
+}
+
+.continents1 li {
+    list-style-type: none;
+    background-color: #E8EDFF;
+    width: 115px;
+    height: 90px;
+    padding: 0px;
+    margin: 1%;
+    background-image: url(../image/earth-logo.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-position: center top;
+    border: 1px #E8EDFF solid;
+    border-radius: 20%;
+    display: inline-table;
+}
+
+    .continents1 li a {
+        display: table-cell;
+        height: inherit;
+        vertical-align: bottom;
+        margin-bottom: 2px;
+    }
+
+.indice {
+    background-color: white;
+    width: 110px;
+    height: 45px;
+    line-height: 0.2em;
+    display: inline-block;
+    border: 1px gray solid;
+    text-align: center;
+    border-radius: 20px;
+}
+
+h1 {
+    text-align: center;
+    width: 200px;
+    margin: auto;
+    background-color: #377CE4;
+    color: white;
+    border: 1px gray solid;
+    border-radius: 20px;
+}
+
+.continents2 li {
+    list-style-type: none;
+    background-color: #E8EDFF;
+    line-height: 1.5em;
+    padding: 2px;
+    text-align: center;
+    margin: 2px;
+    border: 1px gray solid;
+    border-radius: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
