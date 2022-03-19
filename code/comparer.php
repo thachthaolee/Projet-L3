@@ -26,7 +26,7 @@
             
                 <ul>
                     <li><a href="index.php">Accueil</a></li>
-                    <li><a href="#" >Continent</a></li>
+                    <li><a href="continents1.php" >Continent</a></li>
                     <li><a id = "ici" href="comparer.php">Comparer</a></li>
                     <li><a href="scores.php">Score</a></li>
                     <li><a href="apropos.html" >A propos</a></li>
@@ -39,13 +39,13 @@
         <form action="comparer.php" method="post" autocomplete="off">
             <div class = "conteneur1">
                 <p class = "colp1">
-                <INPUT class="casepays" id ="pays1" type="text"name="pays1"value="<?php echo $pays1?>"placeholder="Sélectionner">
+                <INPUT class="casepays" id ="pays1" type="text"name="pays1"value=<?php echo '\''.$_GET['pays1'].'\''; ?>placeholder="Sélectionner">
                 </p>
                 <p class = "colp1">
                 <INPUT id = "annee" type="number"name="annee"value=""min="2015"max="2019"placeholder="année">
                 </p>
                 <p class = "colp1">
-                <INPUT class="casepays" id ="pays2" type="text"name="pays2"value="<?php echo $pays2?>"placeholder="Sélectionner">
+                <INPUT class="casepays" id ="pays2" type="text"name="pays2"value=<?php echo '\''.$_GET['pays2'].'\''; ?>placeholder="Sélectionner">
                 </p>
             </div>
             <br/><br/><br/><br/>
@@ -57,6 +57,7 @@
         $pays1 = $_POST['pays1'];
         $pays2 = $_POST['pays2'];
         $annee = $_POST['annee'];
+        
 
 
         $req = $bdd->query('SELECT COUNT(*)
@@ -77,27 +78,51 @@
             $pays2_existe = $ligne[0];
 		    }
 	    $req ->closeCursor();
-
-
+        
+        if(isset($_GET['erreur'])){
+            $erreur = $_GET['erreur'];
+        }else{
+            $erreur = 0;
+        }
+        
+        // erreur 0 : champ vide -> Veuillez saisir les noms des deux pays à comparer.
         if($pays1=="" ||$pays2==""){
-            echo "<div class ='indication'>";
-            echo "<p>Veuillez saisir les noms des deux pays à comparer.</p>";
-            echo "</div>";
-        }elseif($pays1_existe == 0){
-            echo "<div class ='indication'>";
-            echo "<p>".$pays1."  n'existe pas dans la base de données</p>";
-            echo "</div>";
-            echo '<meta http-equiv="refresh" content="2; url= ../HapMap/comparer.php">';
-        }elseif($pays2_existe == 0){
-            echo "<div class ='indication'>";
-            echo "<p>".$pays2."  n'existe pas dans la base de données</p>";
-            echo "</div>";
-            echo '<meta http-equiv="refresh" content="2; url=../HapMap/comparer.php">';
-        }elseif($annee==""){
-            echo "<div class ='indication'>";
-            echo "<p>Veuillez sélectionner l'année pour laquelle vous souhaitez effecturer une comparaison.</p>";
-            echo "</div>";
-            echo '<meta http-equiv="refresh" content="4; url=../HapMap/comparer.php">';
+            $erreur=0;
+        }elseif($pays1_existe == 0){ //erreur 1 : le pays1 n'existe pas
+            $erreur = 1;
+        }elseif($pays2_existe == 0){ //erreur 2 : le pays2 n'existe pas
+            $erreur = 2;
+        }elseif($annee==""){//erreur 3 : les pays ont ete saisis et existent mais l'annee n'est pas saisie
+            $erreur  = 3;
+        }else{
+            $erreur = 999;
+        }
+        
+        
+        if($erreur == 0){
+            if(isset($_GET['pays1']) && isset($_GET['pays2'])){
+                echo "<div class ='indication'>";
+                echo "<p>Veuillez sélectionner l'année pour laquelle vous souhaitez effecturer une comparaison.</p>";
+                echo "</div>";
+            }elseif(!isset($_GET['pays1']) && isset($_GET['pays2'])){
+                echo "<div class ='indication'>";
+                echo "<p>".$_GET['aff']."  n'existe pas dans la base de données</p>";
+                echo "</div>";
+            }elseif(isset($_GET['pays1']) && !isset($_GET['pays2'])){
+                echo "<div class ='indication'>";
+                echo "<p>".$_GET['aff']."  n'existe pas dans la base de données</p>";
+                echo "</div>";
+            }else{
+                echo "<div class ='indication'>";
+                echo "<p>Veuillez saisir les noms des deux pays à comparer.</p>";
+                echo "</div>";
+            }
+        }elseif($erreur == 1){
+            echo '<meta http-equiv="refresh" content="0; url= ../HapMap/comparer.php?pays2='.$pays2.'&aff='.$pays1.'">';
+        }elseif($erreur == 2){
+            echo '<meta http-equiv="refresh" content="0; url=../HapMap/comparer.php?pays1='.$pays1.'&aff='.$pays2.'">';
+        }elseif($erreur == 3){
+            echo '<meta http-equiv="refresh" content="0; url=../HapMap/comparer.php?pays1='.$pays1.'&pays2='.$pays2.'">';
         }else{
             //recuperation vecteur nom des indices pays 1 :
             $req = $bdd->query('SELECT score.Nom_Score
@@ -220,11 +245,7 @@
             echo '</div>';
 
            
-
-
-
-        }
-        $req = $bdd->query('SELECT pays.id_pays
+            $req = $bdd->query('SELECT pays.id_pays
             FROM pays
             WHERE pays.Nom_Pays ="'.$pays1.'"');
             $id_pays1;
@@ -244,6 +265,10 @@
         echo '<div id =  "graphe_comparer">';
         echo '<img id = "img_graphe_comp" src = "graphe_comparer.php?id_pays1='.$id_pays1.'&id_pays2='.$id_pays2.'&annee='.$annee.'">';
         echo '</div>';
+
+
+        }
+       
         ?>
     
 

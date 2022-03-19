@@ -66,13 +66,11 @@ $gbplot = new GroupBarPlot(array($b1plot,$b2plot));
 $graph->Add($gbplot);
 
 // Setup the titles
-//$graph->title->Set("A simple bar graph");
-//$graph->xaxis->title->Set("X-title");
-//$graph->yaxis->title->Set("Y-title");
+$graph->title->Set("A simple bar graph");
 
-//$graph->title->SetFont(FF_FONT1,FS_BOLD);
-//$graph->yaxis->title->SetFont(FF_FONT1,FS_BOLD);
-//$graph->xaxis->title->SetFont(FF_FONT1,FS_BOLD);
+
+$graph->title->SetFont(FF_FONT1,FS_BOLD);
+
 
 // Display the graph
 $graph->Stroke();
