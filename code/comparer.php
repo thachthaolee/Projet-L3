@@ -118,11 +118,11 @@
                 echo "</div>";
             }
         }elseif($erreur == 1){
-            echo '<meta http-equiv="refresh" content="0; url= ../HapMap/comparer.php?pays2='.$pays2.'&aff='.$pays1.'">';
+            echo '<meta http-equiv="refresh" content="0; url=comparer.php?pays2='.$pays2.'&aff='.$pays1.'">';
         }elseif($erreur == 2){
-            echo '<meta http-equiv="refresh" content="0; url=../HapMap/comparer.php?pays1='.$pays1.'&aff='.$pays2.'">';
+            echo '<meta http-equiv="refresh" content="0; url=comparer.php?pays1='.$pays1.'&aff='.$pays2.'">';
         }elseif($erreur == 3){
-            echo '<meta http-equiv="refresh" content="0; url=../HapMap/comparer.php?pays1='.$pays1.'&pays2='.$pays2.'">';
+            echo '<meta http-equiv="refresh" content="0; url=comparer.php?pays1='.$pays1.'&pays2='.$pays2.'">';
         }else{
             //recuperation vecteur nom des indices pays 1 :
             $req = $bdd->query('SELECT score.Nom_Score
