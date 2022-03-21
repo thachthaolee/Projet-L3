@@ -23,11 +23,11 @@
             <nav>
             
                 <ul>
-                    <li><a href="index.php">Accueil</a></li>
-                    <li><a href="continents1.php" >Continent</a></li>
-                    <li><a href="comparer.php">Comparer</a></li>
-                    <li><a id = "ici" href="scores.php">Score</a></li>
-                    <li><a href="apropos.html" >A propos</a></li>
+                    <li><a href="index.php">Home page</a></li>
+					<li><a href="continents1.php">Continent</a></li>
+					<li><a href="comparer.php">Compare</a></li>
+					<li><a href="scores.php">Score</a></li>
+					<li><a id="ici" href="apropos.html">About us</a></li>
                     <!--Rajouter la fonction rechercher-->
                 </ul>
             </nav>

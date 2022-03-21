@@ -21,11 +21,11 @@
             <nav>
             
                 <ul>
-                    <li><a href="index.php">Accueil</a></li>
-                    <li><a href="continents1.php" >Continent</a></li>
-                    <li><a href="comparer.php">Comparer</a></li>
-                    <li><a id = "ici" href="scores.php">Score</a></li>
-                    <li><a href="apropos.html" >A propos</a></li>
+                    <li><a href="index.php">Home page</a></li>
+					<li><a href="continents1.php">Continent</a></li>
+					<li><a href="comparer.php">Compare</a></li>
+					<li><a href="scores.php">Score</a></li>
+					<li><a id="ici" href="apropos.html">About us</a></li>
                     <!--Rajouter la fonction rechercher-->
                 </ul>
             </nav>
@@ -44,8 +44,8 @@ $ligne = $rep->fetch();
 
 echo "<h2>".$ligne['Nom_Score']."</h2>";
 echo "<br>";
-echo "La mesure dans laquelle ".$ligne['Nom_Score']." contribue au calcul du score de bonheur";
-echo "<a href='classement.php'><h3> Classement </h3></a></li>";
+echo "The degree in which ".$ligne['Nom_Score']." contributes in the calculation of the happiness score";
+echo "<a href='classement.php'><h3> Ranking </h3></a></li>";
 echo "<a href='carte.php'><h3> Carte </h3></a></li>";
 echo "<br>";
 

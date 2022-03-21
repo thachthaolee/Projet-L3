@@ -20,11 +20,11 @@
             <nav>
             
                 <ul>
-                    <li><a href="index.php">Accueil</a></li>
-                    <li><a id = "ici" href="continents1.php" >Continent</a></li>
-                    <li><a href="comparer.php">Comparer</a></li>
-                    <li><a href="scores.php">Score</a></li>
-                    <li><a href="apropos.html" >A propos</a></li>
+                    <li><a href="index.php">Home page</a></li>
+					<li><a href="continents1.php">Continent</a></li>
+					<li><a href="comparer.php">Compare</a></li>
+					<li><a href="scores.php">Score</a></li>
+					<li><a id="ici" href="apropos.html">About us</a></li>
                     <!--Rajouter la fonction rechercher-->
                 </ul>
             </nav>
@@ -35,8 +35,8 @@
 	
 		<form action="continents1.php" method="get" autocomplete="off">
 
-		<p>Veuillez saisir une année : <INPUT id = "annee" type="number" name="annee" value="" min="2015" max="2019" placeholder="année"></p>
-		<p><?php echo "Vous avez choisi ".$_GET['annee'];?></p>
+		<p>Please select a year : <INPUT id = "annee" type="number" name="annee" value="" min="2015" max="2019" placeholder="year"></p>
+		<p><?php echo "You have chosen ".$_GET['annee'];?></p>
 		</form>
 	
 	

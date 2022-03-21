@@ -23,18 +23,18 @@
     <nav>
             
         <ul>
-            <li><a href="index.php">Accueil</a></li>
-            <li><a href="continents1.php" >Continent</a></li>
-            <li><a href="comparer.php">Comparer</a></li>
-            <li><a id = "ici" href="#">Score</a></li>
-            <li><a href="#" >A propos</a></li>
+            <li><a href="index.php">Home page</a></li>
+            <li><a href="continents1.php">Continent</a></li>
+            <li><a href="comparer.php">Compare</a></li>
+            <li><a href="scores.php">Score</a></li>
+			<li><a id="ici" href="apropos.html">About us</a></li>
             <!--Rajouter la fonction rechercher-->
         </ul>
     </nav>
 
 </header> 
 
-<h2> Classement </h2>
+<h2> Ranking </h2>
 
 <!--
 <form method="get" action="classement.php" autocomplete="off">
@@ -42,8 +42,8 @@
 </form>
 -->
 <table border="1">
-<tr><th>Rang</th>
-<th>Pays</th>
+<tr><th>Rank</th>
+<th>Country</th>
 <th>Score</th>
 </tr>
 

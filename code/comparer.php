@@ -25,11 +25,11 @@
             <nav>
             
                 <ul>
-                    <li><a href="index.php">Accueil</a></li>
-                    <li><a href="continents1.php" >Continent</a></li>
-                    <li><a id = "ici" href="comparer.php">Comparer</a></li>
-                    <li><a href="scores.php">Score</a></li>
-                    <li><a href="apropos.html" >A propos</a></li>
+                    <li><a href="index.php">Home page</a></li>
+					<li><a href="continents1.php">Continent</a></li>
+					<li><a href="comparer.php">Compare</a></li>
+					<li><a href="scores.php">Score</a></li>
+					<li><a id="ici" href="apropos.html">About us</a></li>
                     <!--Rajouter la fonction rechercher-->
                 </ul>
             </nav>
@@ -39,18 +39,18 @@
         <form action="comparer.php" method="post" autocomplete="off">
             <div class = "conteneur1">
                 <p class = "colp1">
-                <INPUT class="casepays" id ="pays1" type="text"name="pays1"value=<?php echo '\''.$_GET['pays1'].'\''; ?>placeholder="Sélectionner">
+                <INPUT class="casepays" id ="pays1" type="text"name="pays1"value=<?php echo '\''.$_GET['pays1'].'\''; ?>placeholder="Please select">
                 </p>
                 <p class = "colp1">
-                <INPUT id = "annee" type="number"name="annee"value=""min="2015"max="2019"placeholder="année">
+                <INPUT id = "annee" type="number"name="annee"value=""min="2015"max="2019"placeholder="year">
                 </p>
                 <p class = "colp1">
-                <INPUT class="casepays" id ="pays2" type="text"name="pays2"value=<?php echo '\''.$_GET['pays2'].'\''; ?>placeholder="Sélectionner">
+                <INPUT class="casepays" id ="pays2" type="text"name="pays2"value=<?php echo '\''.$_GET['pays2'].'\''; ?>placeholder="Please select">
                 </p>
             </div>
             <br/><br/><br/><br/>
             <p id = "bouton">
-                <input id = "bouton_comparer" type="submit" value="Comparer">
+                <input id = "bouton_comparer" type="submit" value="Compare">
             </p>
         </form>
         <?php
@@ -102,19 +102,19 @@
         if($erreur == 0){
             if(isset($_GET['pays1']) && isset($_GET['pays2'])){
                 echo "<div class ='indication'>";
-                echo "<p>Veuillez sélectionner l'année pour laquelle vous souhaitez effecturer une comparaison.</p>";
+                echo "<p>Please select the year for which you would like to make a comparison.</p>";
                 echo "</div>";
             }elseif(!isset($_GET['pays1']) && isset($_GET['pays2'])){
                 echo "<div class ='indication'>";
-                echo "<p>".$_GET['aff']."  n'existe pas dans la base de données</p>";
+                echo "<p>".$_GET['aff']."  Doesn't exist in the database</p>";
                 echo "</div>";
             }elseif(isset($_GET['pays1']) && !isset($_GET['pays2'])){
                 echo "<div class ='indication'>";
-                echo "<p>".$_GET['aff']."  n'existe pas dans la base de données</p>";
+                echo "<p>".$_GET['aff']."  Doesn't exist in the database</p>";
                 echo "</div>";
             }else{
                 echo "<div class ='indication'>";
-                echo "<p>Veuillez saisir les noms des deux pays à comparer.</p>";
+                echo "<p>Please select the names of the two countries that you would like to compare.</p>";
                 echo "</div>";
             }
         }elseif($erreur == 1){
