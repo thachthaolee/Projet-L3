@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta  http-equiv="Content-Type" content="text/html; charset="utf-8" />
-		<link rel="stylesheet" href="Style/StyleHapMap.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="Style/StyleHapMap.css?" type="text/css" media="screen" />
 		<title>Continents</title>
 	</head>
 
@@ -83,7 +83,7 @@
 			echo '<div class="continents2">';
 			$rep = $bdd->query("SELECT Nom_Pays, Id_Pays FROM pays WHERE Id_Continent = $continent");
 			while ($ligne = $rep -> fetch()) {
-				echo "<li><a href=continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$_GET['annee'].">".$ligne['Nom_Pays']."</a></li>";}
+				echo "<li class='gros'><a href=continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$_GET['annee'].">".$ligne['Nom_Pays']."</a></li>";}
 				
 				$rep -> closeCursor();
 				echo "</div>";
