@@ -102,7 +102,7 @@ elseif($SCORE=="--Please choose a Score--"){
     echo "</div>";
     //echo "<meta http-equiv='Refresh' content='0; url=index.php?annee=".$annee."&Continent=".$CONTINENT."'/>";
 }
- elseif($CONTINENT=="--Please choose a continent--"){
+ elseif($CONTINENT=="--Choose a continent--"){
     echo "<p>Index selected : ".$SCORE."</p>";
     echo "<p>Year selected : ".$annee."</p>";
     echo "<p>Continent selected : Aucun</p>";
@@ -116,7 +116,7 @@ elseif($SCORE=="--Please choose a Score--"){
             while ($ligne = $rep ->fetch()) {
                 echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."Scores/scores.php?id_Pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$ligne['rang']."</td></tr>";
                 }
-                $rep ->closeCursor(); 
+                $rep ->closeCursor();
                 
     echo "</table>";
 
