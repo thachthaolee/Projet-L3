@@ -1,23 +1,25 @@
 /*
 const { Sequelize } = require('sequelize');
-const sequelize = new Sequelize("hapmap", "nom_utilisateur", "mot_de_passe_utilisateur", {
+const sequelize = new Sequelize("hapmap", "nom_utilisateur ?????", "mot_de_passe_utilisateur ???", {
   dialect: "mysql",
   host: "localhost"
 });*/
+
+//const test = document.getElementsByClassName("sm_state_");//Concatener avec DZ pour alerie, DE pour allemagne, RU pour Russie...
 
 var simplemaps_worldmap_mapdata={
   main_settings: {
     //General settings
 		width: "responsive", //or 'responsive'
-    background_color: "#FFFFFF",
+    background_color: "on s'en fiche c'est transparent",
     background_transparent: "yes",
-    popups: "detect",
+    popups: "detect", // ou on_click ou on_hover
     
 		//State defaults
-		state_description: "State description",
-    state_color: "#88A4BC",
-    state_hover_color: "#3B729F",
-    state_url: "https://simplemaps.com",
+		state_description: "State description", // Ici requête pour afficher score quand on survole
+    state_color: "#88A4BC", //couleur pas ouf
+    state_hover_color: "#3B729F", //couleur pas ouf
+    state_url: "https://simplemaps.com", //Ici il faudra un lien pour mener vers la page du pays de Emilie
     border_size: 1.5,
     border_color: "#ffffff",
     all_states_inactive: "no",
