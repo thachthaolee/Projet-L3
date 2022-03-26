@@ -11,12 +11,7 @@
         <title>
             Comparer
         </title>
-        <style>
-            #ici{
-    color: #148EFF;
-    border-bottom: 2px solid #148EFF;
-}
-        </style>
+        
     </head>
 
     <body>
@@ -27,7 +22,7 @@
                 <ul>
                     <li><a href="index.php">Home page</a></li>
 					<li><a href="continents1.php">Continent</a></li>
-					<li><a id="ici" href="comparer.php">Compare</a></li>
+					<li><a class="ici" href="comparer.php">Compare</a></li>
 					<li><a href="scores.php">Score</a></li>
 					<li><a href="apropos.html">About us</a></li>
                     <!--Rajouter la fonction rechercher-->

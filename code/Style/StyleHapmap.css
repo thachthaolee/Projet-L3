@@ -4,6 +4,9 @@
 html{
     background-color: rgb(246, 247, 255);
 }
+.ici{
+    color: #148EFF;
+}
 header {
     height:130px;
     width:1250px;
@@ -26,10 +29,12 @@ nav ul{
 }
 
 nav li{
+    display: inline;
     float: left;
     width: 20%;/*100% divisé par le nombre d'éléments de menu*/
     text-align: center;/*Centre le texte dans les éléments de menu*/
     transition: transform .2s;
+    position: relative;
 }
 
 /*Evite que le menu n'ait une hauteur nulle*/
@@ -43,18 +48,31 @@ nav a{
     display: block; /*Toute la surface sera cliquable*/
     text-decoration: none;
     color: black;
-    border-bottom: 2px solid transparent;/*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
+    border-bottom: 2px solid transparent; /*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
     padding: 10px 0px;/*Agrandit le menu et espace la bordure du texte*/
     transition-property:all; 
     transition-duration:0.4s; 
 }
 
+
+nav li::after{
+    content:"";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background:#148EFF;
+    transform: scale(0);
+    transition: transform 0.2s  ease-in-out;
+}
+nav li:hover::after{
+    transform: scale(1);
+}
 nav a:hover{
     color: #148EFF;
-    border-bottom: 2px solid #148EFF;
-    transition-property:all; 
-    transition-duration:0.4s; 
 }
+
+
 
 .conteneur{
   margin: 0px 20px;
