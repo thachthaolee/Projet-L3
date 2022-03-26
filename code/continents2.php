@@ -41,13 +41,13 @@
 				$rep = $bdd->query("SELECT * FROM continent WHERE Id_Continent= $continent");
 							
 				while ($mat=$rep-> fetch()){	
-					echo "<h1>".$mat['Nom_Continent']."</h1></br>";
+					echo "<br/><br/><h1>".$mat['Nom_Continent']."</h1><br/></br>";
 					}
 		?>		
 		
-		<center>
+		
 		<?php
-				echo '<img src="graphe.php?id_continent='.$_GET["id_continent"].'&annee='.$_GET["annee"].'">' // call the fonction graphe as photo
+				echo '<img src="graphe.php?id_continent='.$_GET["id_continent"].'&annee='.$_GET["annee"].'"><br/>' // call the fonction graphe as photo
 		?>
 		
 		</br>		
@@ -77,7 +77,7 @@
 			 $rep -> closeCursor();
 			 
 		?>
-		</center>
+		<br/><br/>
 		
 		<?php			
 			echo '<div class="continents2">';

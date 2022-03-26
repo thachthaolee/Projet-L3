@@ -41,7 +41,7 @@
         <!--formulaire pour filtres-->
     
 
-        <form action="index.php" method="get" autocomplete="off">
+        <form action="scores.php" method="get" autocomplete="off">
         <p id = "form_index">
             <INPUT class="formulaire_filtres" type="number"name="annee"value=""min="2015"max="2019"placeholder="Year">
         
@@ -80,18 +80,18 @@
         ?>
 
 <?php
-//echo "<meta http-equiv='Refresh' content='0; url=index.php?annee=".$annee."&score=".$SCORE."&Continent=".$CONTINENT."'/>";
+//echo "<meta http-equiv='Refresh' content='0; url=scores.php?annee=".$annee."&score=".$SCORE."&Continent=".$CONTINENT."'/>";
 if($annee==""){
     echo "<div>";
     echo "<p class='àremplir'>Please select a year to observe</p>";
     echo "</div>";
-    //echo "<meta http-equiv='Refresh' content='0; url=index.php?score=".$SCORE."&Continent=".$CONTINENT."'/>";
+    //echo "<meta http-equiv='Refresh' content='0; url=scores.php?score=".$SCORE."&Continent=".$CONTINENT."'/>";
 }
 elseif($SCORE=="--Please choose a Score--"){
     echo "<div>";
     echo "<p class='àremplir'>Please select a score to observe</p>";    
     echo "</div>";
-    //echo "<meta http-equiv='Refresh' content='0; url=index.php?annee=".$annee."&Continent=".$CONTINENT."'/>";
+    //echo "<meta http-equiv='Refresh' content='0; url=scores.php?annee=".$annee."&Continent=".$CONTINENT."'/>";
 }
  elseif($CONTINENT=="--Choose a continent--"){
         echo "<div>";

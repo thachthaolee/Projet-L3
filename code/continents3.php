@@ -29,8 +29,9 @@
             </nav>
 
     </header>
+	<br/><br/><br/>
 	
-	<div class="test">
+	<div class="aff_continent3">
 		
 		<?php 	require ('bd.php');
 				$bdd = getBD();
@@ -41,16 +42,19 @@
 							
 				while ($mat=$rep-> fetch()){	
 					echo "<h1>".$mat['Nom_Pays']."</h1></br>";
-					}
-		?>		
+				}
+				$rep->closeCursor();
+		?>		<br/>
 		
 		
-		<center>
+
 		<?php
 				echo '<img src="graphe1.php?id_pays='.$_GET["id_pays"].'&annee='.$_GET["annee"].'">' // call the fonction graphe1 as photo
 		?>
 		
+		
 		</br>	
+		</br>
 		<?php
 			 $rep = $bdd -> query('SELECT AVG(avoir.valeur_score) as moyenne, score.Nom_Score as nom
 												FROM score, avoir, pays, continent, annee
@@ -72,12 +76,20 @@
 				 $moyenne[]=$ligne['moyenne'];
 				 echo '<div class="indice"><p>'.$ligne['nom']."</p>";
 				 echo '<p>'.$ligne['moyenne']."</p></div>";
-			 }
+			}
 			 
-			 $rep -> closeCursor();
-			 
+			$rep -> closeCursor();
+
+			$rep = $bdd->query("SELECT * FROM pays WHERE Id_Pays= $pays");
+							
+				while ($mat=$rep-> fetch()){	
+					echo "<br/><br/><h2><a href='comparer.php?pays1=".$mat['Nom_Pays']."&continent=1'>Compare</a></h2></br>";
+				}
+				$rep->closeCursor();
+			
 		?>
-		</center>
+		
+	
 			
 	</div>		
 	

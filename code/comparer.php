@@ -110,7 +110,11 @@
                 echo "</div>";
             }elseif(isset($_GET['pays1']) && !isset($_GET['pays2'])){
                 echo "<div class ='indication'>";
-                echo "<p>".$_GET['aff']."  Doesn't exist in the database</p>";
+                if(isset($_GET['continent'])){
+                    echo "<p>Please select the name of the other country and the year</p>";
+                }else{
+                    echo "<p>".$_GET['aff']."  Doesn't exist in the database</p>";
+                }
                 echo "</div>";
             }else{
                 echo "<div class ='indication'>";

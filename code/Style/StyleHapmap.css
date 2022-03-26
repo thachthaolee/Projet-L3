@@ -15,11 +15,10 @@ header {
   /* Aide bandeau : https://www.pierre-giraud.com/html-css-apprendre-coder-cours/creation-menu-horizontal-sticky/ */  
   nav{
     width: 100%;
-    margin: 0px auto 40px auto;
+    margin: 0px auto 0px auto;
     background-color: #b9c7fa;
     position: sticky;
     top: 0px;
-    
 }
 
 nav ul{
@@ -281,23 +280,30 @@ table{
     margin-right: auto;
     width: 80%;
     background-color: #F6F7FF;
+    text-align: center;
 }
 
 .continents1 li {
     list-style-type: none;
     background-color: #E8EDFF;
-    width: 115px;
-    height: 90px;
+    width: 143px;
+    height: 110px;
     padding: 0px;
     margin: 1%;
     background-image: url(../image/earth-logo.png);
-    background-size: auto;
+    background-size: 65%;
     background-repeat: no-repeat;
     text-align: center;
     background-position: center top;
     border: 1px #E8EDFF solid;
     border-radius: 20%;
     display: inline-table;
+    transition: transform .2s;
+}
+.continents1 li:hover{
+    transform: scale(1.2);
+    position: relative;
+    z-index: 1;
 }
 
 .continents1 li a {
@@ -305,6 +311,7 @@ table{
     height: inherit;
     vertical-align: bottom;
     margin-bottom: 2px;
+    padding-bottom: 10px;
  }
 
 .indice {
@@ -340,20 +347,48 @@ h1 {
     margin: 2px;
     border: 1px gray solid;
     border-radius: 20px;
+    transition: transform .2s;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.continents2 li:hover{
+    transform: scale(1.2);
+    position: relative;
+    z-index: 1;
+}
+.continents2{
+    text-align: center;
 }
 
 a {
     text-decoration: none;
     color: black;
 }
-.gros{
-    transition: transform .2s;
+
+#CartePrincipal{
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
 }
-.gros:hover{
-    transform: scale(1.2);
-    position: relative;
-    z-index: 1;
+#map{
+    margin-left: auto;
+    margin-right: auto;
 }
+.aff_continent3{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.aff_continent3 h2{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
 
 
 
