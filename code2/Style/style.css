@@ -1,0 +1,39 @@
+body{
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	background-color: #F6F7FF;}
+	
+.continents1 li{
+    list-style-type: none;
+    background-color: #E8EDFF;
+    width: 80px;
+    height: 105px;
+    padding : 2px;
+    margin: 2px;
+    text-align: center;
+    background-image: url(../image/earth-logo.png);
+    background-size: auto;
+    float: left;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-position: center bottom;
+    vertical-align:bottom;}
+	
+h1{
+	text-align: center;
+	width: 200px;
+	margin: auto;
+	background-color: #377CE4;
+	color: white;}
+	
+.continents2 li{
+	list-style-type: none;
+	background-color: #E8EDFF;
+	padding: 2px;
+	text-align: center;
+	margin: 2px;}
+	
+a{
+	text-decoration: none;
+	color: black;}
