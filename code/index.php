@@ -50,8 +50,7 @@
         <p id = "form_index">
             <INPUT class="formulaire_filtres" type="number"name="annee"value=""min="2015"max="2019"placeholder="Year">
         
-            <!--<INPUT type="text" name="FiltreScore" value="<?php echo $SCORE?>"placeholder="Sélectionner">-->
-<!--Je prefererais passer par l'id score que le nom du score-->
+        
             <SELECT class="formulaire_filtres" name="score">
                 <option valeur="">--Please choose a Score--</option>
                 <option valeur="<?php echo $SCORE?>">Hapiness Rank</option>
@@ -65,7 +64,6 @@
                 <option valeur="<?php echo $SCORE?>">Social Support</option>
             </SELECT>
 
-<!--La on va avoir 2 pbs : comment on fait si on veut séléctionner sur le monde + les rang seront les généraux meme si on demande un continent-->
             <SELECT class="formulaire_filtres" name="Continent">
                 <option valeur="">--Choose a continent--</option>
                 <option valeur="<?php echo $CONTINENT?>">Africa</option>
@@ -82,11 +80,9 @@
 
         <?php
         $annee = $_GET['annee'];
-        //$SCORE = $_GET['FiltreScore'];
         $SCORE = $_GET['score'];
         $CONTINENT = $_GET['Continent'];
         ?>
-<!--Mettre des filtres ici : année, score, continent...-->
 
 <?php
 //echo "<meta http-equiv='Refresh' content='0; url=index.php?annee=".$annee."&score=".$SCORE."&Continent=".$CONTINENT."'/>";
@@ -98,16 +94,18 @@ if($annee==""){
 }
 elseif($SCORE=="--Please choose a Score--"){
     echo "<div>";
-    echo "<p class='àremplir'>Please select a year to observe</p>";    
+    echo "<p class='àremplir'>Please select a score to observe</p>";    
     echo "</div>";
     //echo "<meta http-equiv='Refresh' content='0; url=index.php?annee=".$annee."&Continent=".$CONTINENT."'/>";
 }
  elseif($CONTINENT=="--Choose a continent--"){
-    echo "<p>Index selected : ".$SCORE."</p>";
-    echo "<p>Year selected : ".$annee."</p>";
-    echo "<p>Continent selected : Aucun</p>";
+        echo "<div>";
+    echo "<p class='selection'>Year selected : ".$annee."</p>";
+    echo "<p class='selection'>Index selected : ".$SCORE."</p>";
+    echo "<p class='selection'>Continent selected : World</p>";
+        echo "</div>";
     echo '<table id="index_tab">';
-    echo "<tr id='champs'><td>Identifiant pays</td><td>Pays</td><!--En fonction d'un filtre, un score--><td>Valeur Score</td><td>Rang</td></tr>";
+    echo "<tr id='champs'><td>Identifiant pays</td><td>Pays</td><td>Valeur Score</td><td>Rang</td></tr>";
              $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent  FROM avoir, pays, annee, score, continent 
                                         WHERE avoir.Id_Pays=pays.Id_Pays AND avoir.annee=annee.Annee 
                                         AND avoir.Id_Score=score.Id_Score AND continent.Id_Continent=pays.Id_Continent
@@ -122,10 +120,12 @@ elseif($SCORE=="--Please choose a Score--"){
 
  }
  else{
-    echo "<p>Index selected : ".$SCORE."</p>";
-    echo "<p>Year selected : ".$annee."</p>";
-    echo "<p>Continent selected : ".$CONTINENT."</p>";
-    echo "<p>To be noted that the ranks that you are watching, are the ranks for the whole world, their ranking is being defined by their order.</p>";
+        echo "<div>"; 
+    echo "<p class='selection'>Index selected : ".$SCORE."</p>";
+    echo "<p class='selection'>Year selected : ".$annee."</p>";
+    echo "<p class='selection'>Continent selected : ".$CONTINENT."</p>";
+        echo "</div>";
+    echo "<p id='indic'>To be noted that the ranks that you are watching, are the ranks for the whole world, their ranking is being defined by their order.</p>";
     echo '<table id="index_tab">';
     echo "<tr id='champs'><td>Identifiant pays</td><td>Pays</td><!--En fonction d'un filtre, un score--><td>Valeur Score</td><td>Rang</td></tr>";
              $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent  FROM avoir, pays, annee, score, continent 
@@ -147,14 +147,3 @@ elseif($SCORE=="--Please choose a Score--"){
 
     </body>
 </html>
-
-
-<?php // Double tableau qui fonctionne
-//$rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score  FROM avoir, pays, annee,score 
-      //                                  WHERE avoir.Id_Pays=pays.Id_Pays AND avoir.annee=annee.Annee AND avoir.Id_Score=score.Id_Score
-      //                                  AND score.Nom_Score="'.$SCORE.'" AND avoir.annee="'.$annee.'" ORDER BY avoir.rang ASC');
-      //          while ($ligne = $rep ->fetch()) {
-      //              echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."Scores/scores.php?id_Pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$ligne['rang']."</td></tr>";
-      //              }
-      //              $rep ->closeCursor(); 
-      //              ?>

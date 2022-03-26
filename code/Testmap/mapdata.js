@@ -5,7 +5,7 @@ const sequelize = new Sequelize("hapmap", "nom_utilisateur ?????", "mot_de_passe
   host: "localhost"
 });*/
 
-//const test = document.getElementsByClassName("sm_state_");//Concatener avec DZ pour alerie, DE pour allemagne, RU pour Russie...
+// Les url trouvés à partir de excel (bureau mattis)
 
 var simplemaps_worldmap_mapdata={
   main_settings: {
@@ -19,7 +19,6 @@ var simplemaps_worldmap_mapdata={
 		state_description: "State description", // Ici requête pour afficher score quand on survole
     state_color: "#88A4BC", //couleur pas ouf
     state_hover_color: "#3B729F", //couleur pas ouf
-    state_url: "https://simplemaps.com", //Ici il faudra un lien pour mener vers la page du pays de Emilie
     border_size: 1.5,
     border_color: "#ffffff",
     all_states_inactive: "no",
@@ -83,1501 +82,859 @@ var simplemaps_worldmap_mapdata={
   state_specific: {
     AF: {
       name: "Afghanistan",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=1&annee=2019"
     },
     AO: {
       name: "Angola",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=4&annee=2019"
     },
     AL: {
       name: "Albania",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=2&annee=2019"
     },
     AE: {
       name: "United Arab Emirates",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=159&annee=2019"
     },
     AR: {
       name: "Argentina",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=5&annee=2019"
     },
     AM: {
       name: "Armenia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=6&annee=2019"
     },
     AU: {
       name: "Australia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=7&annee=2019"
     },
     AT: {
       name: "Austria",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=8&annee=2019"
     },
     AZ: {
       name: "Azerbaijan",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=9&annee=2019"
     },
     BI: {
       name: "Burundi",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=23&annee=2019"
     },
     BE: {
       name: "Belgium",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=13&annee=2019"
     },
     BJ: {
       name: "Benin",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=15&annee=2019"
     },
     BF: {
       name: "Burkina Faso",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=22&annee=2019"
     },
     BD: {
       name: "Bangladesh",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=11&annee=2019"
     },
     BG: {
       name: "Bulgaria",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=21&annee=2019"
     },
     BH: {
       name: "Bahrain",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=10&annee=2019"
     },
     BA: {
       name: "Bosnia and Herzegovina",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=18&annee=2019"
     },
     BY: {
       name: "Belarus",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=12&annee=2019"
     },
     BZ: {
       name: "Belize",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=14&annee=2019"
     },
     BO: {
       name: "Bolivia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=17&annee=2019"
     },
     BR: {
       name: "Brazil",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=20&annee=2019"
     },
     BN: {
       name: "Brunei Darussalam",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     BT: {
       name: "Bhutan",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=16&annee=2019"
     },
     BW: {
       name: "Botswana",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=19&annee=2019"
     },
     CF: {
       name: "Central African Republic",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=27&annee=2019"
     },
     CA: {
       name: "Canada",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=26&annee=2019"
     },
     CH: {
       name: "Switzerland",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=144&annee=2019"
     },
     CL: {
       name: "Chile",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=29&annee=2019"
     },
     CN: {
       name: "China",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=30&annee=2019"
     },
     CI: {
       name: "Côte d'Ivoire",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     CM: {
       name: "Cameroon",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=25&annee=2019"
     },
     CD: {
       name: "Democratic Republic of the Congo",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     CG: {
       name: "Republic of Congo",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     CO: {
       name: "Colombia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=31&annee=2019"
     },
     CR: {
       name: "Costa Rica",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=35&annee=2019"
     },
     CU: {
       name: "Cuba",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     CZ: {
       name: "Czech Republic",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=38&annee=2019"
     },
     DE: {
       name: "Germany",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=52&annee=2019"
     },
     DJ: {
       name: "Djibouti",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=40&annee=2019"
     },
     DK: {
       name: "Denmark",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=39&annee=2019"
     },
     DO: {
       name: "Dominican Republic",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=41&annee=2019"
     },
     DZ: {
       name: "Algeria",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=3&annee=2019"
     },
     EC: {
       name: "Ecuador",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=42&annee=2019"
     },
     EG: {
       name: "Egypt",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=43&annee=2019"
     },
     ER: {
       name: "Eritrea",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     EE: {
       name: "Estonia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=45&annee=2019"
     },
     ET: {
       name: "Ethiopia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=46&annee=2019"
     },
     FI: {
       name: "Finland",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=47&annee=2019"
     },
     FJ: {
       name: "Fiji",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     GA: {
       name: "Gabon",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=49&annee=2019"
     },
     GB: {
       name: "United Kingdom",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=160&annee=2019"
     },
     GE: {
       name: "Georgia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=51&annee=2019"
     },
     GH: {
       name: "Ghana",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=53&annee=2019"
     },
     GN: {
       name: "Guinea",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=56&annee=2019"
     },
     GM: {
       name: "The Gambia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     GW: {
       name: "Guinea-Bissau",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     GQ: {
       name: "Equatorial Guinea",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     GR: {
       name: "Greece",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=54&annee=2019"
     },
     GL: {
       name: "Greenland",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     GT: {
       name: "Guatemala",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=55&annee=2019"
     },
     GY: {
       name: "Guyana",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     HN: {
       name: "Honduras",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=58&annee=2019"
     },
     HR: {
       name: "Croatia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=36&annee=2019"
     },
     HT: {
       name: "Haiti",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=57&annee=2019"
     },
     HU: {
       name: "Hungary",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=60&annee=2019"
     },
     ID: {
       name: "Indonesia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=63&annee=2019"
     },
     IN: {
       name: "India",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=62&annee=2019"
     },
     IE: {
       name: "Ireland",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=66&annee=2019"
     },
     IR: {
       name: "Iran",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=64&annee=2019"
     },
     IQ: {
       name: "Iraq",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=65&annee=2019"
     },
     IS: {
       name: "Iceland",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=61&annee=2019"
     },
     IL: {
       name: "Israel",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=67&annee=2019"
     },
     IT: {
       name: "Italy",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=68&annee=2019"
     },
     JM: {
       name: "Jamaica",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=70&annee=2019"
     },
     JO: {
       name: "Jordan",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=72&annee=2019"
     },
     JP: {
       name: "Japan",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=71&annee=2019"
     },
     KZ: {
       name: "Kazakhstan",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=73&annee=2019"
     },
     KE: {
       name: "Kenya",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=74&annee=2019"
     },
     KG: {
       name: "Kyrgyzstan",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=77&annee=2019"
     },
     KH: {
       name: "Cambodia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=24&annee=2019"
     },
     KR: {
       name: "Republic of Korea",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     XK: {
       name: "Kosovo",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=75&annee=2019"
     },
     KW: {
       name: "Kuwait",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=76&annee=2019"
     },
     LA: {
       name: "Lao PDR",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     LB: {
       name: "Lebanon",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=80&annee=2019"
     },
     LR: {
       name: "Liberia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=82&annee=2019"
     },
     LY: {
       name: "Libya",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=83&annee=2019"
     },
     LK: {
       name: "Sri Lanka",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=139&annee=2019"
     },
     LS: {
       name: "Lesotho",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=81&annee=2019"
     },
     LT: {
       name: "Lithuania",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=84&annee=2019"
     },
     LU: {
       name: "Luxembourg",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=85&annee=2019"
     },
     LV: {
       name: "Latvia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=79&annee=2019"
     },
     MA: {
       name: "Morocco",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=98&annee=2019"
     },
     MD: {
       name: "Moldova",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=95&annee=2019"
     },
     MG: {
       name: "Madagascar",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=87&annee=2019"
     },
     MX: {
       name: "Mexico",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=94&annee=2019"
     },
     MK: {
       name: "Macedonia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=86&annee=2019"
     },
     ML: {
       name: "Mali",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=90&annee=2019"
     },
     MM: {
       name: "Myanmar",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=100&annee=2019"
     },
     ME: {
       name: "Montenegro",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=97&annee=2019"
     },
     MN: {
       name: "Mongolia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=96&annee=2019"
     },
     MZ: {
       name: "Mozambique",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=99&annee=2019"
     },
     MR: {
       name: "Mauritania",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=92&annee=2019"
     },
     MW: {
       name: "Malawi",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=88&annee=2019"
     },
     MY: {
       name: "Malaysia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=89&annee=2019"
     },
     NA: {
       name: "Namibia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=101&annee=2019"
     },
     NE: {
       name: "Niger",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=106&annee=2019"
     },
     NG: {
       name: "Nigeria",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=107&annee=2019"
     },
     NI: {
       name: "Nicaragua",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=105&annee=2019"
     },
     NL: {
       name: "Netherlands",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=103&annee=2019"
     },
     NO: {
       name: "Norway",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=111&annee=2019"
     },
     NP: {
       name: "Nepal",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=102&annee=2019"
     },
     NZ: {
       name: "New Zealand",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=104&annee=2019"
     },
     OM: {
       name: "Oman",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=112&annee=2019"
     },
     PK: {
       name: "Pakistan",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=113&annee=2019"
     },
     PA: {
       name: "Panama",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=115&annee=2019"
     },
     PE: {
       name: "Peru",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=117&annee=2019"
     },
     PH: {
       name: "Philippines",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=118&annee=2019"
     },
     PG: {
       name: "Papua New Guinea",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     PL: {
       name: "Poland",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=119&annee=2019"
     },
     KP: {
       name: "Dem. Rep. Korea",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     PT: {
       name: "Portugal",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=120&annee=2019"
     },
     PY: {
       name: "Paraguay",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=116&annee=2019"
     },
     PS: {
       name: "Palestine",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     QA: {
       name: "Qatar",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=122&annee=2019"
     },
     RO: {
       name: "Romania",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=123&annee=2019"
     },
     RU: {
       name: "Russia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=124&annee=2019"
     },
     RW: {
       name: "Rwanda",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=125&annee=2019"
     },
     EH: {
       name: "Western Sahara",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     SA: {
       name: "Saudi Arabia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=126&annee=2019"
     },
     SD: {
       name: "Sudan",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=140&annee=2019"
     },
     SS: {
       name: "South Sudan",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=137&annee=2019"
     },
     SN: {
       name: "Senegal",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=127&annee=2019"
     },
     SL: {
       name: "Sierra Leone",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=129&annee=2019"
     },
     SV: {
       name: "El Salvador",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=44&annee=2019"
     },
     RS: {
       name: "Serbia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=128&annee=2019"
     },
     SR: {
       name: "Suriname",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=141&annee=2019"
     },
     SK: {
       name: "Slovakia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=131&annee=2019"
     },
     SI: {
       name: "Slovenia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=132&annee=2019"
     },
     SE: {
       name: "Sweden",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=143&annee=2019"
     },
     SZ: {
       name: "Swaziland",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=142&annee=2019"
     },
     SY: {
       name: "Syria",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=145&annee=2019"
     },
     TD: {
       name: "Chad",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=28&annee=2019"
     },
     TG: {
       name: "Togo",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=151&annee=2019"
     },
     TH: {
       name: "Thailand",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=150&annee=2019"
     },
     TJ: {
       name: "Tajikistan",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=148&annee=2019"
     },
     TM: {
       name: "Turkmenistan",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=156&annee=2019"
     },
     TL: {
       name: "Timor-Leste",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     TN: {
       name: "Tunisia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=154&annee=2019"
     },
     TR: {
       name: "Turkey",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=155&annee=2019"
     },
     TW: {
       name: "Taiwan",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=146&annee=2019"
     },
     TZ: {
       name: "Tanzania",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=149&annee=2019"
     },
     UG: {
       name: "Uganda",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=157&annee=2019"
     },
     UA: {
       name: "Ukraine",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=158&annee=2019"
     },
     UY: {
       name: "Uruguay",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=162&annee=2019"
     },
     US: {
       name: "United States",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=161&annee=2019"
     },
     UZ: {
       name: "Uzbekistan",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=163&annee=2019"
     },
     VE: {
       name: "Venezuela",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=164&annee=2019"
     },
     VN: {
       name: "Vietnam",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=165&annee=2019"
     },
     VU: {
       name: "Vanuatu",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     YE: {
       name: "Yemen",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=166&annee=2019"
     },
     ZA: {
       name: "South Africa",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=135&annee=2019"
     },
     ZM: {
       name: "Zambia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=167&annee=2019"
     },
     ZW: {
       name: "Zimbabwe",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=168&annee=2019"
     },
     SO: {
       name: "Somalia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=133&annee=2019"
     },
     GF: {
       name: "France",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "toto.html"
+      url: "http://localhost/HapMap/continents3.php?id_pays=48&annee=2019"
     },
     FR: {
       name: "France",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "toto.html"
+      url: "http://localhost/HapMap/continents3.php?id_pays=48&annee=2019"
     },
     ES: {
       name: "Spain",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=138&annee=2019"
     },
     AW: {
       name: "Aruba",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     AI: {
       name: "Anguilla",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     AD: {
       name: "Andorra",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     AG: {
       name: "Antigua and Barbuda",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     BS: {
       name: "Bahamas",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     BM: {
       name: "Bermuda",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     BB: {
       name: "Barbados",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     KM: {
       name: "Comoros",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=32&annee=2019"
     },
     CV: {
       name: "Cape Verde",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     KY: {
       name: "Cayman Islands",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     DM: {
       name: "Dominica",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     FK: {
       name: "Falkland Islands",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     FO: {
       name: "Faeroe Islands",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     GD: {
       name: "Grenada",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     HK: {
       name: "Hong Kong",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=59&annee=2019"
     },
     KN: {
       name: "Saint Kitts and Nevis",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     LC: {
       name: "Saint Lucia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     LI: {
       name: "Liechtenstein",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     MF: {
       name: "Saint Martin (French)",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     MV: {
       name: "Maldives",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     MT: {
       name: "Malta",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=91&annee=2019"
     },
     MS: {
       name: "Montserrat",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     MU: {
       name: "Mauritius",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=93&annee=2019"
     },
     NC: {
       name: "New Caledonia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     NR: {
       name: "Nauru",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     PN: {
       name: "Pitcairn Islands",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     PR: {
       name: "Puerto Rico",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=121&annee=2019"
     },
     PF: {
       name: "French Polynesia",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     SG: {
       name: "Singapore",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=130&annee=2019"
     },
     SB: {
       name: "Solomon Islands",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     ST: {
       name: "São Tomé and Principe",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     SX: {
       name: "Saint Martin (Dutch)",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     SC: {
       name: "Seychelles",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     TC: {
       name: "Turks and Caicos Islands",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     TO: {
       name: "Tonga",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     TT: {
       name: "Trinidad and Tobago",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=153&annee=2019"
     },
     VC: {
       name: "Saint Vincent and the Grenadines",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     VG: {
       name: "British Virgin Islands",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     VI: {
       name: "United States Virgin Islands",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     CY: {
       name: "Cyprus",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "http://localhost/HapMap/continents3.php?id_pays=37&annee=2019"
     },
     RE: {
       name: "Reunion (France)",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     YT: {
       name: "Mayotte (France)",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     MQ: {
       name: "Martinique (France)",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     GP: {
       name: "Guadeloupe (France)",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     CW: {
       name: "Curaco (Netherlands)",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     },
     IC: {
       name: "Canary Islands (Spain)",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
+      url: "#N/A"
     }
   },
   labels: {}

@@ -23,7 +23,6 @@ header {
 
 nav ul{
     list-style-type: none;
-
 }
 
 nav li{
@@ -60,7 +59,6 @@ nav a:hover{
 #form_index{
     text-align: center;
 }
-/*h2 pour la page score avec en titre le nom des scores*/
 h2{
     background-color: #A8BBFF;
     border-radius: 7px;
@@ -120,9 +118,10 @@ table{
     width: 20%;
     background-color: none;
     position: relative;
-    /*text-transform: uppercase;*/
+    text-transform: uppercase;
     border: 1px solid #A8BBFF;
-    border-radius: 10%;
+    border-radius: 2%;
+    text-align: center;
 }
 .àremplir{
     margin-left: auto;
@@ -135,7 +134,24 @@ table{
     background-color: #A8BBFF;
     font-style: oblique;
 }
-
+.selection{
+    /*j'arrive pas à centrer sous la case qui correspond*/
+    background-color: red;
+    display:inline-block;
+    width: max-content;
+    position: relative;
+    left: 20%;
+}
+#indic{
+    margin-left: auto;
+    margin-right: auto;
+    width:60%;
+    text-align: center;
+    left: auto;
+    position:relative;
+    font-style: oblique;
+    text-decoration:wavy underline;
+}
 
 /*CSS de la page comparer : */
 
