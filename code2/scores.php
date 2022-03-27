@@ -47,15 +47,12 @@
         
             <SELECT class="formulaire_filtres" name="score">
                 <option valeur="">--Please choose a Score--</option>
-                <option valeur="<?php echo $SCORE?>">Hapiness Rank</option>
-                <option valeur="<?php echo $SCORE?>">Hapiness Score</option>
                 <option valeur="<?php echo $SCORE?>">Economy</option>
                 <option valeur="<?php echo $SCORE?>">Family</option>
                 <option valeur="<?php echo $SCORE?>">Health</option>
                 <option valeur="<?php echo $SCORE?>">Freedom</option>
                 <option valeur="<?php echo $SCORE?>">Trust</option>
                 <option valeur="<?php echo $SCORE?>">Generosity</option>
-                <option valeur="<?php echo $SCORE?>">Social Support</option>
             </SELECT>
 
             <SELECT class="formulaire_filtres" name="continent">
@@ -82,17 +79,67 @@
         
 
 //echo "<meta http-equiv='Refresh' content='0; url=scores.php?annee=".$annee."&score=".$SCORE."&Continent=".$CONTINENT."'/>";
-if($annee==""){
+if($SCORE=="--Please choose a Score--" && $CONTINENT=="--Choose a continent--"){
+        echo "<div>";
+    echo "<p class='selection'>Year selected : ".$annee."</p>";    
+    echo "<p class='selection'>Index selected : Hapiness Score</p>";
+    echo "<p class='selection'>Continent selected : World</p>";
+        echo "</div>";
+    echo '<table id="index_tab">';
+    echo "<tr id='champs'><td>Identifiant pays</td><td>Pays</td><td>Valeur Score</td><td>Rang</td></tr>";
+             $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent
+                                 FROM avoir, pays, annee, score, continent
+                                 WHERE avoir.Id_Pays=pays.Id_Pays 
+                                 AND avoir.annee=annee.Annee
+                                 AND avoir.Id_Score=score.Id_Score 
+                                 AND continent.Id_Continent=pays.Id_Continent
+                                 AND score.Nom_Score="Hapiness Score"
+                                 AND avoir.annee="'.$annee.'" 
+                                 ORDER BY avoir.rang ASC');
+            while ($ligne = $rep ->fetch()) {
+                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."Scores/scores.php?id_Pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$ligne['rang']."</td></tr>";
+            }
+            $rep ->closeCursor();
+                                                        
+            echo "</table>";     
+}
+elseif($annee==""){
     echo "<div>";
     echo "<p class='àremplir'>Please select a year to observe</p>";
     echo "</div>";
     //echo "<meta http-equiv='Refresh' content='0; url=scores.php?score=".$SCORE."&Continent=".$CONTINENT."'/>";
 }
 elseif($SCORE=="--Please choose a Score--"){
-    echo "<div>";
+        echo "<div>";
+    echo "<p class='selection'>Year selected : ".$annee."</p>";    
+    echo "<p class='selection'>Index selected : Hapiness Score</p>";
+    echo "<p class='selection'>Continent selected : ".$CONTINENT."</p>";
+        echo "</div>";
+    echo '<table id="index_tab">';
+    echo "<tr id='champs'><td>Identifiant pays</td><td>Pays</td><td>Valeur Score</td><td>Rang</td></tr>";
+             $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent
+                                 FROM avoir, pays, annee, score, continent
+                                 WHERE avoir.Id_Pays=pays.Id_Pays 
+                                 AND avoir.annee=annee.Annee
+                                 AND avoir.Id_Score=score.Id_Score 
+                                 AND continent.Id_Continent=pays.Id_Continent
+                                 AND score.Nom_Score="Hapiness Score"
+                                 AND avoir.annee="'.$annee.'"
+                                 AND continent.Nom_Continent="'.$CONTINENT.'" 
+                                 ORDER BY avoir.rang ASC');
+            $i=1;
+            while ($ligne = $rep ->fetch()) {
+                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."Scores/scores.php?id_Pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$i."</td></tr>";
+                $i++;
+            }
+            $rep ->closeCursor();
+                                    
+    echo "</table>";
+
+    /*echo "<div>";
     echo "<p class='àremplir'>Please select a score to observe</p>";    
     echo "</div>";
-    //echo "<meta http-equiv='Refresh' content='0; url=scores.php?annee=".$annee."&Continent=".$CONTINENT."'/>";
+    //echo "<meta http-equiv='Refresh' content='0; url=scores.php?annee=".$annee."&Continent=".$CONTINENT."'/>";*/
 }
  elseif($CONTINENT=="--Choose a continent--"){
         echo "<div>";
@@ -113,7 +160,6 @@ elseif($SCORE=="--Please choose a Score--"){
                 $rep ->closeCursor();
                 
     echo "</table>";
-
  }
  else{
         echo "<div>"; 
@@ -130,8 +176,10 @@ elseif($SCORE=="--Please choose a Score--"){
                                         AND score.Nom_Score="'.$SCORE.'" AND avoir.annee="'.$annee.'"
                                         AND continent.Nom_Continent="'.$CONTINENT.'" 
                                         ORDER BY avoir.rang ASC');
+            $i=1;
             while ($ligne = $rep ->fetch()) {
-                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."Scores/scores.php?id_Pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$ligne['rang']."</td></tr>";
+                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."Scores/scores.php?id_Pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$i."</td></tr>";
+                $i++;
                 }
                 $rep ->closeCursor(); 
                 
