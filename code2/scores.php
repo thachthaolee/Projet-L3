@@ -79,12 +79,19 @@
         
 
 //echo "<meta http-equiv='Refresh' content='0; url=scores.php?annee=".$annee."&score=".$SCORE."&Continent=".$CONTINENT."'/>";
-if($SCORE=="--Please choose a Score--" && $CONTINENT=="--Choose a continent--"){
+if($annee==""){
+    echo "<div>";
+    echo "<p class='àremplir'>Please select a year to observe</p>";
+    echo "</div>";
+    //echo "<meta http-equiv='Refresh' content='0; url=scores.php?score=".$SCORE."&Continent=".$CONTINENT."'/>";
+}
+elseif($SCORE=="--Please choose a Score--" && $CONTINENT=="--Choose a continent--"){
         echo "<div>";
     echo "<p class='selection'>Year selected : ".$annee."</p>";    
     echo "<p class='selection'>Index selected : Hapiness Score</p>";
     echo "<p class='selection'>Continent selected : World</p>";
         echo "</div>";
+    echo "<p id='indic'>To be noted that the ranks that you are watching, are the ranks for the whole world, their ranking is being defined by their order.</p>";
     echo '<table id="index_tab">';
     echo "<tr id='champs'><td>Identifiant pays</td><td>Pays</td><td>Valeur Score</td><td>Rang</td></tr>";
              $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent
@@ -103,18 +110,13 @@ if($SCORE=="--Please choose a Score--" && $CONTINENT=="--Choose a continent--"){
                                                         
             echo "</table>";     
 }
-elseif($annee==""){
-    echo "<div>";
-    echo "<p class='àremplir'>Please select a year to observe</p>";
-    echo "</div>";
-    //echo "<meta http-equiv='Refresh' content='0; url=scores.php?score=".$SCORE."&Continent=".$CONTINENT."'/>";
-}
 elseif($SCORE=="--Please choose a Score--"){
         echo "<div>";
     echo "<p class='selection'>Year selected : ".$annee."</p>";    
     echo "<p class='selection'>Index selected : Hapiness Score</p>";
     echo "<p class='selection'>Continent selected : ".$CONTINENT."</p>";
         echo "</div>";
+    echo "<p id='indic'>To be noted that the ranks that you are watching, are the ranks for the whole world, their ranking is being defined by their order.</p>";
     echo '<table id="index_tab">';
     echo "<tr id='champs'><td>Identifiant pays</td><td>Pays</td><td>Valeur Score</td><td>Rang</td></tr>";
              $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent
@@ -147,6 +149,7 @@ elseif($SCORE=="--Please choose a Score--"){
     echo "<p class='selection'>Index selected : ".$SCORE."</p>";
     echo "<p class='selection'>Continent selected : World</p>";
         echo "</div>";
+    echo "<p id='indic'>To be noted that the ranks that you are watching, are the ranks for the whole world, their ranking is being defined by their order.</p>";
     echo '<table id="index_tab">';
     echo "<tr id='champs'><td>Identifiant pays</td><td>Pays</td><td>Valeur Score</td><td>Rang</td></tr>";
              $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent  FROM avoir, pays, annee, score, continent 
