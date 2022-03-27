@@ -298,8 +298,31 @@ table{
     margin-right: auto;
     width: 80%;
     background-color: #F6F7FF;
-    text-align: center;
+    text-align: center;	
 }
+
+#t1{
+    margin-left: auto;
+    margin-right: auto;
+    width:200px;
+    text-align: center;
+    left: auto;
+    position:relative;
+    background-color: #A8BBFF;
+    font-style: oblique;
+}
+
+#t2{
+    margin-left: auto;
+    margin-right: auto;
+    width:360px;
+    text-align: center;
+    left: auto;
+    position:relative;
+    background-color: #A8BBFF;
+    font-style: oblique;
+}
+
 
 .continents1 li {
     list-style-type: none;
@@ -383,6 +406,40 @@ a {
     text-decoration: none;
     color: black;
 }
+.aff_continent3{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.aff_continent3 h2{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#graphe{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#img_graphe{
+    border-radius: 15px;
+    box-shadow: 7px 7px 7px grey;
+}
+
+h3{
+	background-color: #A8BBFF;
+    width:100px;
+	font-weight:normal;
+	border-radius: 10px;
+}
+
+
+
+
+
 
 #CartePrincipal{
     text-align: center;
@@ -395,20 +452,5 @@ a {
     margin-left: auto;
     margin-right: auto;
 }
-.aff_continent3{
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-.aff_continent3 h2{
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-
-
-
-
 
 
