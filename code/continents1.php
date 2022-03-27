@@ -32,15 +32,17 @@
 		echo '
 		<form action="continents1.php" method="get" autocomplete="off">
 		<br/><br/><br/>
-		<p>Please select a year :<br/><br/> <INPUT id = "annee" type="number" name="annee" value="" min="2015" max="2019" placeholder="year"></p>
-		<INPUT type= "submit" value = "Validate">
+		<p id="t1">Please select a year :</p><p><INPUT id = "annee" type="number" name="annee" value="" min="2015" max="2019" placeholder="year"></p>
+		<p><INPUT type= "submit" value = "Validate"></p>
 		</form>';
+		?>
+		<?php
 		
 		}else{
 	
 	
 		echo '<div class="continents1">';
-			echo '<br/><br/><br/><br/>Please select the continent for the year '.$_GET['annee'].' :<br/><br/><br/>';
+			echo '<br/><br/><br/><br/><p id="t2">Please select the continent for the year '.$_GET['annee'].' :</p><br/><br/>';
 			
 				require ('bd.php');
 				$bdd = getBD();

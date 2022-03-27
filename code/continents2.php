@@ -41,8 +41,11 @@
 		?>		
 		
 		
+	<center>	
 		<?php
-				echo '<img src="graphe.php?id_continent='.$_GET["id_continent"].'&annee='.$_GET["annee"].'"><br/>' // call the fonction graphe as photo
+			echo '<div id =  "graphe">';
+			echo '<img id="img_graphe" src="graphe.php?id_continent='.$_GET["id_continent"].'&annee='.$_GET["annee"].'"><br/>'; // call the fonction graphe as photo
+			echo '</div>';
 		?>
 		
 		</br>		
@@ -72,7 +75,9 @@
 			 $rep -> closeCursor();
 			 
 		?>
+	</center>	
 		<br/><br/>
+		
 		
 		<?php			
 			echo '<div class="continents2">';

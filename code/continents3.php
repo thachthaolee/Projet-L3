@@ -26,8 +26,7 @@
     </header>
 	<br/><br/><br/>
 	
-	<div class="aff_continent3">
-		
+	
 		<?php 	require ('bd.php');
 				$bdd = getBD();
 
@@ -42,9 +41,13 @@
 		?>		<br/>
 		
 		
-
+	<center>
+	
+		
 		<?php
-				echo '<img src="graphe1.php?id_pays='.$_GET["id_pays"].'&annee='.$_GET["annee"].'">' // call the fonction graphe1 as photo
+			echo '<div id="graphe">';
+			echo '<img id="img_graphe" src="graphe1.php?id_pays='.$_GET["id_pays"].'&annee='.$_GET["annee"].'">'; // call the fonction graphe1 as photo
+			echo '</div>';
 		?>
 		
 		
@@ -74,19 +77,23 @@
 			}
 			 
 			$rep -> closeCursor();
+		?>	
+	
 
+		<?php
 			$rep = $bdd->query("SELECT * FROM pays WHERE Id_Pays= $pays");
 							
 				while ($mat=$rep-> fetch()){	
-					echo "<br/><br/><h2><a href='comparer.php?pays1=".$mat['Nom_Pays']."&continent=1'>Compare</a></h2></br>";
+					
+					echo "<br/><br/><h3><a href='comparer.php?pays1=".$mat['Nom_Pays']."&continent=1'>Compare</a></h3></br>";
+					
 				}
 				$rep->closeCursor();
 			
-		?>
-		
-	
+		?>	
+	</center>		
 			
-	</div>		
+		
 	
 </body>
 </html>
