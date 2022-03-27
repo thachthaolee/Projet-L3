@@ -117,8 +117,8 @@ elseif($SCORE=="--Please choose a Score--"){
  }
  else{
         echo "<div>"; 
+    echo "<p class='selection'>Year selected : ".$annee."</p>";    
     echo "<p class='selection'>Index selected : ".$SCORE."</p>";
-    echo "<p class='selection'>Year selected : ".$annee."</p>";
     echo "<p class='selection'>Continent selected : ".$CONTINENT."</p>";
         echo "</div>";
     echo "<p id='indic'>To be noted that the ranks that you are watching, are the ranks for the whole world, their ranking is being defined by their order.</p>";

@@ -158,12 +158,12 @@ table{
     font-style: oblique;
 }
 .selection{
-    /*j'arrive pas à centrer sous la case qui correspond*/
+    display: inline-block;
+    width: 20%;
     background-color: red;
-    display:inline-block;
-    width: max-content;
     position: relative;
-    left: 20%;
+    left: 9.7%;
+    text-align: center;
 }
 #indic{
     margin-left: auto;
@@ -174,6 +174,7 @@ table{
     position:relative;
     font-style: oblique;
     text-decoration:wavy underline;
+    top: 30px;
 }
 
 /*CSS de la page comparer : */
@@ -452,5 +453,3 @@ h3{
     margin-left: auto;
     margin-right: auto;
 }
-
-
