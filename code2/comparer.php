@@ -11,12 +11,16 @@
         <title>
             Comparer
         </title>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="JsLocalSearch.js"></script>
         
     </head>
 
     <body>
         <header>
-            <a href ="index.php"><img src = "image/logo.png" alt = "Logo"/></a>
+            <img src = "../HapMap/image/logo.png" alt = "Logo"/> 
             <nav>
             
                 <ul>
@@ -36,32 +40,46 @@
         $pays2 = "";
         $annee = "";
         ?>
+
+
         
         <form action="comparer.php" method="post" autocomplete="off">
             <div class = "conteneur1">
                 <p class = "colp1">
-                <INPUT class="casepays" id ="pays1" type="text"name="pays1"placeholder="Please select"value=
+                <INPUT class="casepays" id="gsearchsimple" class="form-control input-lg"  type="text"name="pays1"placeholder="Please select"value=
                 <?php if(isset($_GET['pays1']))
                     echo '\''.$_GET['pays1'].'\''; 
                 else
                     echo "''";?> >
                 </p>
+                
+    
                 <p class = "colp1">
                 <INPUT id = "annee" type="number"name="annee"value=""min="2015"max="2019"placeholder="year">
                 </p>
                 <p class = "colp1">
-                <INPUT class="casepays" id ="pays2" type="text"name="pays2"placeholder="Please select"value=
+                <INPUT class="casepays" id="gsearchsimple2" class="form-control input-lg" type="text"name="pays2"placeholder="Please select"value=
                 <?php if(isset($_GET['pays2']))
                     echo '\''.$_GET['pays2'].'\''; 
                 else
                     echo "''";?> >
                 </p>
             </div>
+            <br/>
+                
             <br/><br/><br/><br/>
             <p id = "bouton">
                 <input id = "bouton_comparer" type="submit" value="Compare">
             </p>
+            
+
         </form>
+        <ul class="list-group">
+                <li>test</li>
+                </ul>
+                <ul class="list-group2">
+                <li>test</li>
+                </ul>
         <?php
         if(isset($_POST['pays1']))
             $pays1 = $_POST['pays1'];
@@ -292,3 +310,227 @@
 
     </body>
 </html>
+<script>
+$(document).ready(function(){
+ $('#gsearchsimple').keyup(function(){
+  var query = $('#gsearchsimple').val();
+  $('#detail').html('');
+  $('.list-group').css('display', 'block');
+  if(query.length == 1)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+     $('.list-group').html(data);
+    }
+   })
+  }
+  if(query.length == 2)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+     $('.list-group').html(data);
+    }
+   })
+  }
+  if(query.length == 3)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+     $('.list-group').html(data);
+    }
+   })
+  }
+  if(query.length == 4)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+     $('.list-group').html(data);
+    }
+   })
+  }
+  if(query.length == 5)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+     $('.list-group').html(data);
+    }
+   })
+  }
+  if(query.length == 6)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+     $('.list-group').html(data);
+    }
+   })
+  }
+  if(query.length == 7)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+     $('.list-group').html(data);
+    }
+   })
+  }
+  if(query.length == 0)
+  {
+   $('.list-group').css('display', 'none');
+  }
+ });
+
+ $('#gsearchsimple2').keyup(function(){
+  var query2 = $('#gsearchsimple2').val();
+  $('#detail').html('');
+  $('.list-group2').css('display', 'block');
+  if(query2.length == 1)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query2},
+    success:function(data)
+    {
+     $('.list-group2').html(data);
+    }
+   })
+  }
+  if(query2.length == 1)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query2},
+    success:function(data)
+    {
+     $('.list-group2').html(data);
+    }
+   })
+  }
+  if(query2.length == 2)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query2},
+    success:function(data)
+    {
+     $('.list-group2').html(data);
+    }
+   })
+  }
+  if(query2.length == 3)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query2},
+    success:function(data)
+    {
+     $('.list-group2').html(data);
+    }
+   })
+  }
+  if(query2.length == 4)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query2},
+    success:function(data)
+    {
+     $('.list-group2').html(data);
+    }
+   })
+  }
+  if(query2.length == 5)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query2},
+    success:function(data)
+    {
+     $('.list-group2').html(data);
+    }
+   })
+  }
+  if(query2.length == 6)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query2},
+    success:function(data)
+    {
+     $('.list-group2').html(data);
+    }
+   })
+  }
+  if(query2.length == 7)
+  {
+   $.ajax({
+    url:"fetch.php",
+    method:"POST",
+    data:{query:query2},
+    success:function(data)
+    {
+     $('.list-group2').html(data);
+    }
+   })
+  }
+  if(query2.length == 0)
+  {
+   $('.list-group2').css('display', 'none');
+  }
+ });
+
+ $('#localSearchSimple').jsLocalSearch({
+  action:"Show",
+  html_search:true,
+  mark_text:"marktext"
+ });
+
+ $(document).on('click', '.gsearch', function(){
+  var email = $(this).text();
+  $('#gsearchsimple').val(email);
+  $('.list-group').css('display', 'none');
+  $.ajax({
+   url:"fetch.php",
+   method:"POST",
+   data:{email:email},
+   success:function(data)
+   {
+    $('#detail').html(data);
+   }
+  })
+ });
+});
+</script>
