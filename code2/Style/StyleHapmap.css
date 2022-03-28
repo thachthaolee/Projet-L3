@@ -133,7 +133,6 @@ table{
 #index_tab tr:nth-child(even){
     background-color: rgb(214, 219, 253);
 }
-/*J'arrive pas à séléctionner ligne des titres*/
 #champs{
     text-decoration:double underline;
 }
