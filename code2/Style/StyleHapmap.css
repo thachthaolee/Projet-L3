@@ -160,7 +160,6 @@ table{
 .selection{
     display: inline-block;
     width: 20%;
-    background-color: red;
     position: relative;
     left: 9.7%;
     text-align: center;
