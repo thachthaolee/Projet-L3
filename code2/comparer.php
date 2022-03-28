@@ -16,7 +16,7 @@
 
     <body>
         <header>
-            <img src = "../HapMap/image/logo.png" alt = "Logo"/> 
+            <img src = "image/logo.png" alt = "Logo"/> 
             <nav>
             
                 <ul>
