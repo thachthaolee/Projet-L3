@@ -38,11 +38,14 @@
 				while ($mat=$rep-> fetch()){	
 					echo "<br/><br/><h1>".$mat['Nom_Continent']."</h1><br/></br>";
 					}
-		?>		
+		?>
 		
 		
+	<center>
 		<?php
-				echo '<img src="graphe.php?id_continent='.$_GET["id_continent"].'&annee='.$_GET["annee"].'"><br/>' // call the fonction graphe as photo
+			echo '<div id =  "graphe">';
+			echo '<img id="img_graphe" src="graphe.php?id_continent='.$_GET["id_continent"].'&annee='.$_GET["annee"].'"><br/>'; // call the fonction graphe as photo
+			echo '</div>';
 		?>
 		
 		</br>		
@@ -72,13 +75,14 @@
 			 $rep -> closeCursor();
 			 
 		?>
+		</center>
 		<br/><br/>
 		
 		<?php			
 			echo '<div class="continents2">';
 			$rep = $bdd->query("SELECT Nom_Pays, Id_Pays FROM pays WHERE Id_Continent = $continent");
 			while ($ligne = $rep -> fetch()) {
-				echo "<a href=continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$_GET['annee']."><li class='gros'>".$ligne['Nom_Pays']."</li></a>";
+				echo "<li class='gros'><a href=continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$_GET['annee'].">".$ligne['Nom_Pays']."</a></li>";
 			}	
 				$rep -> closeCursor();
 				echo "</div>";

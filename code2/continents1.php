@@ -32,22 +32,22 @@
 		echo '
 		<form action="continents1.php" method="get" autocomplete="off">
 		<br/><br/><br/>
-		<p>Please select a year :<br/><br/> <INPUT id = "annee" type="number" name="annee" value="" min="2015" max="2019" placeholder="year"></p>
-		<INPUT type= "submit" value = "Validate">
+		<p id="t1">Please select a year :</p><p><INPUT id = "annee" type="number" name="annee" value="" min="2015" max="2019" placeholder="year"></p>
+		<p><INPUT type= "submit" value = "Validate"></p>
 		</form>';
 		
 		}else{
 	
 	
 		echo '<div class="continents1">';
-			echo '<br/><br/><br/><br/>Please select the continent for the year '.$_GET['annee'].' :<br/><br/><br/>';
+			echo '<br/><br/><br/><br/><p id="t2">Please select the continent for the year '.$_GET['annee'].' :</p><br/><br/>';
 			
 				require ('bd.php');
 				$bdd = getBD();
 
 				$rep = $bdd -> query('SELECT * FROM continent');
 				while ($ligne = $rep -> fetch()) {
-					echo "<li class = 'lictn1'><a href=continents2.php?id_continent=".$ligne['Id_Continent']."&annee=".$_GET['annee'].">".$ligne['Nom_Continent']."</a></li>";
+					echo "<li class = 'lictn1' id= 'LE".$ligne['Id_Continent']."'><a href=continents2.php?id_continent=".$ligne['Id_Continent']."&annee=".$_GET['annee'].">".$ligne['Nom_Continent']."</a></li>";
 				}
 				
 				
