@@ -16,7 +16,7 @@
 
     <body>
         <header>
-            <img src = "image/logo.png" alt = "Logo"/> 
+            <a href ="index.php"><img src = "image/logo.png" alt = "Logo"/></a>
             <nav>
             
                 <ul>
