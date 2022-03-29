@@ -25,6 +25,21 @@ while ($ligne = $donnees ->fetch()) {
 	$valeurs[] = $ligne[1];
 }
 
+$donnees3 = $bdd -> query('SELECT STD(avoir.valeur_score)
+FROM avoir, score, annee
+WHERE avoir.annee = 2016
+AND score.Id_Score != 1
+and avoir.Id_Score=score.Id_Score 
+GROUP BY score.Id_Score');
+$ecart= array();
+while ($ligne = $donnees3 ->fetch()) {
+	$ecart[] = $ligne[0];
+}
+$dcr1 = array();
+for($i=0; $i<count($ecart); $i++){
+	$dcr1[$i] = $valeurs[$i]/$ecart[$i];
+}
+
 // Create the graph. These two calls are always required
 $graph = new Graph(900,300);
 $graph->SetScale("textlin");
@@ -38,7 +53,7 @@ $graph->img->SetMargin(40,30,20,40);
 $graph->xaxis->SetTickLabels($score);
 
 // Create a bar pot
-$bplot = new BarPlot($valeurs);
+$bplot = new BarPlot($dcr1);
 $graph->Add($bplot);
 
 // Setup the titles

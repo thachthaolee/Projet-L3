@@ -6,7 +6,7 @@ require_once ('jpgraph/src/jpgraph_bar.php');
 $bdd = new PDO('mysql:host=localhost;dbname=hapmap;charset=utf8', 'root', 'root');
 
 // Donnees 
-$donnees = $bdd -> query('SELECT score.Nom_Score, AVG(avoir.valeur_score)
+$donnees = $bdd -> query('SELECT score.Nom_Score, avoir.valeur_score
 				FROM score, avoir, pays, continent, annee
 				WHERE score.Id_Score = avoir.Id_Score
 				AND avoir.Id_Pays = pays.Id_Pays
@@ -24,7 +24,7 @@ while ($ligne = $donnees ->fetch()) {
 	$score[] = $ligne[0];
 	$valeurs[] = $ligne[1];
 }
-$donnees2 = $bdd -> query('SELECT score.Nom_Score, AVG(avoir.valeur_score)
+$donnees2 = $bdd -> query('SELECT score.Nom_Score, avoir.valeur_score
 				FROM score, avoir, pays, continent, annee
 				WHERE score.Id_Score = avoir.Id_Score
 				AND avoir.Id_Pays = pays.Id_Pays
@@ -42,6 +42,23 @@ while ($ligne = $donnees2 ->fetch()) {
 	$score2[] = $ligne[0];
 	$valeurs2[] = $ligne[1];
 }
+$donnees3 = $bdd -> query('SELECT STD(avoir.valeur_score)
+FROM avoir, score, annee
+WHERE avoir.annee = 2016
+AND score.Id_Score != 1
+and avoir.Id_Score=score.Id_Score 
+GROUP BY score.Id_Score');
+$ecart= array();
+while ($ligne = $donnees3 ->fetch()) {
+	$ecart[] = $ligne[0];
+}
+$dcr1 = array();
+$dcr2 = array();
+for($i=0; $i<count($ecart); $i++){
+	$dcr1[$i] = $valeurs[$i]/$ecart[$i];
+	$dcr2[$i] = $valeurs2[$i]/$ecart[$i];
+}
+
 
 // Create the graph. These two calls are always required
 $graph = new Graph(900,300);
@@ -56,9 +73,9 @@ $graph->img->SetMargin(40,30,20,40);
 $graph->xaxis->SetTickLabels($score2);
 
 // Create a bar pot
-$b1plot = new BarPlot($valeurs);
+$b1plot = new BarPlot($dcr1);
 $b1plot->SetFillColor("orange");
-$b2plot = new BarPlot($valeurs2);
+$b2plot = new BarPlot($dcr2);
 $b2plot->SetFillColor("blue");
 
 $gbplot = new GroupBarPlot(array($b1plot,$b2plot));
