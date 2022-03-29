@@ -126,8 +126,6 @@ table{
     border: 3px solid #A8BBFF;
     margin-left: auto;
     margin-right: auto;
-}
-#index_tab tr:nth-child(odd){
     background-color: rgb(246, 247, 255);
 }
 #index_tab tr:nth-child(even){
@@ -137,8 +135,8 @@ table{
     text-decoration:double underline;
     top: 20px;
     position: sticky;
-    z-index: 5;
-    color: red;
+    z-index: 1;
+    background-color: #a8bbff;
 }
 tr{
     top: 20px;
