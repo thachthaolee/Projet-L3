@@ -104,7 +104,7 @@ elseif($SCORE=="--Please choose a Score--" && $CONTINENT=="--Choose a continent-
                                  AND avoir.annee="'.$annee.'" 
                                  ORDER BY avoir.rang ASC');
             while ($ligne = $rep ->fetch()) {
-                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."Scores/scores.php?id_Pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$ligne['rang']."</td></tr>";
+                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$annee.">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$ligne['rang']."</td></tr>";
             }
             $rep ->closeCursor();
                                                         
@@ -131,7 +131,7 @@ elseif($SCORE=="--Please choose a Score--"){
                                  ORDER BY avoir.rang ASC');
             $i=1;
             while ($ligne = $rep ->fetch()) {
-                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."Scores/scores.php?id_Pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$i."</td></tr>";
+                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$annee.">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$i."</td></tr>";
                 $i++;
             }
             $rep ->closeCursor();
@@ -158,7 +158,7 @@ elseif($SCORE=="--Please choose a Score--"){
                                         AND score.Nom_Score="'.$SCORE.'" AND avoir.annee="'.$annee.'"
                                         ORDER BY avoir.rang ASC');
             while ($ligne = $rep ->fetch()) {
-                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."Scores/scores.php?id_Pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$ligne['rang']."</td></tr>";
+                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$annee.">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$ligne['rang']."</td></tr>";
                 }
                 $rep ->closeCursor();
                 
@@ -181,7 +181,8 @@ elseif($SCORE=="--Please choose a Score--"){
                                         ORDER BY avoir.rang ASC');
             $i=1;
             while ($ligne = $rep ->fetch()) {
-                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."Scores/scores.php?id_Pays=".$ligne['Id_Pays'].">".$ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$i."</td></tr>";
+                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a href="."continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$annee.">".
+                $ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$i."</td></tr>";
                 $i++;
                 }
                 $rep ->closeCursor(); 
