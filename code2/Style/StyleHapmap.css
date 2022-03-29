@@ -177,8 +177,11 @@ tr{
     left: auto;
     position:relative;
     font-style: oblique;
-    text-decoration:wavy underline;
+    text-decoration: underline;
     top: 30px;
+}
+#hover:hover{
+    color: #426ca6;
 }
 
 /*CSS de la page comparer : */
