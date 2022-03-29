@@ -6,7 +6,7 @@
     <?php include('bd.php'); 
     $bdd = getBD();?>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="Style/StyleHapmap.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="Style/StyleHapmap.css?" type="text/css" media="screen" />
     <title> Scores </title>
 </head>
 

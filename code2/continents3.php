@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta  http-equiv="Content-Type" content="text/html; charset="utf-8" />
-		<link rel="stylesheet" href="Style/StyleHapMap.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="Style/StyleHapMap.css?" type="text/css" media="screen" />
 		<title>Continents</title>
 	</head>
 
@@ -80,7 +80,7 @@
 			$rep = $bdd->query("SELECT * FROM pays WHERE Id_Pays= $pays");
 							
 				while ($mat=$rep-> fetch()){	
-					echo "<br/><br/><h3><a href='comparer.php?pays1=".$mat['Nom_Pays']."&continent=1'>Compare</a></h3></br>";
+					echo "<br/><br/><a href='comparer.php?pays1=".$mat['Nom_Pays']."&continent=1'><h3>Compare</h3></a></br>";
 
 				}
 				$rep->closeCursor();

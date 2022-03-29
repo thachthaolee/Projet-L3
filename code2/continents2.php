@@ -82,7 +82,7 @@
 			echo '<div class="continents2">';
 			$rep = $bdd->query("SELECT Nom_Pays, Id_Pays FROM pays WHERE Id_Continent = $continent");
 			while ($ligne = $rep -> fetch()) {
-				echo "<li class='gros'><a href=continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$_GET['annee'].">".$ligne['Nom_Pays']."</a></li>";
+				echo "<a href=continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$_GET['annee']."><li class='gros'>".$ligne['Nom_Pays']."</li></a>";
 			}	
 				$rep -> closeCursor();
 				echo "</div>";
