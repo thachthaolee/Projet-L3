@@ -26,7 +26,7 @@ if(isset($_POST['query']))
  {
   $output .=  '
   <li class="list-group-item contsearch">
-   <a href="javascript:void(0)" class="gsearch">'.$row["Nom_Pays"].'</a>
+   <a href="comparer.php?continent=1&pays='.$row["Nom_Pays"].'" class="gsearch">'.$row["Nom_Pays"].'</a>
   </li>
   ';
  }

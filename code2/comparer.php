@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-
+<?php
+session_start();
+?>
 <html>
     <?php
         require('bd.php');
@@ -36,22 +38,43 @@
         </header>
 
         <?php
-        $pays1 = "";
-        $pays2 = "";
-        $annee = "";
+            $pays1 = "";
+            $pays2 = "";
+            $annee = "";
+            if(isset($_SESSION['plein'])){
+                echo '<meta http-equiv="refresh" content="0; url=deco.php">';
+            }
+            if(isset($_GET['pays'])){
+                if(!isset($_SESSION['pays1'])){
+                    $_SESSION['pays1']=array();
+                    $_SESSION['pays1'][0]=$_GET['pays'];
+                }
+                elseif(!isset($_SESSION['pays2'])){
+                    $_SESSION['pays2']=array();
+                    $_SESSION['pays2'][0]=$_GET['pays'];
+                }
+            }
+            
+        
         ?>
-
+        
+            
 
         
         <form action="comparer.php" method="post" autocomplete="off">
             <div class = "conteneur1">
                 <p class = "colp1">
                 <INPUT class="casepays" id="gsearchsimple" class="form-control input-lg"  type="text"name="pays1"placeholder="Please select"value=
-                <?php if(isset($_GET['pays1']))
+                <?php if(isset($_SESSION['pays1'])){
+                    echo '\''.$_SESSION['pays1'][0].'\''; 
+                }
+                elseif(isset($_GET['pays1']))
                     echo '\''.$_GET['pays1'].'\''; 
                 else
                     echo "''";?> >
                 </p>
+                
+                
                 
     
                 <p class = "colp1">
@@ -59,11 +82,23 @@
                 </p>
                 <p class = "colp1">
                 <INPUT class="casepays" id="gsearchsimple2" class="form-control input-lg" type="text"name="pays2"placeholder="Please select"value=
-                <?php if(isset($_GET['pays2']))
+                <?php if(isset($_SESSION['pays2'])){
+                    echo '\''.$_SESSION['pays2'][0].'\''; 
+                }
+                elseif(isset($_GET['pays2']))
                     echo '\''.$_GET['pays2'].'\''; 
                 else
                     echo "''";?> >
                 </p>
+                
+            </div>
+            <div id = 'conteneurli'>
+            <ul class="list-group">
+                
+                </ul>
+                <ul class="list-group2">
+                
+                </ul>
             </div>
             <br/>
                 
@@ -74,12 +109,7 @@
             
 
         </form>
-        <ul class="list-group">
-                <li>test</li>
-                </ul>
-                <ul class="list-group2">
-                <li>test</li>
-                </ul>
+        
         <?php
         if(isset($_POST['pays1']))
             $pays1 = $_POST['pays1'];
@@ -160,6 +190,7 @@
         }elseif($erreur == 3){
             echo '<meta http-equiv="refresh" content="0; url=comparer.php?pays1='.$pays1.'&pays2='.$pays2.'">';
         }else{
+            $_SESSION['plein']=array();
             //recuperation vecteur nom des indices pays 1 :
             $req = $bdd->query('SELECT score.Nom_Score
             FROM pays, avoir, score, annee

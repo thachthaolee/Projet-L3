@@ -250,6 +250,63 @@ tr{
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 100px;
+    position: relative;
+}
+#conteneurli{
+    position: relative;
+}
+.list-group{
+    width: 200px;
+    position: absolute;
+    left: 21%;
+    list-style: none;
+    margin: -15px;
+    padding: 0px;
+}
+.list-group li{
+    background-color: #ced9ff;
+    transition: background-color 300ms;
+    transition: color 300ms;
+    padding-left: 5px;
+}
+.list-group li:hover{
+    background-color: #1bc224;
+    transition: background-color 300ms;
+}
+.list-group2{
+    width: 200px;
+    position: absolute;
+    right: 27%;
+    list-style: none;
+    margin: -15px;
+    padding: 0px;
+}
+.list-group2 li{
+    background-color: #ced9ff;
+    transition: background-color 300ms;
+    transition: color 300ms;
+    padding-left: 5px;
+}
+.list-group2 li:hover{
+    background-color: #1bc224;
+    transition: background-color 300ms;
+}
+.list-group a:hover{
+    color: white;
+    transition: color 200ms;
+}
+.list-group2 a:hover{
+    color: white;
+    transition: color 200ms;
+}
+.list-group a{
+    transition: color 200ms;
+}
+.list-group2 a{
+    transition: color 200ms;
+}
+.gsearch{
+    display: block;
 }
 .conteneur2{
     overflow: hidden;
@@ -282,11 +339,11 @@ tr{
     text-align: center;
 }
 .indication{
+    position: relative;
     margin-left: 20%;
     margin-right: 20%;
     text-align: center;
-    position: relative;
-    bottom : 245px;
+    margin-top: -260px;
 }
 #graphe_comparer{
     margin-top: 100px;
