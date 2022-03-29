@@ -135,6 +135,14 @@ table{
 }
 #champs{
     text-decoration:double underline;
+    top: 20px;
+    position: sticky;
+    z-index: 5;
+    color: red;
+}
+tr{
+    top: 20px;
+    position: sticky;
 }
 .formulaire_filtres{
     width: 20%;
