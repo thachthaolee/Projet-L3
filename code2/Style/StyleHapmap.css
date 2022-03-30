@@ -314,12 +314,34 @@ tr{
     margin-right: 19%;
 }
 #pays_gauche{
+    float: left;
     text-align: left;
     font-size: xx-large;
+    background-image: linear-gradient(rgb(97,169,243),rgb(97,169,243));
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position-x: right;
+
+    transition: background-size 500ms;
+}
+#pays_gauche:hover{
+    background-size: 100% 100%;
+    background-position-x: left;
 }
 #pays_droit{
+    float: right;
     text-align: right;
     font-size: xx-large;
+    background-image: linear-gradient(rgb(243,129,185),rgb(243,129,185));
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position-x: right;
+
+    transition: background-size 500ms;
+}
+#pays_droit:hover{
+    background-size: 100% 100%;
+    background-position-x: left;
 }
 .colp1{
     width: 33%;
@@ -328,8 +350,6 @@ tr{
     text-align: center;
 }
 .colp2{
-    width: 50%;
-    float: left;
     display: inline;
     text-align: center;
 }
