@@ -380,7 +380,7 @@ tr{
 /* css de la page continents */
 .test {
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 135px;
     width: 80%;
     background-color: #F6F7FF;
     text-align: center;	
