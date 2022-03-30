@@ -2,7 +2,8 @@
 
 //fetch.php;
 
-$connect = new PDO('mysql:host=localhost;dbname=HapMap;charset=utf8', 'root', 'root');
+require('bd.php');
+$connect = getBD();
 
 
 if(isset($_POST['query']))
