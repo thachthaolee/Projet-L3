@@ -44,6 +44,28 @@ session_start();
             if(isset($_SESSION['plein'])){
                 echo '<meta http-equiv="refresh" content="0; url=deco.php">';
             }
+
+            if(!isset($_SESSION['pays1'])){
+                if(isset($_GET['pays1'])){
+                    $_SESSION['pays1']=array();
+                    $_SESSION['pays1'][0]=$_GET['pays1'];
+                }elseif(isset($_GET['pays'])){
+                    $_SESSION['pays1']=array();
+                    $_SESSION['pays1'][0]=$_GET['pays'];
+                }
+            }else{
+                if(!isset($_SESSION['pays2'])){
+                    if(isset($_GET['pays1'])){
+                        $_SESSION['pays2']=array();
+                        $_SESSION['pays2'][0]=$_GET['pays1'];
+                    }elseif(isset($_GET['pays'])){
+                        $_SESSION['pays2']=array();
+                        $_SESSION['pays2'][0]=$_GET['pays'];
+                    }
+                }
+            }
+
+            /*
             if(isset($_GET['pays'])){
                 if(!isset($_SESSION['pays1'])){
                     $_SESSION['pays1']=array();
@@ -53,25 +75,24 @@ session_start();
                     $_SESSION['pays2']=array();
                     $_SESSION['pays2'][0]=$_GET['pays'];
                 }
-            }
+            }*/
             
         
         ?>
         
             
-
-        
+        <!--
         <form action="comparer.php" method="post" autocomplete="off">
             <div class = "conteneur1">
                 <p class = "colp1">
                 <INPUT class="casepays" id="gsearchsimple" class="form-control input-lg"  type="text"name="pays1"placeholder="Please select"value=
-                <?php if(isset($_SESSION['pays1'])){
+                <?php /*if(isset($_SESSION['pays1'])){
                     echo '\''.$_SESSION['pays1'][0].'\''; 
                 }
                 elseif(isset($_GET['pays1']))
                     echo '\''.$_GET['pays1'].'\''; 
                 else
-                    echo "''";?> >
+                    echo "''";*/?> >
                 </p>
                 
                 
@@ -82,17 +103,17 @@ session_start();
                 </p>
                 <p class = "colp1">
                 <INPUT class="casepays" id="gsearchsimple2" class="form-control input-lg" type="text"name="pays2"placeholder="Please select"value=
-                <?php if(isset($_SESSION['pays2'])){
+                <?/*php if(isset($_SESSION['pays2'])){
                     echo '\''.$_SESSION['pays2'][0].'\''; 
                 }
                 elseif(isset($_GET['pays2']))
                     echo '\''.$_GET['pays2'].'\''; 
                 else
-                    echo "''";?> >
+                    echo "''";*/?> >
                 </p>
                 
             </div>
-            <div id = 'conteneurli'>
+            <div id = "conteneurli">
             <ul class="list-group">
                 
                 </ul>
@@ -106,9 +127,13 @@ session_start();
             <p id = "bouton">
                 <input id = "bouton_comparer" type="submit" value="Compare">
             </p>
-            
-
         </form>
+            -->
+       
+
+
+
+
         
         <?php
         if(isset($_POST['pays1']))
@@ -162,6 +187,62 @@ session_start();
         
         
         if($erreur == 0){
+
+            echo'<form action="comparer.php" method="post" autocomplete="off">
+            <div class = "conteneur1">
+                <p class = "colp1">
+                <INPUT class="casepays" id="gsearchsimple" class="form-control input-lg"  type="text"name="pays1"placeholder="Please select"value=';
+                 if(isset($_SESSION['pays1'])){
+                    echo '\''.$_SESSION['pays1'][0].'\''; 
+                }
+                elseif(isset($_GET['pays1']))
+                    echo '\''.$_GET['pays1'].'\''; 
+                else
+                    echo "''"; 
+                echo'</p>';
+                
+                
+                
+                if(isset($_SESSION['pays1']) && isset($_SESSION['pays2'])){
+                    echo '<p class = "colp1">
+                <INPUT  id = "annee" type="number"name="annee"value=""min="2015"max="2019"placeholder="year">
+                </p>';
+                }else{
+                    echo '<p class = "colp1">
+                <INPUT class="invisible" id = "annee" type="number"name="annee"value=""min="2015"max="2019"placeholder="year">
+                </p>';
+                }
+                
+                echo  '<p class = "colp1">
+                <INPUT class="casepays" id="gsearchsimple2" class="form-control input-lg" type="text"name="pays2"placeholder="Please select"value=';
+                if(isset($_SESSION['pays2'])){
+                    echo '\''.$_SESSION['pays2'][0].'\''; 
+                }
+                elseif(isset($_GET['pays2']))
+                    echo '\''.$_GET['pays2'].'\''; 
+                else
+                    echo "''";
+                echo '</p>
+                
+            </div>
+            <div id = "conteneurli">
+            <ul class="list-group">
+                
+                </ul>
+                <ul class="list-group2">
+                
+                </ul>
+            </div>
+            <br/>
+                
+            <br/><br/><br/><br/>
+            <p id = "bouton">
+                <input id = "bouton_comparer" type="submit" value="Compare">
+            </p>
+        </form>';
+
+
+
             if(isset($_GET['pays1']) && isset($_GET['pays2'])){
                 echo "<div class ='indication'>";
                 echo "<p>Please select the year for which you would like to make a comparison.</p>";
@@ -293,6 +374,8 @@ session_start();
                 }
                 return $afficher;
             }
+            
+
             echo '<div id = "conteneur">';
             echo '<p class ="colp" id ="pays1">';
             afficher_tab($val_pays1);
@@ -332,6 +415,8 @@ session_start();
         echo '<div id =  "graphe_comparer">';
         echo '<img id = "img_graphe_comp" src = "graphe_comparer.php?id_pays1='.$id_pays1.'&id_pays2='.$id_pays2.'&annee='.$annee.'">';
         echo '</div>';
+
+        echo '<p class = "change"><a href = "deco.php">Select  other countries</a></p><br/><br/><br/>';
 
 
         }

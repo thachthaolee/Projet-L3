@@ -365,6 +365,9 @@ tr{
     text-align: center;
     margin-top: -260px;
 }
+.invisible{
+    opacity: 0;
+}
 #graphe_comparer{
     margin-top: 100px;
     margin-bottom: 100px;
@@ -376,15 +379,34 @@ tr{
     border-radius: 15px;
     box-shadow: 7px 7px 7px grey;
 }
+.change{
+    font-size: larger;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 200px;
+    background-color: white;
+    transition: color  400ms;
+    transition: background-color 400ms;
+}
+
+.change:hover{
+    color: white;
+    transition: color 400ms;
+    background-color: #A8BBFF;
+    transition: background-color 400ms;
+}
 /* fin du css de la page comparer*/
 /* css de la page continents */
 .test {
     margin-left: auto;
-    margin-right: 135px;
+    margin-right: auto;
     width: 80%;
     background-color: #F6F7FF;
     text-align: center;	
 }
+
+
 
 #t1{
     margin-left: auto;

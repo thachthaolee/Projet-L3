@@ -6,6 +6,12 @@ session_destroy();?>
     <head>
 </head>
 <body>
-<meta http-equiv="refresh" content="0; url=comparer.php">
+<?php
+if(isset($_GET['pays1'])){
+    echo '<meta http-equiv="refresh" content="0; url=comparer.php?pays1='.$_GET['pays1'].'&continent=1">';
+}else{
+    echo '<meta http-equiv="refresh" content="0; url=comparer.php">';
+}
+?>
 </body>
 </html>

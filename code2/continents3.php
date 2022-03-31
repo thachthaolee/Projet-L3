@@ -80,7 +80,7 @@
 			$rep = $bdd->query("SELECT * FROM pays WHERE Id_Pays= $pays");
 							
 				while ($mat=$rep-> fetch()){	
-					echo "<br/><br/><a href='comparer.php?pays1=".$mat['Nom_Pays']."&continent=1'><h3>Compare</h3></a></br>";
+					echo "<br/><br/><a href='deco.php?pays1=".$mat['Nom_Pays']."&continent=1'><h3>Compare</h3></a></br>";
 
 				}
 				$rep->closeCursor();
