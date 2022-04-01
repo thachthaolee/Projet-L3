@@ -287,6 +287,8 @@ session_start();
 		    }
 	        $req ->closeCursor();
 
+            
+
 
             //recuperation vecteur scores des indices pays 1 :
             $req = $bdd->query('SELECT avoir.valeur_score
@@ -316,7 +318,15 @@ session_start();
                 //stockage dans un tableau
 	            array_push($val_pays2, $ligne['valeur_score']."<br/>\n");
 		    }
-	        $req ->closeCursor();
+
+            if($val_pays1[0]==""){
+                echo "<p class='indispo'>Données indisponibles pour le pays ".$pays1." en ".$annee."</p>";
+                echo '<meta http-equiv="refresh" content="4; url=comparer.php">';
+            }elseif($val_pays2[0]==""){
+                echo "<p class='indispo'>Données indisponibles pour le pays ".$pays2." en ".$annee."</p>";
+                echo '<meta http-equiv="refresh" content="4; url=comparer.php">';
+            }else{
+                $req ->closeCursor();
             echo "<div class = 'conteneur2'>";
             echo "<p class = 'colp2' id = 'pays_gauche'>";
             echo $pays1;
@@ -417,6 +427,8 @@ session_start();
         echo '</div>';
 
         echo '<p class = "change"><a href = "deco.php">Select  other countries</a></p><br/><br/><br/>';
+            }
+	        
 
 
         }

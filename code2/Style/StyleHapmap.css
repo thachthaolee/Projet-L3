@@ -343,6 +343,10 @@ tr{
     background-size: 100% 100%;
     background-position-x: left;
 }
+.indispo{
+    margin-top: 200px;
+    text-align: center;
+}
 .colp1{
     width: 33%;
     float: left;
