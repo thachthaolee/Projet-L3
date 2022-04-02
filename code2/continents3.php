@@ -53,6 +53,16 @@
 		</br>	
 		</br>
 		<?php
+		$bon = $bdd-> query ("SELECT id_pays FROM avoir");
+		$tab=array();
+               while($lol= $bon-> fetch()){
+                   $tab[]=$lol['id_pays'];
+               }
+               $bon-> closeCursor();
+			   if(!in_array($pays,$tab)){
+				echo "<p class='indispo'>Le pays séléctionné n'est pas disponible</p>";
+				echo '<meta http-equiv="refresh" content="3; url=continents1.php">';
+			   }else{
 			 $rep = $bdd -> query('SELECT AVG(avoir.valeur_score) as moyenne, score.Nom_Score as nom
 												FROM score, avoir, pays, continent, annee
 												WHERE score.Id_Score = avoir.Id_Score
@@ -136,6 +146,7 @@
 			if($_GET['annee']=='avg'){
 				echo '<p class = "avg">* These data represent an average of the indicators over different years from 2015 to 2019<p>';
 			}
+				}
 			
 		?>
 	</center>	
