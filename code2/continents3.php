@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<?php session_start(); ?>
+
 <html>
 	<head>
 		<meta  http-equiv="Content-Type" content="text/html; charset="utf-8" />
@@ -31,6 +34,15 @@
 		<?php 	require ('bd.php');
 				$bdd = getBD();
 
+				$nompays = "";
+
+				/*if($_GET['annee'] < 2015 || $_GET['annee'] > 2019){
+					echo '<meta http-equiv="refresh" content="3; url=continents1.php">';
+				}
+				if($_GET['id_pays'] < 1 || $_GET['id_pays'] > 169){
+					echo '<meta http-equiv="refresh" content="3; url=continents2.php?id_continent='.$_SESSION['continent'].'&annee='.$_GET['annee'].'">';
+				}*/
+
 				$pays = $_GET['id_pays'];
 
 				$rep = $bdd->query("SELECT * FROM pays WHERE Id_Pays= $pays");
@@ -60,8 +72,8 @@
                }
                $bon-> closeCursor();
 			   if(!in_array($pays,$tab)){
-				echo "<p class='indispo'>Le pays séléctionné n'est pas disponible</p>";
-				echo '<meta http-equiv="refresh" content="3; url=continents1.php">';
+				echo "<p class='indispo'>The selected country is not available</p>";
+				echo '<meta http-equiv="refresh" content="3; url=continents2.php?id_continent='.$_SESSION['continent'].'&annee='.$_GET['annee'].'">';
 			   }else{
 			 $rep = $bdd -> query('SELECT AVG(avoir.valeur_score) as moyenne, score.Nom_Score as nom
 												FROM score, avoir, pays, continent, annee
@@ -86,8 +98,8 @@
 												
 											   $rep -> closeCursor();
 
-			if($moyenne[0]=="" && $_GET['annee']!='avg'){
-				echo "<p class='indispo'>Données indisponibles pour le pays ".$nompays." en ".$_GET['annee']."</p>";
+			if($moyenne==array() && $_GET['annee']!='avg'){
+				echo "<p class='indispo'>Data not available for ".$nompays." in ".$_GET['annee']."</p>";
                 echo '<meta http-equiv="refresh" content="3; url=continents1.php">';
 			}else{
 				echo '<div id="graphe">';

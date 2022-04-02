@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<?php session_start(); ?>
+
 <html>
 	<head>
 		<meta  http-equiv="Content-Type" content="text/html; charset="utf-8" />
@@ -31,9 +34,16 @@
 		<?php 	require ('bd.php');
 				$bdd = getBD();
 
-				$continent = $_GET['id_continent'];
+				if($_GET['annee'] < 2015 || $_GET['annee'] > 2019){
+					echo '<meta http-equiv="refresh" content="0; url=continents1.php">';
+				}
+				if($_GET['id_continent'] < 1 || $_GET['id_continent'] > 6){
+					echo '<meta http-equiv="refresh" content="0; url=continents1.php?annee='.$_GET['annee'].'">';
+				}
+				
+				$_SESSION['continent'] = $_GET['id_continent'];
 
-				$rep = $bdd->query("SELECT * FROM continent WHERE Id_Continent= $continent");
+				$rep = $bdd->query("SELECT * FROM continent WHERE Id_Continent=" .$_SESSION['continent']."");
 							
 				while ($mat=$rep-> fetch()){	
 					echo "<br/><br/><h1>".$mat['Nom_Continent']."</h1><br/></br>";
@@ -80,7 +90,7 @@
 		
 		<?php			
 			echo '<div class="continents2">';
-			$rep = $bdd->query("SELECT Nom_Pays, Id_Pays FROM pays WHERE Id_Continent = $continent");
+			$rep = $bdd->query("SELECT Nom_Pays, Id_Pays FROM pays WHERE Id_Continent =" .$_SESSION['continent']."");
 			while ($ligne = $rep -> fetch()) {
 				echo "<a href=continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$_GET['annee']."><li class='gros'>".$ligne['Nom_Pays']."</li></a>";
 			}	
