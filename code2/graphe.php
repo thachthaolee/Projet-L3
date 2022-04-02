@@ -27,7 +27,7 @@ while ($ligne = $donnees ->fetch()) {
 
 $donnees3 = $bdd -> query('SELECT STD(avoir.valeur_score)
 FROM avoir, score, annee
-WHERE avoir.annee = 2016
+WHERE avoir.annee = '.$_GET['annee'].'
 AND score.Id_Score != 1
 and avoir.Id_Score=score.Id_Score 
 GROUP BY score.Id_Score');

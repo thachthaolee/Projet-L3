@@ -6,7 +6,9 @@ require_once ('jpgraph/src/jpgraph_bar.php');
 $bdd = new PDO('mysql:host=localhost;dbname=hapmap;charset=utf8', 'root', 'root');
 
 // Donnees 
-$donnees = $bdd -> query('SELECT score.Nom_Score, AVG(avoir.valeur_score)
+
+if($_GET['annee']=='avg'){
+	$donnees = $bdd -> query('SELECT score.Nom_Score, AVG(avoir.valeur_score)
 				FROM score, avoir, pays, continent, annee
 				WHERE score.Id_Score = avoir.Id_Score
 				AND avoir.Id_Pays = pays.Id_Pays
@@ -14,11 +16,10 @@ $donnees = $bdd -> query('SELECT score.Nom_Score, AVG(avoir.valeur_score)
 				AND annee.Annee= avoir.annee
 				AND score.Id_Score != 1
 				AND pays.Id_Pays="'. $_GET["id_pays"] . '"
-				AND annee.Annee = ' . $_GET["annee"] . '
 				GROUP by score.Id_Score
 				order by score.Id_Score');
-		
-$score = array();
+
+				$score = array();
 $valeurs = array();
 while ($ligne = $donnees ->fetch()) {
 	$score[] = $ligne[0];
@@ -38,6 +39,42 @@ $dcr1 = array();
 for($i=0; $i<count($ecart); $i++){
 	$dcr1[$i] = $valeurs[$i]/$ecart[$i];
 }
+}else{
+	$donnees = $bdd -> query('SELECT score.Nom_Score, AVG(avoir.valeur_score)
+				FROM score, avoir, pays, continent, annee
+				WHERE score.Id_Score = avoir.Id_Score
+				AND avoir.Id_Pays = pays.Id_Pays
+				AND pays.Id_Continent = continent.Id_Continent
+				AND annee.Annee= avoir.annee
+				AND score.Id_Score != 1
+				AND pays.Id_Pays="'. $_GET["id_pays"] . '"
+				AND annee.Annee = ' . $_GET["annee"] . '
+				GROUP by score.Id_Score
+				order by score.Id_Score');
+		
+$score = array();
+$valeurs = array();
+while ($ligne = $donnees ->fetch()) {
+	$score[] = $ligne[0];
+	$valeurs[] = $ligne[1];
+}
+$donnees3 = $bdd -> query('SELECT STD(avoir.valeur_score)
+FROM avoir, score, annee
+WHERE avoir.annee = '.$_GET['annee'].'
+AND score.Id_Score != 1
+and avoir.Id_Score=score.Id_Score 
+GROUP BY score.Id_Score');
+$ecart= array();
+while ($ligne = $donnees3 ->fetch()) {
+	$ecart[] = $ligne[0];
+}
+$dcr1 = array();
+for($i=0; $i<count($ecart); $i++){
+	$dcr1[$i] = $valeurs[$i]/$ecart[$i];
+}
+
+}
+
 
 // Create the graph. These two calls are always required
 $graph = new Graph(900,300);

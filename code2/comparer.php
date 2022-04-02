@@ -321,10 +321,10 @@ session_start();
 
             if($val_pays1[0]==""){
                 echo "<p class='indispo'>Données indisponibles pour le pays ".$pays1." en ".$annee."</p>";
-                echo '<meta http-equiv="refresh" content="4; url=comparer.php">';
+                echo '<meta http-equiv="refresh" content="3; url=comparer.php">';
             }elseif($val_pays2[0]==""){
                 echo "<p class='indispo'>Données indisponibles pour le pays ".$pays2." en ".$annee."</p>";
-                echo '<meta http-equiv="refresh" content="4; url=comparer.php">';
+                echo '<meta http-equiv="refresh" content="3; url=comparer.php">';
             }else{
                 $req ->closeCursor();
             echo "<div class = 'conteneur2'>";
