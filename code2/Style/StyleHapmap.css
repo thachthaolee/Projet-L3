@@ -23,6 +23,60 @@ header {
     position: sticky;
     top: 0px;
 }
+.gsearchsimple3{
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    color: black;
+    border: none;
+    height: 20px;
+    text-align: center;
+    border-radius: 0%;
+    transition: background-color 300ms;
+    width: 200px;
+}
+.list-group3{
+    width: 200px;
+    position: absolute;
+    right: 1%;
+    top:40px;
+    list-style: none;
+    margin: -15px;
+    padding: 0px;
+    z-index: 10;
+}
+.list-group3 li{
+    background-color: #ced9ff;
+    transition: background-color 300ms;
+    transition: color 300ms;
+    padding-left: 5px;
+    z-index: 10;
+}
+.list-group3 li:hover{
+    background-color: #1bc224;
+    transition: background-color 300ms;
+    z-index: 10;
+}
+.list-group3 a:hover{
+    color: white;
+    transition: color 200ms;
+    z-index: 10;
+}
+
+.list-group3 a{
+    transition: color 200ms;
+    z-index: 10;
+}
+.gsearchsimple3:hover{
+    background-color: #b9c7fa;
+    transition: background-color 300ms;
+}
+.gsearchsimple3::placeholder{
+    color: white;
+    opacity: 0.8;
+}
 
 nav ul{
     list-style-type: none;
