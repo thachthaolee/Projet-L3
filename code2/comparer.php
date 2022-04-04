@@ -444,6 +444,102 @@ session_start();
 </html>
 <script>
 $(document).ready(function(){
+ $('.gsearchsimple3').keyup(function(){
+  var query3 = $('.gsearchsimple3').val();
+  $('#detail').html('');
+  $('.list-group3').css('display', 'block');
+  if(query3.length == 1)
+  {
+   $.ajax({
+    url:"fetch2.php",
+    method:"POST",
+    data:{query:query3},
+    success:function(data)
+    {
+     $('.list-group3').html(data);
+    }
+   })
+  }
+  if(query3.length == 2)
+  {
+   $.ajax({
+    url:"fetch2.php",
+    method:"POST",
+    data:{query:query3},
+    success:function(data)
+    {
+     $('.list-group3').html(data);
+    }
+   })
+  }
+  if(query3.length == 3)
+  {
+   $.ajax({
+    url:"fetch2.php",
+    method:"POST",
+    data:{query:query3},
+    success:function(data)
+    {
+     $('.list-group3').html(data);
+    }
+   })
+  }
+  if(query3.length == 4)
+  {
+   $.ajax({
+    url:"fetch2.php",
+    method:"POST",
+    data:{query:query3},
+    success:function(data)
+    {
+     $('.list-group3').html(data);
+    }
+   })
+  }
+  if(query3.length == 5)
+  {
+   $.ajax({
+    url:"fetch2.php",
+    method:"POST",
+    data:{query:query3},
+    success:function(data)
+    {
+     $('.list-group3').html(data);
+    }
+   })
+  }
+  if(query3.length == 6)
+  {
+   $.ajax({
+    url:"fetch2.php",
+    method:"POST",
+    data:{query:query3},
+    success:function(data)
+    {
+     $('.list-group3').html(data);
+    }
+   })
+  }
+  if(query3.length == 7)
+  {
+   $.ajax({
+    url:"fetch2.php",
+    method:"POST",
+    data:{query:query3},
+    success:function(data)
+    {
+     $('.list-group3').html(data);
+    }
+   })
+  }
+  if(query3.length == 0)
+  {
+   $('.list-group3').css('display', 'none');
+  }
+ });
+});
+
+$(document).ready(function(){
  $('#gsearchsimple').keyup(function(){
   var query = $('#gsearchsimple').val();
   $('#detail').html('');
@@ -665,101 +761,6 @@ $(document).ready(function(){
   })
  });
 });
-</script>
-<script>
-$(document).ready(function(){
- $('.gsearchsimple3').keyup(function(){
-  var query3 = $('.gsearchsimple3').val();
-  $('#detail').html('');
-  $('.list-group3').css('display', 'block');
-  if(query3.length == 1)
-  {
-   $.ajax({
-    url:"fetch2.php",
-    method:"POST",
-    data:{query:query3},
-    success:function(data)
-    {
-     $('.list-group3').html(data);
-    }
-   })
-  }
-  if(query3.length == 2)
-  {
-   $.ajax({
-    url:"fetch2.php",
-    method:"POST",
-    data:{query:query3},
-    success:function(data)
-    {
-     $('.list-group3').html(data);
-    }
-   })
-  }
-  if(query3.length == 3)
-  {
-   $.ajax({
-    url:"fetch2.php",
-    method:"POST",
-    data:{query:query3},
-    success:function(data)
-    {
-     $('.list-group3').html(data);
-    }
-   })
-  }
-  if(query3.length == 4)
-  {
-   $.ajax({
-    url:"fetch2.php",
-    method:"POST",
-    data:{query:query3},
-    success:function(data)
-    {
-     $('.list-group3').html(data);
-    }
-   })
-  }
-  if(query3.length == 5)
-  {
-   $.ajax({
-    url:"fetch2.php",
-    method:"POST",
-    data:{query:query3},
-    success:function(data)
-    {
-     $('.list-group3').html(data);
-    }
-   })
-  }
-  if(query3.length == 6)
-  {
-   $.ajax({
-    url:"fetch2.php",
-    method:"POST",
-    data:{query:query3},
-    success:function(data)
-    {
-     $('.list-group3').html(data);
-    }
-   })
-  }
-  if(query3.length == 7)
-  {
-   $.ajax({
-    url:"fetch2.php",
-    method:"POST",
-    data:{query:query3},
-    success:function(data)
-    {
-     $('.list-group3').html(data);
-    }
-   })
-  }
-  if(query3.length == 0)
-  {
-   $('.list-group3').css('display', 'none');
-  }
- });
-});
+
+
 </script>
