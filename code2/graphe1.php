@@ -15,6 +15,7 @@ if($_GET['annee']=='avg'){
 				AND pays.Id_Continent = continent.Id_Continent
 				AND annee.Annee= avoir.annee
 				AND score.Id_Score != 1
+				AND score.Id_Score != 2
 				AND pays.Id_Pays="'. $_GET["id_pays"] . '"
 				GROUP by score.Id_Score
 				order by score.Id_Score');
@@ -29,16 +30,18 @@ $donnees3 = $bdd -> query('SELECT STD(avoir.valeur_score)
 FROM avoir, score, annee
 WHERE avoir.annee = 2016
 AND score.Id_Score != 1
+and score.Id_Score != 2
 and avoir.Id_Score=score.Id_Score 
 GROUP BY score.Id_Score');
-$ecart= array();
+
+/*$ecart= array();
 while ($ligne = $donnees3 ->fetch()) {
 	$ecart[] = $ligne[0];
 }
 $dcr1 = array();
 for($i=0; $i<count($ecart); $i++){
 	$dcr1[$i] = $valeurs[$i]/$ecart[$i];
-}
+}*/
 }else{
 	$donnees = $bdd -> query('SELECT score.Nom_Score, AVG(avoir.valeur_score)
 				FROM score, avoir, pays, continent, annee
@@ -47,6 +50,7 @@ for($i=0; $i<count($ecart); $i++){
 				AND pays.Id_Continent = continent.Id_Continent
 				AND annee.Annee= avoir.annee
 				AND score.Id_Score != 1
+				AND score.Id_Score != 2
 				AND pays.Id_Pays="'. $_GET["id_pays"] . '"
 				AND annee.Annee = ' . $_GET["annee"] . '
 				GROUP by score.Id_Score
@@ -62,16 +66,17 @@ $donnees3 = $bdd -> query('SELECT STD(avoir.valeur_score)
 FROM avoir, score, annee
 WHERE avoir.annee = '.$_GET['annee'].'
 AND score.Id_Score != 1
+and score.Id_Score != 2
 and avoir.Id_Score=score.Id_Score 
 GROUP BY score.Id_Score');
-$ecart= array();
+/*$ecart= array();
 while ($ligne = $donnees3 ->fetch()) {
 	$ecart[] = $ligne[0];
 }
 $dcr1 = array();
 for($i=0; $i<count($ecart); $i++){
 	$dcr1[$i] = $valeurs[$i]/$ecart[$i];
-}
+}*/
 
 }
 
@@ -89,7 +94,7 @@ $graph->img->SetMargin(40,30,20,40);
 $graph->xaxis->SetTickLabels($score);
 
 // Create a bar pot
-$bplot = new BarPlot($dcr1);
+$bplot = new BarPlot($valeurs);
 $graph->Add($bplot);
 
 // Setup the titles

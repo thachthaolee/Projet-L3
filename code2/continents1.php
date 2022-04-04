@@ -40,9 +40,10 @@
 		echo '
 		<form action="continents1.php" method="get" autocomplete="off">
 		<br/><br/><br/>
-		<p id="t1">Please select a year :</p><p><INPUT id = "annee" type="number" name="annee" value="" min="2015" max="2019" placeholder="year"></p>
+		<p id="t3">Please select a year :</p><p><INPUT id = "annee" type="number" name="annee" value="" min="2015" max="2019" placeholder="year"></p>
 		<p><INPUT type= "submit" value = "Validate"></p>
-		</form>';
+		</form>
+		<img src="image/carte.png" alt="image de carte" >';
 		
 		}elseif($_GET['annee'] > 2019 || $_GET['annee'] < 2015){
 		echo '

@@ -423,6 +423,8 @@ tr{
     text-align: center;
     margin-top: -260px;
 }
+
+
 .invisible{
     opacity: 0;
 }
@@ -455,6 +457,7 @@ tr{
     transition: background-color 400ms;
 }
 /* fin du css de la page comparer*/
+
 /* css de la page continents */
 .test {
     margin-left: auto;
@@ -464,10 +467,19 @@ tr{
     text-align: center;	
 }
 
-
-
 #t1{
     margin-left: auto;
+    margin-right: auto;
+    width:650px;
+    text-align: center;
+    left: auto;
+    position:relative;
+    background-color: #A8BBFF;
+    font-style: oblique;
+}
+
+#t3{
+	margin-left: auto;
     margin-right: auto;
     width:200px;
     text-align: center;
@@ -621,7 +633,6 @@ h3{
 	background-color: #A8BBFF;
     width:100px;
 	font-weight:normal;
-	border-radius: 10px;
 }
 
 

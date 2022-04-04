@@ -13,6 +13,7 @@ $donnees = $bdd -> query('SELECT score.Nom_Score, avoir.valeur_score
 				AND pays.Id_Continent = continent.Id_Continent
 				AND annee.Annee= avoir.annee
 				AND score.Id_Score != 1
+				AND score.Id_Score != 2
 				AND pays.Id_Pays="'. $_GET["id_pays1"] . '"
 				AND annee.Annee = ' . $_GET["annee"] . '
 				GROUP by score.Id_Score
@@ -31,6 +32,7 @@ $donnees2 = $bdd -> query('SELECT score.Nom_Score, avoir.valeur_score
 				AND pays.Id_Continent = continent.Id_Continent
 				AND annee.Annee= avoir.annee
 				AND score.Id_Score != 1
+				AND score.Id_Score != 2
 				AND pays.Id_Pays="'. $_GET["id_pays2"] . '"
 				AND annee.Annee = ' . $_GET["annee"] . '
 				GROUP by score.Id_Score
@@ -46,9 +48,10 @@ $donnees3 = $bdd -> query('SELECT STD(avoir.valeur_score)
 FROM avoir, score, annee
 WHERE avoir.annee = '.$_GET['annee'].'
 AND score.Id_Score != 1
+AND score.Id_Score != 2
 and avoir.Id_Score=score.Id_Score 
 GROUP BY score.Id_Score');
-$ecart= array();
+/*$ecart= array();
 while ($ligne = $donnees3 ->fetch()) {
 	$ecart[] = $ligne[0];
 }
@@ -57,7 +60,7 @@ $dcr2 = array();
 for($i=0; $i<count($ecart); $i++){
 	$dcr1[$i] = $valeurs[$i]/$ecart[$i];
 	$dcr2[$i] = $valeurs2[$i]/$ecart[$i];
-}
+}*/
 
 
 // Create the graph. These two calls are always required
@@ -73,10 +76,10 @@ $graph->img->SetMargin(40,30,20,40);
 $graph->xaxis->SetTickLabels($score2);
 
 // Create a bar pot
-$b1plot = new BarPlot($dcr1);
+$b1plot = new BarPlot($valeurs);
 $b1plot->SetFillColor("orange");
 $b2plot = new BarPlot($dcr2);
-$b2plot->SetFillColor("blue");
+$b2plot->SetFillColor("valeurs2");
 
 $gbplot = new GroupBarPlot(array($b1plot,$b2plot));
 

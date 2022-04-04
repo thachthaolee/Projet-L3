@@ -265,7 +265,7 @@ session_start();
                 echo "</div>";
             }else{
                 echo "<div class ='indication'>";
-                echo "<p>Please select the names of the two countries that you would like to compare.</p>";
+                echo '<p id="t1">Please select the names of the two countries that you would like to compare.</p>';
                 echo "</div>";
             }
         }elseif($erreur == 1){
