@@ -5,7 +5,7 @@
         require('bd.php');
         $bdd = getBD();
         ?>
-        <title>HAPMAP</title>
+        <title>HapMap</title>
         <meta http-equiv="Content-Type" 
             content="text/html; charset=UTF-8" />
         <link rel="stylesheet" href="Style/StyleHapmap.css?" type="text/css"
@@ -34,7 +34,7 @@
                     <!--Rajouter la fonction rechercher-->
                 </ul>
             </nav>
-            <input  class="gsearchsimple3" class="form-control input-lg"  name="recherche" type = "text" placeholder="Research">
+            <input  class="gsearchsimple3 form-control input-lg"  name="recherche" type = "text" placeholder="Research">
             <ul class="list-group3">
                 
             </ul>
@@ -45,10 +45,7 @@
 				<div id="map"></div>
 			</div>
        
-
-    </body>
-</html>
-<script>
+            <script>
 $(document).ready(function(){
  $('.gsearchsimple3').keyup(function(){
   var query3 = $('.gsearchsimple3').val();
@@ -145,3 +142,6 @@ $(document).ready(function(){
  });
 });
 </script>
+
+    </body>
+</html>

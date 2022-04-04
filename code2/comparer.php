@@ -11,7 +11,7 @@ session_start();
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" href="Style/StyleHapmap.css?" type="text/css" media="screen" />
         <title>
-            Comparer
+            HapMap
         </title>
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -34,7 +34,7 @@ session_start();
                     <!--Rajouter la fonction rechercher-->
                 </ul>
             </nav>
-            <input  class="gsearchsimple3" class="form-control input-lg"  name="recherche" type = "text" placeholder="Research">
+            <input  class="gsearchsimple3 form-control input-lg"  name="recherche" type = "text" placeholder="Research">
             <ul class="list-group3">
                 
             </ul>
@@ -195,37 +195,37 @@ session_start();
             echo'<form action="comparer.php" method="post" autocomplete="off">
             <div class = "conteneur1">
                 <p class = "colp1">
-                <INPUT class="casepays" id="gsearchsimple" class="form-control input-lg"  type="text"name="pays1"placeholder="Please select"value=';
+                <INPUT class="casepays" id="gsearchsimple form-control input-lg"  type="text" name="pays1" placeholder="Please select" value=';
                  if(isset($_SESSION['pays1'])){
                     echo '\''.$_SESSION['pays1'][0].'\''; 
                 }
                 elseif(isset($_GET['pays1']))
                     echo '\''.$_GET['pays1'].'\''; 
                 else
-                    echo "''"; 
-                echo'</p>';
+                    echo "''>"; 
+                echo' </p>';
                 
                 
                 
                 if(isset($_SESSION['pays1']) && isset($_SESSION['pays2'])){
                     echo '<p class = "colp1">
-                <INPUT  id = "annee" type="number"name="annee"value=""min="2015"max="2019"placeholder="year">
+                <INPUT  id = "annee" type="number" name="annee" value="" min="2015" max="2019" placeholder="year">
                 </p>';
                 }else{
                     echo '<p class = "colp1">
-                <INPUT class="invisible" id = "annee" type="number"name="annee"value=""min="2015"max="2019"placeholder="year">
+                <INPUT class="invisible" id = "annee" type="number" name="annee" value="" min="2015" max="2019" placeholder="year">
                 </p>';
                 }
                 
                 echo  '<p class = "colp1">
-                <INPUT class="casepays" id="gsearchsimple2" class="form-control input-lg" type="text"name="pays2"placeholder="Please select"value=';
+                <INPUT class="casepays form-control input-lg" id="gsearchsimple2" type="text" name="pays2" placeholder="Please select" value=';
                 if(isset($_SESSION['pays2'])){
                     echo '\''.$_SESSION['pays2'][0].'\''; 
                 }
                 elseif(isset($_GET['pays2']))
                     echo '\''.$_GET['pays2'].'\''; 
                 else
-                    echo "''";
+                    echo "''> ";
                 echo '</p>
                 
             </div>
@@ -440,105 +440,7 @@ session_start();
         ?>
     
 
-    </body>
-</html>
-<script>
-$(document).ready(function(){
- $('.gsearchsimple3').keyup(function(){
-  var query3 = $('.gsearchsimple3').val();
-  $('#detail').html('');
-  $('.list-group3').css('display', 'block');
-  if(query3.length == 1)
-  {
-   $.ajax({
-    url:"fetch2.php",
-    method:"POST",
-    data:{query:query3},
-    success:function(data)
-    {
-     $('.list-group3').html(data);
-    }
-   })
-  }
-  if(query3.length == 2)
-  {
-   $.ajax({
-    url:"fetch2.php",
-    method:"POST",
-    data:{query:query3},
-    success:function(data)
-    {
-     $('.list-group3').html(data);
-    }
-   })
-  }
-  if(query3.length == 3)
-  {
-   $.ajax({
-    url:"fetch2.php",
-    method:"POST",
-    data:{query:query3},
-    success:function(data)
-    {
-     $('.list-group3').html(data);
-    }
-   })
-  }
-  if(query3.length == 4)
-  {
-   $.ajax({
-    url:"fetch2.php",
-    method:"POST",
-    data:{query:query3},
-    success:function(data)
-    {
-     $('.list-group3').html(data);
-    }
-   })
-  }
-  if(query3.length == 5)
-  {
-   $.ajax({
-    url:"fetch2.php",
-    method:"POST",
-    data:{query:query3},
-    success:function(data)
-    {
-     $('.list-group3').html(data);
-    }
-   })
-  }
-  if(query3.length == 6)
-  {
-   $.ajax({
-    url:"fetch2.php",
-    method:"POST",
-    data:{query:query3},
-    success:function(data)
-    {
-     $('.list-group3').html(data);
-    }
-   })
-  }
-  if(query3.length == 7)
-  {
-   $.ajax({
-    url:"fetch2.php",
-    method:"POST",
-    data:{query:query3},
-    success:function(data)
-    {
-     $('.list-group3').html(data);
-    }
-   })
-  }
-  if(query3.length == 0)
-  {
-   $('.list-group3').css('display', 'none');
-  }
- });
-});
-
+    <script>
 $(document).ready(function(){
  $('#gsearchsimple').keyup(function(){
   var query = $('#gsearchsimple').val();
@@ -761,6 +663,103 @@ $(document).ready(function(){
   })
  });
 });
-
-
 </script>
+<script>
+$(document).ready(function(){
+ $('.gsearchsimple3').keyup(function(){
+  var query3 = $('.gsearchsimple3').val();
+  $('#detail').html('');
+  $('.list-group3').css('display', 'block');
+  if(query3.length == 1)
+  {
+   $.ajax({
+    url:"fetch2.php",
+    method:"POST",
+    data:{query:query3},
+    success:function(data)
+    {
+     $('.list-group3').html(data);
+    }
+   })
+  }
+  if(query3.length == 2)
+  {
+   $.ajax({
+    url:"fetch2.php",
+    method:"POST",
+    data:{query:query3},
+    success:function(data)
+    {
+     $('.list-group3').html(data);
+    }
+   })
+  }
+  if(query3.length == 3)
+  {
+   $.ajax({
+    url:"fetch2.php",
+    method:"POST",
+    data:{query:query3},
+    success:function(data)
+    {
+     $('.list-group3').html(data);
+    }
+   })
+  }
+  if(query3.length == 4)
+  {
+   $.ajax({
+    url:"fetch2.php",
+    method:"POST",
+    data:{query:query3},
+    success:function(data)
+    {
+     $('.list-group3').html(data);
+    }
+   })
+  }
+  if(query3.length == 5)
+  {
+   $.ajax({
+    url:"fetch2.php",
+    method:"POST",
+    data:{query:query3},
+    success:function(data)
+    {
+     $('.list-group3').html(data);
+    }
+   })
+  }
+  if(query3.length == 6)
+  {
+   $.ajax({
+    url:"fetch2.php",
+    method:"POST",
+    data:{query:query3},
+    success:function(data)
+    {
+     $('.list-group3').html(data);
+    }
+   })
+  }
+  if(query3.length == 7)
+  {
+   $.ajax({
+    url:"fetch2.php",
+    method:"POST",
+    data:{query:query3},
+    success:function(data)
+    {
+     $('.list-group3').html(data);
+    }
+   })
+  }
+  if(query3.length == 0)
+  {
+   $('.list-group3').css('display', 'none');
+  }
+ });
+});
+</script>
+    </body>
+</html>

@@ -29,14 +29,14 @@
                     <!--Rajouter la fonction rechercher-->
                 </ul>
             </nav>
-            <input  class="gsearchsimple3" class="form-control input-lg"  name="recherche" type = "text" placeholder="Research">
+            <input  class="gsearchsimple3 form-control input-lg"  name="recherche" type = "text" placeholder="Research">
             <ul class="list-group3">
                 
             </ul>
 
         </header>
  <!-- menu bandeau fin -->
- <img id= "Score"src = "image/ScoreLeaders.png" alt = "Photo ScoreLeaders"/> 
+ <img id= "Score" src = "image/ScoreLeaders.png" alt = "Photo ScoreLeaders"/> 
         <h2 id="ScoreLeaders">Score Leaders</h2>
         <!--<h2>Famille</h2> Pour mettre au point css-->
 
@@ -50,11 +50,11 @@
 
         <form action="scores.php" method="post" autocomplete="off">
         <p id = "form_index">
-            <INPUT class="formulaire_filtres" type="number"name="annee"value=""min="2015"max="2019"placeholder="Year">
+            <INPUT class="formulaire_filtres" type="number" name="annee" value="" min="2015" max="2019" placeholder="Year">
         
         
             <SELECT class="formulaire_filtres" name="score">
-                <option valeur="">--Please choose a Score--</option>
+                <option valeur="">--Choose a Score--</option>
                 <option valeur="<?php echo $SCORE?>">Economy</option>
                 <option valeur="<?php echo $SCORE?>">Family</option>
                 <option valeur="<?php echo $SCORE?>">Health</option>
@@ -93,7 +93,7 @@ if($annee==""){
     echo "</div>";
     //echo "<meta http-equiv='Refresh' content='0; url=scores.php?score=".$SCORE."&Continent=".$CONTINENT."'/>";
 }
-elseif($SCORE=="--Please choose a Score--" && $CONTINENT=="--Choose a continent--"){
+elseif($SCORE=="--Choose a Score--" && $CONTINENT=="--Choose a continent--"){
         echo "<div>";
             echo "<p class='selection'>Year selected : ".$annee."</p>";    
             echo "<p class='selection'>Index selected : Hapiness Score</p>";                
@@ -120,7 +120,7 @@ elseif($SCORE=="--Please choose a Score--" && $CONTINENT=="--Choose a continent-
                                                             
         echo "</table>";
 }     
-elseif($SCORE=="--Please choose a Score--"){
+elseif($SCORE=="--Choose a Score--"){
         echo "<div>";
     echo "<p class='selection'>Year selected : ".$annee."</p>";    
     echo "<p class='selection'>Index selected : Hapiness Score</p>";
@@ -203,10 +203,6 @@ elseif($SCORE=="--Please choose a Score--"){
  }
 ?>
 
-
-</body>
-
-</html>
 <script>
 $(document).ready(function(){
  $('.gsearchsimple3').keyup(function(){
@@ -304,3 +300,7 @@ $(document).ready(function(){
  });
 });
 </script>
+
+</body>
+
+</html>

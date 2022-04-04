@@ -4,9 +4,9 @@
 
 <html>
 	<head>
-		<meta  http-equiv="Content-Type" content="text/html; charset="utf-8" />
+		<meta  http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<link rel="stylesheet" href="Style/StyleHapMap.css?" type="text/css" media="screen" />
-		<title>Continents</title>
+		<title>HapMap</title>
 		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -30,7 +30,7 @@
                     <!--Rajouter la fonction rechercher-->
                 </ul>
             </nav>
-			<input  class="gsearchsimple3" class="form-control input-lg"  name="recherche" type = "text" placeholder="Research">
+			<input  class="gsearchsimple3 form-control input-lg"  name="recherche" type = "text" placeholder="Research">
             <ul class="list-group3">
                 
             </ul>
@@ -54,7 +54,7 @@
 				$rep = $bdd->query("SELECT * FROM continent WHERE Id_Continent=" .$_SESSION['continent']."");
 							
 				while ($mat=$rep-> fetch()){	
-					echo "<br/><br/><h1>".$mat['Nom_Continent']."</h1><br/></br>";
+					echo "<br/><br/><h1>".$mat['Nom_Continent']."</h1><br/><br/>";
 					}
 		?>
 		
@@ -107,10 +107,7 @@
 			?>
 					
 	</div>		
-	
-</body>
-</html>
-<script>
+	<script>
 $(document).ready(function(){
  $('.gsearchsimple3').keyup(function(){
   var query3 = $('.gsearchsimple3').val();
@@ -207,3 +204,6 @@ $(document).ready(function(){
  });
 });
 </script>
+</body>
+</html>
+

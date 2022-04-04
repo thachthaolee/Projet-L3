@@ -4,9 +4,9 @@
 
 <html>
 	<head>
-		<meta  http-equiv="Content-Type" content="text/html; charset="utf-8" />
+		<meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="Style/StyleHapMap.css?" type="text/css" media="screen" />
-		<title>Continents</title>
+		<title>HapMap</title>
 		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -29,7 +29,7 @@
                     <!--Rajouter la fonction rechercher-->
                 </ul>
             </nav>
-			<input  class="gsearchsimple3" class="form-control input-lg"  name="recherche" type = "text" placeholder="Research">
+			<input  class="gsearchsimple3 form-control input-lg"  name="recherche" type = "text" placeholder="Research">
             <ul class="list-group3">
                 
             </ul>
@@ -59,7 +59,7 @@
 					$nompays = $mat['Nom_Pays'];
 				}
 				$rep->closeCursor();
-				echo "<h1>".$nompays."</h1></br>";
+				echo "<h1>".$nompays."</h1><br/>";
 		?>		<br/>
 		
 		
@@ -70,8 +70,8 @@
 		?>
 		
 		
-		</br>	
-		</br>
+		<br/>	
+		<br/>
 		<?php
 		$bon = $bdd-> query ("SELECT id_pays FROM avoir");
 		$tab=array();
@@ -158,7 +158,7 @@
 			$rep = $bdd->query("SELECT * FROM pays WHERE Id_Pays= $pays");
 							
 				while ($mat=$rep-> fetch()){	
-					echo "<br/><br/><a href='deco.php?pays1=".$mat['Nom_Pays']."&continent=1'><h3>Compare</h3></a></br>";
+					echo "<br/><br/><a href='deco.php?pays1=".$mat['Nom_Pays']."&continent=1'><h3>Compare</h3></a><br/>";
 
 				}
 				$rep->closeCursor();
@@ -171,12 +171,9 @@
 		?>
 	</center>	
 	
-			
-	</div>		
+				
 	
-</body>
-</html>
-<script>
+	<script>
 $(document).ready(function(){
  $('.gsearchsimple3').keyup(function(){
   var query3 = $('.gsearchsimple3').val();
@@ -273,3 +270,6 @@ $(document).ready(function(){
  });
 });
 </script>
+	
+</body>
+</html>
