@@ -323,11 +323,11 @@ session_start();
 	            array_push($val_pays2, $ligne['valeur_score']."<br/>\n");
 		    }
 
-            if($val_pays1[0]==""){
-                echo "<p class='indispo'>Données indisponibles pour le pays ".$pays1." en ".$annee."</p>";
+            if($val_pays1==array()){
+                echo "<p class='indispo'>Data not available for ".$pays1." in ".$annee."</p>";
                 echo '<meta http-equiv="refresh" content="4; url=comparer.php">';
-            }elseif($val_pays2[0]==""){
-                echo "<p class='indispo'>Données indisponibles pour le pays ".$pays2." en ".$annee."</p>";
+            }elseif($val_pays2==array()){
+                echo "<p class='indispo'>Data not available for ".$pays2." in ".$annee."</p>";
                 echo '<meta http-equiv="refresh" content="4; url=comparer.php">';
             }else{
                 $req ->closeCursor();
