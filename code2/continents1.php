@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 
+<!-- Première page de l'onglet qui affiche les statistiques d'un continent choisi puis d'un pays de ce continent -->
+
 <html>
 <head>
     <meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="Style/StyleHapMap.css?" type="text/css" media="screen" />
     <title>HapMap</title>
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="JsLocalSearch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="JsLocalSearch.js"></script>
 </head>
 
 
 
 <body>
+    <!-- Bandeau haut de page -->
 	<header>
 			<a href ="index.php"><img src = "image/logo.png" alt = "Logo"/></a>
             <nav>
-            
                 <ul>
                     <li><a href="index.php">Home page</a></li>
 					<li><a class="ici" href="continents1.php">Continent</a></li>
 					<li><a href="comparer.php">Compare</a></li>
 					<li><a href="scores.php">Score</a></li>
 					<li><a href="apropos.html">About us</a></li>
-                    <!--Rajouter la fonction rechercher-->
                 </ul>
             </nav>
 			<input  class="gsearchsimple3 form-control input-lg"  name="recherche" type = "text" placeholder="Research">
@@ -36,7 +37,7 @@
 	
 		<div class="test">
 		<?php
-		if(!isset($_GET['annee'])){
+		if(!isset($_GET['annee'])){ //Si aucune année n'a été choisie
 		echo '
 		<form action="continents1.php" method="get" autocomplete="off">
 		<br/><br/><br/>
@@ -45,7 +46,7 @@
 		</form>
 		<img src="image/carte.png" alt="image de carte" >';
 		
-		}elseif($_GET['annee'] > 2019 || $_GET['annee'] < 2015){
+		}elseif($_GET['annee'] > 2019 || $_GET['annee'] < 2015){ //Si l'année choisie est incorrecte
 		echo '
 		<form action="continents1.php" method="get" autocomplete="off">
 		<br/><br/><br/>
@@ -54,10 +55,8 @@
 		</form>';
 		}
 		
-		else{
-	
-	
-		echo '<div class="continents1">';
+		else{ //Quand une année a été choisie
+		    echo '<div class="continents1">';
 			echo '<br/><br/><br/><br/><p id="t2">Please select the continent for the year '.$_GET['annee'].' :</p><br/><br/>';
 			
 				require ('bd.php');
@@ -72,10 +71,12 @@
 				$rep -> closeCursor();
 
 			
-		echo '</div>';}?>
+		    echo '</div>';
+        }?>
 		</div>
 
-        <script>
+<!-- Fonction research avec autocomplétion -->
+<script>
 $(document).ready(function(){
  $('.gsearchsimple3').keyup(function(){
   var query3 = $('.gsearchsimple3').val();

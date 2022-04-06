@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-<!-- PAge qui permet, en fonction de filtres, la visualisation d'un classement des différents pays disponibles -->
+<!-- Page qui permet, en fonction de filtres, la visualisation d'un classement des différents pays disponibles -->
 <head>
     <?php include('bd.php'); 
     $bdd = getBD();?>
@@ -16,6 +16,7 @@
 
 <body>
 
+<!-- Bandeau haut de page -->
 <header>
             <a href ="index.php"><img src = "image/logo.png" alt = "Logo"/></a> 
             <nav>
@@ -26,7 +27,6 @@
 					<li><a href="comparer.php">Compare</a></li>
 					<li><a class="ici" href="scores.php">Score</a></li>
 					<li><a href="apropos.html">About us</a></li>
-                    <!--Rajouter la fonction rechercher-->
                 </ul>
             </nav>
             <input  class="gsearchsimple3 form-control input-lg"  name="recherche" type = "text" placeholder="Research">
@@ -35,7 +35,7 @@
             </ul>
 
         </header>
- <!-- menu bandeau fin -->
+ <!-- Menu bandeau fin -->
  <img id= "Score" src = "image/ScoreLeaders.png" alt = "Photo ScoreLeaders"/> 
         <h2 id="ScoreLeaders">Score Leaders</h2>
         <!--<h2>Famille</h2> Pour mettre au point css-->
@@ -47,7 +47,7 @@
         $CONTINENT = "";
         ?>
 
-        <!--formulaire en guise de filtre-->
+        <!--Formulaire des filtres-->
 
         <form action="scores.php" method="post" autocomplete="off">
         <p id = "form_index">
@@ -79,7 +79,7 @@
         </form>
 
         <?php
-        //Récupération des variables dans les filtres
+        //Récupération des filtres dans les variables
         if(isset($_POST['annee']))
             $annee = $_POST['annee'];
         if(isset($_POST['score']))
@@ -88,12 +88,12 @@
             $CONTINENT = $_POST['continent'];
         
 //En fonction des filtres, les différents scénarios dans les if
-if($annee==""){
+if($annee==""){ //Si aucune année n'est choisie
     echo "<div>";
     echo "<p class='àremplir'>Please select a year to observe</p>";
     echo "</div>";
 }
-elseif($SCORE=="--Choose a score--" && $CONTINENT=="--Choose a continent--"){
+elseif($SCORE=="--Choose a score--" && $CONTINENT=="--Choose a continent--"){ //Si aucun Score ni aucun Continent n'est choisi
         echo "<div>";
             echo "<p class='selection'>Year selected : ".$annee."</p>";    
             echo "<p class='selection'>Index selected : Hapiness Score</p>";                
@@ -102,15 +102,15 @@ elseif($SCORE=="--Choose a score--" && $CONTINENT=="--Choose a continent--"){
 
         echo '<table id="index_tab">';
         echo "<tr id='champs'><td>Country identifier</td><td>Country</td><td>Value Score</td><td>Rank</td></tr>";
-                    $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent
-                                        FROM avoir, pays, annee, score, continent
-                                        WHERE avoir.Id_Pays=pays.Id_Pays 
-                                        AND avoir.annee=annee.Annee
-                                        AND avoir.Id_Score=score.Id_Score 
-                                        AND continent.Id_Continent=pays.Id_Continent
-                                        AND score.Nom_Score="Hapiness Score"
-                                        AND avoir.annee="'.$annee.'" 
-                                        ORDER BY avoir.rang ASC');
+        $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent
+                            FROM avoir, pays, annee, score, continent
+                            WHERE avoir.Id_Pays=pays.Id_Pays 
+                            AND avoir.annee=annee.Annee
+                            AND avoir.Id_Score=score.Id_Score 
+                            AND continent.Id_Continent=pays.Id_Continent
+                            AND score.Nom_Score="Hapiness Score"
+                            AND avoir.annee="'.$annee.'" 
+                            ORDER BY avoir.rang ASC');
         //On parcourt les résultats de la requête SQL dans le fetch
         while ($ligne = $rep ->fetch()) {
             echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a id='hover' href="."continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$annee.">".
@@ -121,88 +121,87 @@ elseif($SCORE=="--Choose a score--" && $CONTINENT=="--Choose a continent--"){
         echo "</table>";
 }     
 elseif($SCORE=="--Choose a score--"){
-        echo "<div>";
-    echo "<p class='selection'>Year selected : ".$annee."</p>";    
-    echo "<p class='selection'>Index selected : Hapiness Score</p>";
-    echo "<p class='selection'>Continent selected : ".$CONTINENT."</p>";
-        echo "</div>";
+    echo "<div>";
+        echo "<p class='selection'>Year selected : ".$annee."</p>";    
+        echo "<p class='selection'>Index selected : Hapiness Score</p>";
+        echo "<p class='selection'>Continent selected : ".$CONTINENT."</p>";
+    echo "</div>";
 
     echo '<table id="index_tab">';
     echo "<tr id='champs'><td>Country identifier</td><td>Country</td><td>Value Score</td><td>Rank</td></tr>";
-             $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent
-                                 FROM avoir, pays, annee, score, continent
-                                 WHERE avoir.Id_Pays=pays.Id_Pays 
-                                 AND avoir.annee=annee.Annee
-                                 AND avoir.Id_Score=score.Id_Score 
-                                 AND continent.Id_Continent=pays.Id_Continent
-                                 AND score.Nom_Score="Hapiness Score"
-                                 AND avoir.annee="'.$annee.'"
-                                 AND continent.Nom_Continent="'.$CONTINENT.'" 
-                                 ORDER BY avoir.rang ASC');
-            $i=1;
-            while ($ligne = $rep ->fetch()) {
-                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a id='hover' href="."continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$annee.">".
-                $ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$i."</td></tr>";
-                $i++;
-            }
-            $rep ->closeCursor();
+    $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent
+                        FROM avoir, pays, annee, score, continent
+                        WHERE avoir.Id_Pays=pays.Id_Pays 
+                        AND avoir.annee=annee.Annee
+                        AND avoir.Id_Score=score.Id_Score 
+                        AND continent.Id_Continent=pays.Id_Continent
+                        AND score.Nom_Score="Hapiness Score"
+                        AND avoir.annee="'.$annee.'"
+                        AND continent.Nom_Continent="'.$CONTINENT.'" 
+                        ORDER BY avoir.rang ASC');
+        $i=1;
+        while ($ligne = $rep ->fetch()) {
+            echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a id='hover' href="."continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$annee.">".
+            $ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$i."</td></tr>";
+            $i++;
+        }
+        $rep ->closeCursor();
                                     
     echo "</table>";
-
-    /*echo "<div>";
-    echo "<p class='àremplir'>Please select a score to observe</p>";    
-    echo "</div>";
-    //echo "<meta http-equiv='Refresh' content='0; url=scores.php?annee=".$annee."&Continent=".$CONTINENT."'/>";*/
 }
- elseif($CONTINENT=="--Choose a continent--"){
-        echo "<div>";
-    echo "<p class='selection'>Year selected : ".$annee."</p>";
-    echo "<p class='selection'>Index selected : ".$SCORE."</p>";
-    echo "<p class='selection'>Continent selected : World</p>";
-        echo "</div>";
+elseif($CONTINENT=="--Choose a continent--"){ // Si aucun continent n'est choisi
+    echo "<div>";
+        echo "<p class='selection'>Year selected : ".$annee."</p>";
+        echo "<p class='selection'>Index selected : ".$SCORE."</p>";
+        echo "<p class='selection'>Continent selected : World</p>";
+    echo "</div>";
 
     echo '<table id="index_tab">';
     echo "<tr id='champs'><td>Country identifier</td><td>Country</td><td>Value Score</td><td>Rank</td></tr>";
-             $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent  FROM avoir, pays, annee, score, continent 
-                                        WHERE avoir.Id_Pays=pays.Id_Pays AND avoir.annee=annee.Annee 
-                                        AND avoir.Id_Score=score.Id_Score AND continent.Id_Continent=pays.Id_Continent
-                                        AND score.Nom_Score="'.$SCORE.'" AND avoir.annee="'.$annee.'"
-                                        ORDER BY avoir.rang ASC');
-            while ($ligne = $rep ->fetch()) {
-                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a id='hover' href="."continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$annee.">".
-                $ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$ligne['rang']."</td></tr>";
-                }
-                $rep ->closeCursor();
+    $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent  FROM avoir, pays, annee, score, continent 
+                        WHERE avoir.Id_Pays=pays.Id_Pays AND avoir.annee=annee.Annee 
+                        AND avoir.Id_Score=score.Id_Score AND continent.Id_Continent=pays.Id_Continent
+                        AND score.Nom_Score="'.$SCORE.'" AND avoir.annee="'.$annee.'"
+                        ORDER BY avoir.rang ASC');
+    while ($ligne = $rep ->fetch()) {
+        echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a id='hover' href="."continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$annee.">".
+        $ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$ligne['rang']."</td></tr>";
+    }
+    $rep ->closeCursor();
                 
     echo "</table>";
  }
- else{
-        echo "<div>"; 
-    echo "<p class='selection'>Year selected : ".$annee."</p>";    
-    echo "<p class='selection'>Index selected : ".$SCORE."</p>";
-    echo "<p class='selection'>Continent selected : ".$CONTINENT."</p>";
-        echo "</div>";
+ else{ //Si tous les filtres sont choisis
+    echo "<div>"; 
+        echo "<p class='selection'>Year selected : ".$annee."</p>";    
+        echo "<p class='selection'>Index selected : ".$SCORE."</p>";
+        echo "<p class='selection'>Continent selected : ".$CONTINENT."</p>";
+    echo "</div>";
 
     echo '<table id="index_tab">';
     echo "<tr id='champs'><td>Country identifier</td><td>Country</td><td>Value Score</td><td>Rank</td></tr>";
-             $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent  FROM avoir, pays, annee, score, continent 
-                                        WHERE avoir.Id_Pays=pays.Id_Pays AND avoir.annee=annee.Annee 
-                                        AND avoir.Id_Score=score.Id_Score AND continent.Id_Continent=pays.Id_Continent
-                                        AND score.Nom_Score="'.$SCORE.'" AND avoir.annee="'.$annee.'"
-                                        AND continent.Nom_Continent="'.$CONTINENT.'" 
-                                        ORDER BY avoir.rang ASC');
-            $i=1;
-            while ($ligne = $rep ->fetch()) {
-                echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a id='hover' href="."continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$annee.">".
-                $ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$i."</td></tr>";
-                $i++;
-                }
-                $rep ->closeCursor(); 
+    $rep = $bdd->query('SELECT avoir.Id_Pays, pays.Nom_Pays, avoir.annee, avoir.valeur_score, avoir.rang, score.Nom_Score, continent.Nom_Continent  
+                        FROM avoir, pays, annee, score, continent 
+                        WHERE avoir.Id_Pays=pays.Id_Pays 
+                        AND avoir.annee=annee.Annee 
+                        AND avoir.Id_Score=score.Id_Score 
+                        AND continent.Id_Continent=pays.Id_Continent
+                        AND score.Nom_Score="'.$SCORE.'" AND avoir.annee="'.$annee.'"
+                        AND continent.Nom_Continent="'.$CONTINENT.'" 
+                        ORDER BY avoir.rang ASC');
+    $i=1;
+    while ($ligne = $rep ->fetch()) {
+        echo "<tr><td>".$ligne['Id_Pays']."</td><td>"."<a id='hover' href="."continents3.php?id_pays=".$ligne['Id_Pays']."&annee=".$annee.">".
+        $ligne['Nom_Pays']."</a>"."</td><td>".$ligne['valeur_score']."</td><td>".$i."</td></tr>";
+        $i++;
+    }
+    $rep ->closeCursor(); 
                 
     echo "</table>";
  }
 ?>
 
+<!-- Fonction research avec autocomplétion -->
 <script>
 $(document).ready(function(){
  $('.gsearchsimple3').keyup(function(){

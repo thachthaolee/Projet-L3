@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="Style/StyleHapmap.css?" type="text/css"
             media="screen" />
             
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="JsLocalSearch.js"></script>
@@ -20,7 +20,7 @@
     </head>
     <body>
 
-        <!-- menu bandeau début -->
+        <!-- Bandeau haut de page -->
         <header>
             <img src = "image/logo.png" alt = "Logo"/> 
             <nav>
@@ -41,14 +41,14 @@
         </header>
         <h4>Hapiness Score Map</h4>
         <div id="CartePrincipal"> <!-- Keep map above fold -->
-        <script src="mapdata.js"></script> <!--Fichier de paramètres de la carte -->
-        <script src="worldmap.js"></script> <!--Fichier qui crée la carte interractive -->
-				<div id="map"></div>
-			</div>
-            <p class = "avg">* Coloration of countries depend on the average of data avaible from 2015 to 2019<p>
+            <script src="mapdata.js"></script> <!--Fichier de paramètres de la carte -->
+            <script src="worldmap.js"></script> <!--Fichier qui crée la carte interractive -->
+			<div id="map"></div>
+		</div>
+        <p class = "avg">* Coloration of countries depend on the average of data avaible from 2015 to 2019<p>
                 
        <!--La fonction de la barre de recherche-->
-            <script>
+<script>
 $(document).ready(function(){
  $('.gsearchsimple3').keyup(function(){
   var query3 = $('.gsearchsimple3').val();
@@ -146,5 +146,6 @@ $(document).ready(function(){
 });
 </script>
 
-    </body>
+</body>
+
 </html>
