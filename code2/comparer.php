@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <?php
 /*Cette page sert à comparer deux  pays, elle est accessible via le menu du site, ou via le bouton comparer que l'on retrouve
@@ -49,28 +48,23 @@ session_start();
             $pays1 = "";
             $pays2 = "";
             $annee = "";
-
-            //si la variable existe les deux champs sont pleins, il faut les vider
             if(isset($_SESSION['plein'])){
                 echo '<meta http-equiv="refresh" content="0; url=deco.php">';
             }
-            //si le pays 1 n'existe pas, on met la valeur saisie dedans
+
             if(!isset($_SESSION['pays1'])){
                 if(isset($_GET['pays1'])){
                     $_SESSION['pays1']=array();
                     $_SESSION['pays1'][0]=$_GET['pays1'];
-                //le get pays provient d'une autre page, la page continent avec le bouton comparer
                 }elseif(isset($_GET['pays'])){
                     $_SESSION['pays1']=array();
                     $_SESSION['pays1'][0]=$_GET['pays'];
                 }
             }else{
-                //si le pays 2 n'existe pas, on met la valeur saisie dedans
                 if(!isset($_SESSION['pays2'])){
                     if(isset($_GET['pays1'])){
                         $_SESSION['pays2']=array();
                         $_SESSION['pays2'][0]=$_GET['pays1'];
-                    //le get pays provient d'une autre page, la page continent avec le bouton comparer
                     }elseif(isset($_GET['pays'])){
                         $_SESSION['pays2']=array();
                         $_SESSION['pays2'][0]=$_GET['pays'];
@@ -284,11 +278,9 @@ session_start();
             echo '<meta http-equiv="refresh" content="0; url=comparer.php?pays1='.$pays1.'&aff='.$pays2.'">';
         }elseif($erreur == 3){
             echo '<meta http-equiv="refresh" content="0; url=comparer.php?pays1='.$pays1.'&pays2='.$pays2.'">';
-        }else{ //ici tout est correct, on peut comparer les pays sélectionnés
+        }else{//ici tout est correct, on peut comparer les pays sélectionnés
             //création d'une variable de session qui servira à vider pays1 et pays2 au lancement de la page
             $_SESSION['plein']=array();
-
-
             //recuperation vecteur nom des indices pays 1 :
             $req = $bdd->query('SELECT score.Nom_Score
             FROM pays, avoir, score, annee
@@ -355,8 +347,6 @@ session_start();
             echo "</p>";
             echo "</div>";
 
-            //fonctions pour l'affichage de la page :
-
             //Fonction pour afficher les elements d'un tableau :
             function afficher_tab($tab){
                 $taille = count($tab);
@@ -364,8 +354,7 @@ session_start();
                     echo $tab[$i];
                 }
             }
-
-            /
+            
             //Ces deux fonction affichent les flèches du bon côté pour chaque indicateur le plus élevé
             function affichage_gauche($libelle, $pays1, $pays2){
                 $taille = count($libelle);
@@ -409,7 +398,8 @@ session_start();
             }
             
 
-            //affichage des éléments de comparaison (scores des deux pays, lebellés et flèches)
+             //affichage des éléments de comparaison (scores des deux pays, lebellés et flèches)
+
             echo '<div id = "conteneur">';
             echo '<p class ="colp" id ="pays1">';
             afficher_tab($val_pays1);
@@ -428,7 +418,7 @@ session_start();
             echo '</p>';
             echo '</div>';
 
-            //récupération des identifiants des deux pays (pour le graphe)
+           //récupération des identifiants des deux pays (pour le graphe)
             $req = $bdd->query('SELECT pays.id_pays
             FROM pays
             WHERE pays.Nom_Pays ="'.$pays1.'"');
@@ -453,6 +443,7 @@ session_start();
         echo '</div>';
 
         //Lien pour sélectionner d'autres pays
+
         echo '<p class = "change"><a href = "deco.php">Select  other countries</a></p><br/><br/><br/>';
             }
 	        
@@ -466,7 +457,7 @@ session_start();
     </body>
 </html>
 <script>
-//Script JS pour appeler l'autocomplétion 
+    //Script JS pour appeler l'autocomplétion 
 
 //autocomplétion de la fonction de recherche :
 $(document).ready(function(){
@@ -567,7 +558,6 @@ $(document).ready(function(){
 });
 </script>
 <script>
-
 //autocomplétion de l'input du pays 1 :
 $(document).ready(function(){
  $('#gsearchsimple').keyup(function(){
@@ -664,7 +654,7 @@ $(document).ready(function(){
   }
  });
 
- //autocomplétion de l'input du pays 2 :
+  //autocomplétion de l'input du pays 2 :
  $('#gsearchsimple2').keyup(function(){
   var query2 = $('#gsearchsimple2').val();
   $('#detail').html('');
