@@ -146,6 +146,15 @@ h2{
     line-height :45px;
     text-transform: uppercase;
 }
+h4{
+    margin-top: 4%;
+    background-color: #A8BBFF;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 190px;
+    text-transform: uppercase;
+}
 #ScoreLeaders{
     margin-top: 30px;
     margin-left: 28px;
@@ -635,14 +644,9 @@ h3{
 	font-weight:normal;
 }
 
-
-
-
-
-
 #CartePrincipal{
     text-align: center;
-    width: 90%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     padding-top: 50px;

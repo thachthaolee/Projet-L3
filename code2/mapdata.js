@@ -1,4 +1,4 @@
-// Les url trouvés à partir de excel (bureau mattis)
+//Fichier de paramètre de la carte dans index.php
 
 var simplemaps_worldmap_mapdata={
   main_settings: {
@@ -8,8 +8,9 @@ var simplemaps_worldmap_mapdata={
     background_transparent: "yes",
     popups: "detect", // ou on_click ou on_hover
     
+    //Paramètre des pays par défaut
 		//State defaults
-		state_description: "State description", //Grâce aux modifs en ligne
+		state_description: "State description",
     state_color: "#88A4BC",
     state_hover_color: "#3B729F",
     border_size: 1.5,
@@ -66,21 +67,23 @@ var simplemaps_worldmap_mapdata={
 		div: "map",
     auto_load: "yes",
     rotate: "0",
-    url_new_tab: "no",
+    url_new_tab: "no", //Pour ne pas ouvrir le lien dans une nouvelle fenêtre
     images_directory: "default",
     import_labels: "no",
     fade_time: 0.1,
     link_text: "View Website",
-    state_image_url: "",
+    //partie inutile
+    /*state_image_url: "",
     state_image_position: "",
-    location_image_url: ""
+    location_image_url: ""*/ 
   },
-  // Ici toutes les
+  // On modifie les paramètres par défaut ici, tous les champs ont été rempli grâce à l'éditeur en ligne et un fichier excel en local
+  // Le fichier excel qui a permis ces modifications est disponible dans le github dans le dossier Données (mais compliqué à )
   state_specific: {
     AF: {
       name: "Afghanistan",
       url: "continents3.php?id_pays=1&annee=avg",
-      description: "2015 : 3,575 <br /> 2016 : 3,36 <br /> 2017 : 3,794 <br /> 2018 : 3,632 <br /> 2019 : 3,203",
+      description: "2015 : 3,575 <br /> 2016 : 3,360 <br /> 2017 : 3,794 <br /> 2018 : 3,632 <br /> 2019 : 3,203",
       color: "#f02e18",
       hover_color: "#cf0000"
     },
@@ -108,14 +111,14 @@ var simplemaps_worldmap_mapdata={
     AR: {
       name: "Argentina",
       url: "continents3.php?id_pays=5&annee=avg",
-      description: "2015 : 6,574 <br /> 2016 : 6,65 <br /> 2017 : 6,599 <br /> 2018 : 6,388 <br /> 2019 : 6,086",
+      description: "2015 : 6,574 <br /> 2016 : 6,650 <br /> 2017 : 6,599 <br /> 2018 : 6,388 <br /> 2019 : 6,086",
       color: "#b1f754",
       hover_color: "#008A17"
     },
     AM: {
       name: "Armenia",
       url: "continents3.php?id_pays=6&annee=avg",
-      description: "2015 : 4,35 <br /> 2016 : 4,36 <br /> 2017 : 4,376 <br /> 2018 : 4,321 <br /> 2019 : 4,559",
+      description: "2015 : 4,35 <br /> 2016 : 4,360 <br /> 2017 : 4,376 <br /> 2018 : 4,321 <br /> 2019 : 4,559",
       color: "#ff8000",
       hover_color: "#cf0000"
     },
@@ -129,7 +132,7 @@ var simplemaps_worldmap_mapdata={
     AT: {
       name: "Austria",
       url: "continents3.php?id_pays=8&annee=avg",
-      description: "2015 : 7,2 <br /> 2016 : 7,119 <br /> 2017 : 7,006 <br /> 2018 : 7,139 <br /> 2019 : 7,246",
+      description: "2015 : 7,200 <br /> 2016 : 7,119 <br /> 2017 : 7,006 <br /> 2018 : 7,139 <br /> 2019 : 7,246",
       color: "#25e645",
       hover_color: "#008A17"
     },
@@ -157,7 +160,7 @@ var simplemaps_worldmap_mapdata={
     BJ: {
       name: "Benin",
       url: "continents3.php?id_pays=15&annee=avg",
-      description: "2015 : 3,34 <br /> 2016 : 3,484 <br /> 2017 : 3,657 <br /> 2018 : 4,141 <br /> 2019 : 4,883",
+      description: "2015 : 3,340 <br /> 2016 : 3,484 <br /> 2017 : 3,657 <br /> 2018 : 4,141 <br /> 2019 : 4,883",
       color: "#f02e18",
       hover_color: "#cf0000"
     },
@@ -185,7 +188,7 @@ var simplemaps_worldmap_mapdata={
     BH: {
       name: "Bahrain",
       url: "continents3.php?id_pays=10&annee=avg",
-      description: "2015 : 5,96 <br /> 2016 : 6,218 <br /> 2017 : 6,087 <br /> 2018 : 6,105 <br /> 2019 : 6,199",
+      description: "2015 : 5,960 <br /> 2016 : 6,218 <br /> 2017 : 6,087 <br /> 2018 : 6,105 <br /> 2019 : 6,199",
       color: "#b1f754",
       hover_color: "#008A17"
     },
@@ -213,21 +216,21 @@ var simplemaps_worldmap_mapdata={
     BO: {
       name: "Bolivia",
       url: "continents3.php?id_pays=17&annee=avg",
-      description: "2015 : 5,89 <br /> 2016 : 5,822 <br /> 2017 : 5,823 <br /> 2018 : 5,752 <br /> 2019 : 5,779",
+      description: "2015 : 5,890 <br /> 2016 : 5,822 <br /> 2017 : 5,823 <br /> 2018 : 5,752 <br /> 2019 : 5,779",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     BR: {
       name: "Brazil",
       url: "continents3.php?id_pays=20&annee=avg",
-      description: "2015 : 6,983 <br /> 2016 : 6,952 <br /> 2017 : 6,635 <br /> 2018 : 6,419 <br /> 2019 : 6,3",
+      description: "2015 : 6,983 <br /> 2016 : 6,952 <br /> 2017 : 6,635 <br /> 2018 : 6,419 <br /> 2019 : 6,300",
       color: "#25e645",
       hover_color: "#008A17"
     },
     BN: {
       name: "Brunei Darussalam",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -283,7 +286,7 @@ var simplemaps_worldmap_mapdata={
     CI: {
       name: "Côte d'Ivoire",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -297,21 +300,21 @@ var simplemaps_worldmap_mapdata={
     CD: {
       name: "Democratic Republic of the Congo",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     CG: {
       name: "Republic of Congo",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     CO: {
       name: "Colombia",
       url: "continents3.php?id_pays=31&annee=avg",
-      description: "2015 : 6,477 <br /> 2016 : 6,481 <br /> 2017 : 6,357 <br /> 2018 : 6,26 <br /> 2019 : 6,125",
+      description: "2015 : 6,477 <br /> 2016 : 6,481 <br /> 2017 : 6,357 <br /> 2018 : 6,260 <br /> 2019 : 6,125",
       color: "#b1f754",
       hover_color: "#008A17"
     },
@@ -325,7 +328,7 @@ var simplemaps_worldmap_mapdata={
     CU: {
       name: "Cuba",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -339,7 +342,7 @@ var simplemaps_worldmap_mapdata={
     DE: {
       name: "Germany",
       url: "continents3.php?id_pays=52&annee=avg",
-      description: "2015 : 6,75 <br /> 2016 : 6,994 <br /> 2017 : 6,951 <br /> 2018 : 6,965 <br /> 2019 : 6,985",
+      description: "2015 : 6,750 <br /> 2016 : 6,994 <br /> 2017 : 6,951 <br /> 2018 : 6,965 <br /> 2019 : 6,985",
       color: "#25e645",
       hover_color: "#008A17"
     },
@@ -353,14 +356,14 @@ var simplemaps_worldmap_mapdata={
     DK: {
       name: "Denmark",
       url: "continents3.php?id_pays=39&annee=avg",
-      description: "2015 : 7,527 <br /> 2016 : 7,526 <br /> 2017 : 7,522 <br /> 2018 : 7,555 <br /> 2019 : 7,6",
+      description: "2015 : 7,527 <br /> 2016 : 7,526 <br /> 2017 : 7,522 <br /> 2018 : 7,555 <br /> 2019 : 7,600",
       color: "#25e645",
       hover_color: "#008A17"
     },
     DO: {
       name: "Dominican Republic",
       url: "continents3.php?id_pays=41&annee=avg",
-      description: "2015 : 4,885 <br /> 2016 : 5,155 <br /> 2017 : 5,23 <br /> 2018 : 5,302 <br /> 2019 : 5,425",
+      description: "2015 : 4,885 <br /> 2016 : 5,155 <br /> 2017 : 5,230 <br /> 2018 : 5,302 <br /> 2019 : 5,425",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -388,7 +391,7 @@ var simplemaps_worldmap_mapdata={
     ER: {
       name: "Eritrea",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -402,7 +405,7 @@ var simplemaps_worldmap_mapdata={
     ET: {
       name: "Ethiopia",
       url: "continents3.php?id_pays=46&annee=avg",
-      description: "2015 : 4,512 <br /> 2016 : 4,508 <br /> 2017 : 4,46 <br /> 2018 : 4,35 <br /> 2019 : 4,286",
+      description: "2015 : 4,512 <br /> 2016 : 4,508 <br /> 2017 : 4,460 <br /> 2018 : 4,350 <br /> 2019 : 4,286",
       color: "#ff8000",
       hover_color: "#cf0000"
     },
@@ -416,7 +419,7 @@ var simplemaps_worldmap_mapdata={
     FJ: {
       name: "Fiji",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -437,14 +440,14 @@ var simplemaps_worldmap_mapdata={
     GE: {
       name: "Georgia",
       url: "continents3.php?id_pays=51&annee=avg",
-      description: "2015 : 4,297 <br /> 2016 : 4,252 <br /> 2017 : 4,286 <br /> 2018 : 4,34 <br /> 2019 : 4,519",
+      description: "2015 : 4,297 <br /> 2016 : 4,252 <br /> 2017 : 4,286 <br /> 2018 : 4,340 <br /> 2019 : 4,519",
       color: "#ff8000",
       hover_color: "#cf0000"
     },
     GH: {
       name: "Ghana",
       url: "continents3.php?id_pays=53&annee=avg",
-      description: "2015 : 4,633 <br /> 2016 : 4,276 <br /> 2017 : 4,12 <br /> 2018 : 4,657 <br /> 2019 : 4,996",
+      description: "2015 : 4,633 <br /> 2016 : 4,276 <br /> 2017 : 4,120 <br /> 2018 : 4,657 <br /> 2019 : 4,996",
       color: "#ff8000",
       hover_color: "#cf0000"
     },
@@ -458,21 +461,21 @@ var simplemaps_worldmap_mapdata={
     GM: {
       name: "The Gambia",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     GW: {
       name: "Guinea-Bissau",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     GQ: {
       name: "Equatorial Guinea",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -486,7 +489,7 @@ var simplemaps_worldmap_mapdata={
     GL: {
       name: "Greenland",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -500,14 +503,14 @@ var simplemaps_worldmap_mapdata={
     GY: {
       name: "Guyana",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     HN: {
       name: "Honduras",
       url: "continents3.php?id_pays=58&annee=avg",
-      description: "2015 : 4,788 <br /> 2016 : 4,871 <br /> 2017 : 5,181 <br /> 2018 : 5,504 <br /> 2019 : 5,86",
+      description: "2015 : 4,788 <br /> 2016 : 4,871 <br /> 2017 : 5,181 <br /> 2018 : 5,504 <br /> 2019 : 5,860",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -528,7 +531,7 @@ var simplemaps_worldmap_mapdata={
     HU: {
       name: "Hungary",
       url: "continents3.php?id_pays=60&annee=avg",
-      description: "2015 : 4,8 <br /> 2016 : 5,145 <br /> 2017 : 5,324 <br /> 2018 : 5,62 <br /> 2019 : 5,758",
+      description: "2015 : 4,800 <br /> 2016 : 5,145 <br /> 2017 : 5,324 <br /> 2018 : 5,620 <br /> 2019 : 5,758",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -542,14 +545,14 @@ var simplemaps_worldmap_mapdata={
     IN: {
       name: "India",
       url: "continents3.php?id_pays=62&annee=avg",
-      description: "2015 : 4,565 <br /> 2016 : 4,404 <br /> 2017 : 4,315 <br /> 2018 : 4,19 <br /> 2019 : 4,015",
+      description: "2015 : 4,565 <br /> 2016 : 4,404 <br /> 2017 : 4,315 <br /> 2018 : 4,190 <br /> 2019 : 4,015",
       color: "#ff8000",
       hover_color: "#cf0000"
     },
     IE: {
       name: "Ireland",
       url: "continents3.php?id_pays=66&annee=avg",
-      description: "2015 : 6,94 <br /> 2016 : 6,907 <br /> 2017 : 6,977 <br /> 2018 : 6,977 <br /> 2019 : 7,021",
+      description: "2015 : 6,940 <br /> 2016 : 6,907 <br /> 2017 : 6,977 <br /> 2018 : 6,977 <br /> 2019 : 7,021",
       color: "#25e645",
       hover_color: "#008A17"
     },
@@ -591,7 +594,7 @@ var simplemaps_worldmap_mapdata={
     JM: {
       name: "Jamaica",
       url: "continents3.php?id_pays=70&annee=avg",
-      description: "2015 : 5,709 <br /> 2016 : 5,51 <br /> 2017 : 5,311 <br /> 2018 : 5,89 <br /> 2019 : 5,89",
+      description: "2015 : 5,709 <br /> 2016 : 5,510 <br /> 2017 : 5,311 <br /> 2018 : 5,890 <br /> 2019 : 5,890",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -605,21 +608,21 @@ var simplemaps_worldmap_mapdata={
     JP: {
       name: "Japan",
       url: "continents3.php?id_pays=71&annee=avg",
-      description: "2015 : 5,987 <br /> 2016 : 5,921 <br /> 2017 : 5,92 <br /> 2018 : 5,915 <br /> 2019 : 5,886",
+      description: "2015 : 5,987 <br /> 2016 : 5,921 <br /> 2017 : 5,920 <br /> 2018 : 5,915 <br /> 2019 : 5,886",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     KZ: {
       name: "Kazakhstan",
       url: "continents3.php?id_pays=73&annee=avg",
-      description: "2015 : 5,855 <br /> 2016 : 5,919 <br /> 2017 : 5,819 <br /> 2018 : 5,79 <br /> 2019 : 5,809",
+      description: "2015 : 5,855 <br /> 2016 : 5,919 <br /> 2017 : 5,819 <br /> 2018 : 5,790 <br /> 2019 : 5,809",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     KE: {
       name: "Kenya",
       url: "continents3.php?id_pays=74&annee=avg",
-      description: "2015 : 4,419 <br /> 2016 : 4,356 <br /> 2017 : 4,553 <br /> 2018 : 4,41 <br /> 2019 : 4,509",
+      description: "2015 : 4,419 <br /> 2016 : 4,356 <br /> 2017 : 4,553 <br /> 2018 : 4,410 <br /> 2019 : 4,509",
       color: "#ff8000",
       hover_color: "#cf0000"
     },
@@ -633,21 +636,21 @@ var simplemaps_worldmap_mapdata={
     KH: {
       name: "Cambodia",
       url: "continents3.php?id_pays=24&annee=avg",
-      description: "2015 : 3,819 <br /> 2016 : 3,907 <br /> 2017 : 4,168 <br /> 2018 : 4,433 <br /> 2019 : 4,7",
+      description: "2015 : 3,819 <br /> 2016 : 3,907 <br /> 2017 : 4,168 <br /> 2018 : 4,433 <br /> 2019 : 4,700",
       color: "#f02e18",
       hover_color: "#cf0000"
     },
     KR: {
       name: "Republic of Korea",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     XK: {
       name: "Kosovo",
       url: "continents3.php?id_pays=75&annee=avg",
-      description: "2015 : 5,589 <br /> 2016 : 5,401 <br /> 2017 : 5,279 <br /> 2018 : 5,662 <br /> 2019 : 6,1",
+      description: "2015 : 5,589 <br /> 2016 : 5,401 <br /> 2017 : 5,279 <br /> 2018 : 5,662 <br /> 2019 : 6,100",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -661,7 +664,7 @@ var simplemaps_worldmap_mapdata={
     LA: {
       name: "Lao PDR",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -689,7 +692,7 @@ var simplemaps_worldmap_mapdata={
     LK: {
       name: "Sri Lanka",
       url: "continents3.php?id_pays=139&annee=avg",
-      description: "2015 : 4,271 <br /> 2016 : 4,415 <br /> 2017 : 4,44 <br /> 2018 : 4,471 <br /> 2019 : 4,366",
+      description: "2015 : 4,271 <br /> 2016 : 4,415 <br /> 2017 : 4,440 <br /> 2018 : 4,471 <br /> 2019 : 4,366",
       color: "#ff8000",
       hover_color: "#cf0000"
     },
@@ -710,14 +713,14 @@ var simplemaps_worldmap_mapdata={
     LU: {
       name: "Luxembourg",
       url: "continents3.php?id_pays=85&annee=avg",
-      description: "2015 : 6,946 <br /> 2016 : 6,871 <br /> 2017 : 6,863 <br /> 2018 : 6,91 <br /> 2019 : 7,09",
+      description: "2015 : 6,946 <br /> 2016 : 6,871 <br /> 2017 : 6,863 <br /> 2018 : 6,910 <br /> 2019 : 7,090",
       color: "#25e645",
       hover_color: "#008A17"
     },
     LV: {
       name: "Latvia",
       url: "continents3.php?id_pays=79&annee=avg",
-      description: "2015 : 5,098 <br /> 2016 : 5,56 <br /> 2017 : 5,85 <br /> 2018 : 5,933 <br /> 2019 : 5,94",
+      description: "2015 : 5,098 <br /> 2016 : 5,560 <br /> 2017 : 5,850 <br /> 2018 : 5,933 <br /> 2019 : 5,940",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -759,14 +762,14 @@ var simplemaps_worldmap_mapdata={
     ML: {
       name: "Mali",
       url: "continents3.php?id_pays=90&annee=avg",
-      description: "2015 : 3,995 <br /> 2016 : 4,073 <br /> 2017 : 4,19 <br /> 2018 : 4,447 <br /> 2019 : 4,39",
+      description: "2015 : 3,995 <br /> 2016 : 4,073 <br /> 2017 : 4,19 <br /> 2018 : 4,447 <br /> 2019 : 4,390",
       color: "#f02e18",
       hover_color: "#cf0000"
     },
     MM: {
       name: "Myanmar",
       url: "continents3.php?id_pays=100&annee=avg",
-      description: "2015 : 4,307 <br /> 2016 : 4,395 <br /> 2017 : 4,545 <br /> 2018 : 4,308 <br /> 2019 : 4,36",
+      description: "2015 : 4,307 <br /> 2016 : 4,395 <br /> 2017 : 4,545 <br /> 2018 : 4,308 <br /> 2019 : 4,360",
       color: "#ff8000",
       hover_color: "#cf0000"
     },
@@ -787,28 +790,28 @@ var simplemaps_worldmap_mapdata={
     MZ: {
       name: "Mozambique",
       url: "continents3.php?id_pays=99&annee=avg",
-      description: "2015 : 4,971 <br /> 2017 : 4,55 <br /> 2018 : 4,417 <br /> 2019 : 4,466",
+      description: "2015 : 4,971 <br /> 2017 : 4,550 <br /> 2018 : 4,417 <br /> 2019 : 4,466",
       color: "#ff8000",
       hover_color: "#cf0000"
     },
     MR: {
       name: "Mauritania",
       url: "continents3.php?id_pays=92&annee=avg",
-      description: "2015 : 4,436 <br /> 2016 : 4,201 <br /> 2017 : 4,292 <br /> 2018 : 4,356 <br /> 2019 : 4,49",
+      description: "2015 : 4,436 <br /> 2016 : 4,201 <br /> 2017 : 4,292 <br /> 2018 : 4,356 <br /> 2019 : 4,490",
       color: "#ff8000",
       hover_color: "#cf0000"
     },
     MW: {
       name: "Malawi",
       url: "continents3.php?id_pays=88&annee=avg",
-      description: "2015 : 4,292 <br /> 2016 : 4,156 <br /> 2017 : 3,97 <br /> 2018 : 3,587 <br /> 2019 : 3,41",
+      description: "2015 : 4,292 <br /> 2016 : 4,156 <br /> 2017 : 3,970 <br /> 2018 : 3,587 <br /> 2019 : 3,410",
       color: "#f02e18",
       hover_color: "#cf0000"
     },
     MY: {
       name: "Malaysia",
       url: "continents3.php?id_pays=89&annee=avg",
-      description: "2015 : 5,77 <br /> 2016 : 6,005 <br /> 2017 : 6,084 <br /> 2018 : 6,322 <br /> 2019 : 5,339",
+      description: "2015 : 5,770 <br /> 2016 : 6,005 <br /> 2017 : 6,084 <br /> 2018 : 6,322 <br /> 2019 : 5,339",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -857,7 +860,7 @@ var simplemaps_worldmap_mapdata={
     NP: {
       name: "Nepal",
       url: "continents3.php?id_pays=102&annee=avg",
-      description: "2015 : 4,514 <br /> 2016 : 4,793 <br /> 2017 : 4,962 <br /> 2018 : 4,88 <br /> 2019 : 4,913",
+      description: "2015 : 4,514 <br /> 2016 : 4,793 <br /> 2017 : 4,962 <br /> 2018 : 4,880 <br /> 2019 : 4,913",
       color: "#ff8000",
       hover_color: "#cf0000"
     },
@@ -885,7 +888,7 @@ var simplemaps_worldmap_mapdata={
     PA: {
       name: "Panama",
       url: "continents3.php?id_pays=115&annee=avg",
-      description: "2015 : 6,786 <br /> 2016 : 6,701 <br /> 2017 : 6,452 <br /> 2018 : 6,43 <br /> 2019 : 6,321",
+      description: "2015 : 6,786 <br /> 2016 : 6,701 <br /> 2017 : 6,452 <br /> 2018 : 6,430 <br /> 2019 : 6,321",
       color: "#25e645",
       hover_color: "#008A17"
     },
@@ -899,14 +902,14 @@ var simplemaps_worldmap_mapdata={
     PH: {
       name: "Philippines",
       url: "continents3.php?id_pays=118&annee=avg",
-      description: "2015 : 5,073 <br /> 2016 : 5,279 <br /> 2017 : 5,43 <br /> 2018 : 5,524 <br /> 2019 : 5,631",
+      description: "2015 : 5,073 <br /> 2016 : 5,279 <br /> 2017 : 5,430 <br /> 2018 : 5,524 <br /> 2019 : 5,631",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     PG: {
       name: "Papua New Guinea",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -920,14 +923,14 @@ var simplemaps_worldmap_mapdata={
     KP: {
       name: "Dem. Rep. Korea",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     PT: {
       name: "Portugal",
       url: "continents3.php?id_pays=120&annee=avg",
-      description: "2015 : 5,102 <br /> 2016 : 5,123 <br /> 2017 : 5,195 <br /> 2018 : 5,41 <br /> 2019 : 5,693",
+      description: "2015 : 5,102 <br /> 2016 : 5,123 <br /> 2017 : 5,195 <br /> 2018 : 5,410 <br /> 2019 : 5,693",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -941,7 +944,7 @@ var simplemaps_worldmap_mapdata={
     PS: {
       name: "Palestine",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -955,14 +958,14 @@ var simplemaps_worldmap_mapdata={
     RO: {
       name: "Romania",
       url: "continents3.php?id_pays=123&annee=avg",
-      description: "2015 : 5,124 <br /> 2016 : 5,528 <br /> 2017 : 5,825 <br /> 2018 : 5,945 <br /> 2019 : 6,07",
+      description: "2015 : 5,124 <br /> 2016 : 5,528 <br /> 2017 : 5,825 <br /> 2018 : 5,945 <br /> 2019 : 6,070",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     RU: {
       name: "Russia",
       url: "continents3.php?id_pays=124&annee=avg",
-      description: "2015 : 5,716 <br /> 2016 : 5,856 <br /> 2017 : 5,963 <br /> 2018 : 5,81 <br /> 2019 : 5,648",
+      description: "2015 : 5,716 <br /> 2016 : 5,856 <br /> 2017 : 5,963 <br /> 2018 : 5,810 <br /> 2019 : 5,648",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -976,7 +979,7 @@ var simplemaps_worldmap_mapdata={
     EH: {
       name: "Western Sahara",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -990,7 +993,7 @@ var simplemaps_worldmap_mapdata={
     SD: {
       name: "Sudan",
       url: "continents3.php?id_pays=140&annee=avg",
-      description: "2015 : 4,55 <br /> 2016 : 4,139 <br /> 2017 : 4,139 <br /> 2018 : 4,139",
+      description: "2015 : 4,550 <br /> 2016 : 4,139 <br /> 2017 : 4,139 <br /> 2018 : 4,139",
       color: "#f02e18",
       hover_color: "#cf0000"
     },
@@ -1018,7 +1021,7 @@ var simplemaps_worldmap_mapdata={
     SV: {
       name: "El Salvador",
       url: "continents3.php?id_pays=44&annee=avg",
-      description: "2015 : 6,13 <br /> 2016 : 6,068 <br /> 2017 : 6,003 <br /> 2018 : 6,167 <br /> 2019 : 6,253",
+      description: "2015 : 6,130 <br /> 2016 : 6,068 <br /> 2017 : 6,003 <br /> 2018 : 6,167 <br /> 2019 : 6,253",
       color: "#b1f754",
       hover_color: "#008A17"
     },
@@ -1074,7 +1077,7 @@ var simplemaps_worldmap_mapdata={
     TD: {
       name: "Chad",
       url: "continents3.php?id_pays=28&annee=avg",
-      description: "2015 : 3,667 <br /> 2016 : 3,763 <br /> 2017 : 3,936 <br /> 2018 : 4,301 <br /> 2019 : 4,35",
+      description: "2015 : 3,667 <br /> 2016 : 3,763 <br /> 2017 : 3,936 <br /> 2018 : 4,301 <br /> 2019 : 4,350",
       color: "#f02e18",
       hover_color: "#cf0000"
     },
@@ -1109,7 +1112,7 @@ var simplemaps_worldmap_mapdata={
     TL: {
       name: "Timor-Leste",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -1123,7 +1126,7 @@ var simplemaps_worldmap_mapdata={
     TR: {
       name: "Turkey",
       url: "continents3.php?id_pays=155&annee=avg",
-      description: "2015 : 5,332 <br /> 2016 : 5,389 <br /> 2017 : 5,5 <br /> 2018 : 5,483 <br /> 2019 : 5,373",
+      description: "2015 : 5,332 <br /> 2016 : 5,389 <br /> 2017 : 5,500 <br /> 2018 : 5,483 <br /> 2019 : 5,373",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -1179,21 +1182,21 @@ var simplemaps_worldmap_mapdata={
     VE: {
       name: "Venezuela",
       url: "continents3.php?id_pays=164&annee=avg",
-      description: "2015 : 6,81 <br /> 2016 : 6,084 <br /> 2017 : 5,25 <br /> 2018 : 4,806 <br /> 2019 : 4,707",
+      description: "2015 : 6,810 <br /> 2016 : 6,084 <br /> 2017 : 5,250 <br /> 2018 : 4,806 <br /> 2019 : 4,707",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     VN: {
       name: "Vietnam",
       url: "continents3.php?id_pays=165&annee=avg",
-      description: "2015 : 5,36 <br /> 2016 : 5,061 <br /> 2017 : 5,074 <br /> 2018 : 5,103 <br /> 2019 : 5,175",
+      description: "2015 : 5,360 <br /> 2016 : 5,061 <br /> 2017 : 5,074 <br /> 2018 : 5,103 <br /> 2019 : 5,175",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     VU: {
       name: "Vanuatu",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -1228,7 +1231,7 @@ var simplemaps_worldmap_mapdata={
     SO: {
       name: "Somalia",
       url: "continents3.php?id_pays=133&annee=avg",
-      description: "2016 : 5,44 <br /> 2017 : 5,151 <br /> 2018 : 4,982 <br /> 2019 : 4,668",
+      description: "2016 : 5,440 <br /> 2017 : 5,151 <br /> 2018 : 4,982 <br /> 2019 : 4,668",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -1256,49 +1259,49 @@ var simplemaps_worldmap_mapdata={
     AW: {
       name: "Aruba",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     AI: {
       name: "Anguilla",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     AD: {
       name: "Andorra",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     AG: {
       name: "Antigua and Barbuda",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     BS: {
       name: "Bahamas",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     BM: {
       name: "Bermuda",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     BB: {
       name: "Barbados",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -1312,84 +1315,84 @@ var simplemaps_worldmap_mapdata={
     CV: {
       name: "Cape Verde",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     KY: {
       name: "Cayman Islands",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     DM: {
       name: "Dominica",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     FK: {
       name: "Falkland Islands",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     FO: {
       name: "Faeroe Islands",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     GD: {
       name: "Grenada",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     HK: {
       name: "Hong Kong",
       url: "continents3.php?id_pays=59&annee=avg",
-      description: "2015 : 5,474 <br /> 2016 : 5,458 <br /> 2018 : 5,43 <br /> 2019 : 5,43",
+      description: "2015 : 5,474 <br /> 2016 : 5,458 <br /> 2018 : 5,430 <br /> 2019 : 5,430",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     KN: {
       name: "Saint Kitts and Nevis",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     LC: {
       name: "Saint Lucia",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     LI: {
       name: "Liechtenstein",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     MF: {
       name: "Saint Martin (French)",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     MV: {
       name: "Maldives",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -1403,7 +1406,7 @@ var simplemaps_worldmap_mapdata={
     MS: {
       name: "Montserrat",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -1417,21 +1420,21 @@ var simplemaps_worldmap_mapdata={
     NC: {
       name: "New Caledonia",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     NR: {
       name: "Nauru",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     PN: {
       name: "Pitcairn Islands",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -1445,7 +1448,7 @@ var simplemaps_worldmap_mapdata={
     PF: {
       name: "French Polynesia",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -1459,42 +1462,42 @@ var simplemaps_worldmap_mapdata={
     SB: {
       name: "Solomon Islands",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     ST: {
       name: "São Tomé and Principe",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     SX: {
       name: "Saint Martin (Dutch)",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     SC: {
       name: "Seychelles",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     TC: {
       name: "Turks and Caicos Islands",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     TO: {
       name: "Tonga",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -1508,21 +1511,21 @@ var simplemaps_worldmap_mapdata={
     VC: {
       name: "Saint Vincent and the Grenadines",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     VG: {
       name: "British Virgin Islands",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     VI: {
       name: "United States Virgin Islands",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
@@ -1536,42 +1539,42 @@ var simplemaps_worldmap_mapdata={
     RE: {
       name: "Reunion (France)",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     YT: {
       name: "Mayotte (France)",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     MQ: {
       name: "Martinique (France)",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     GP: {
       name: "Guadeloupe (France)",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     CW: {
       name: "Curaco (Netherlands)",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     },
     IC: {
       name: "Canary Islands (Spain)",
       url: "#N/A",
-      description: "Aucune donnée disponible",
+      description: "No data avaible",
       color: "#88A4BC",
       hover_color: "#3B729F"
     }

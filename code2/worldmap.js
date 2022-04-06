@@ -1,3 +1,6 @@
+//Fichier qui créé la carte interractive, modification de la fonction ci-dessous pour avoir les bons continents (rechercher 'europe')
+
+
 /*Copyright 2010-2021 Simplemaps.com
 html5worldmapv4.18 - trial version
 Use pursuant to license agreement at https://simplemaps.com/license */

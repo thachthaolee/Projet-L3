@@ -78,7 +78,7 @@ $graph->xaxis->SetTickLabels($score2);
 // Create a bar pot
 $b1plot = new BarPlot($valeurs);
 $b1plot->SetFillColor("orange");
-$b2plot = new BarPlot($dcr2);
+$b2plot = new BarPlot($valeurs2);
 $b2plot->SetFillColor("valeurs2");
 
 $gbplot = new GroupBarPlot(array($b1plot,$b2plot));

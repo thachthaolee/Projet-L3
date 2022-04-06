@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <!--La page index est l'accueil, elle appelle différents fichiers javascript -->
     <head>
         <?php
         require('bd.php');
@@ -11,8 +12,6 @@
         <link rel="stylesheet" href="Style/StyleHapmap.css?" type="text/css"
             media="screen" />
             
-    <script src="mapdata.js"></script>
-    <script src="worldmap.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -31,7 +30,6 @@
 					<li><a href="comparer.php">Compare</a></li>
 					<li><a href="scores.php">Score</a></li>
 					<li><a href="apropos.html">About us</a></li>
-                    <!--Rajouter la fonction rechercher-->
                 </ul>
             </nav>
             <input  class="gsearchsimple3 form-control input-lg"  name="recherche" type = "text" placeholder="Research">
@@ -41,10 +39,15 @@
             
 
         </header>
+        <h4>Hapiness Score Map</h4>
         <div id="CartePrincipal"> <!-- Keep map above fold -->
+        <script src="mapdata.js"></script> <!--Fichier de paramètres de la carte -->
+        <script src="worldmap.js"></script> <!--Fichier qui crée la carte interractive -->
 				<div id="map"></div>
 			</div>
-       
+            <p class = "avg">* Coloration of countries depend on the average of data avaible from 2015 to 2019<p>
+                
+       <!--La fonction de la barre de recherche-->
             <script>
 $(document).ready(function(){
  $('.gsearchsimple3').keyup(function(){
