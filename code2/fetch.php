@@ -1,6 +1,6 @@
 <?php
 
-//fetch.php;
+//Cette page récupère la liste des pays de l'autocomplétion des input des pays de la page comparer et les renvoie
 
 require('bd.php');
 $connect = getBD();
@@ -8,6 +8,7 @@ $connect = getBD();
 
 if(isset($_POST['query']))
 {
+//requete
  $query = "
  SELECT DISTINCT Nom_Pays
  FROM pays

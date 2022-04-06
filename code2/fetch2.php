@@ -1,6 +1,6 @@
 <?php
 
-//fetch.php;
+//Cette page récupère la liste des pays de la recherche et les renvoie
 
 require('bd.php');
 $connect = getBD();
@@ -8,6 +8,7 @@ $connect = getBD();
 
 if(isset($_POST['query']))
 {
+    //requete
  $query = "
  SELECT DISTINCT Nom_Pays, Id_Pays
  FROM pays
