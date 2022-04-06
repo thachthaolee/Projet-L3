@@ -1,13 +1,13 @@
-<?php // content="text/plain; charset=utf-8"
+<?php 
 // Bibliotheque
 require_once ('jpgraph/src/jpgraph.php');
 require_once ('jpgraph/src/jpgraph_bar.php');
 
+//Conection avec la base de données
 $bdd = new PDO('mysql:host=localhost;dbname=hapmap;charset=utf8', 'root', 'root');
 
-// Donnees 
-
-if($_GET['annee']=='avg'){
+//requete SQL pour la sélection des éléments
+if($_GET['annee']=='avg'){ // creation du graphe moeynne pour les annees 2015-2019 
 	$donnees = $bdd -> query('SELECT score.Nom_Score, AVG(avoir.valeur_score)
 				FROM score, avoir, pays, continent, annee
 				WHERE score.Id_Score = avoir.Id_Score
@@ -19,30 +19,15 @@ if($_GET['annee']=='avg'){
 				AND pays.Id_Pays="'. $_GET["id_pays"] . '"
 				GROUP by score.Id_Score
 				order by score.Id_Score');
-
-				$score = array();
-$valeurs = array();
-while ($ligne = $donnees ->fetch()) {
-	$score[] = $ligne[0];
-	$valeurs[] = $ligne[1];
+					
+	$score = array();
+	$valeurs = array();
+	while ($ligne = $donnees ->fetch()) {
+		$score[] = $ligne[0];
+		$valeurs[] = $ligne[1];
+	}
 }
-$donnees3 = $bdd -> query('SELECT STD(avoir.valeur_score)
-FROM avoir, score, annee
-WHERE avoir.annee = 2016
-AND score.Id_Score != 1
-and score.Id_Score != 2
-and avoir.Id_Score=score.Id_Score 
-GROUP BY score.Id_Score');
-
-/*$ecart= array();
-while ($ligne = $donnees3 ->fetch()) {
-	$ecart[] = $ligne[0];
-}
-$dcr1 = array();
-for($i=0; $i<count($ecart); $i++){
-	$dcr1[$i] = $valeurs[$i]/$ecart[$i];
-}*/
-}else{
+else{
 	$donnees = $bdd -> query('SELECT score.Nom_Score, AVG(avoir.valeur_score)
 				FROM score, avoir, pays, continent, annee
 				WHERE score.Id_Score = avoir.Id_Score
@@ -56,28 +41,12 @@ for($i=0; $i<count($ecart); $i++){
 				GROUP by score.Id_Score
 				order by score.Id_Score');
 		
-$score = array();
-$valeurs = array();
-while ($ligne = $donnees ->fetch()) {
-	$score[] = $ligne[0];
-	$valeurs[] = $ligne[1];
-}
-$donnees3 = $bdd -> query('SELECT STD(avoir.valeur_score)
-FROM avoir, score, annee
-WHERE avoir.annee = '.$_GET['annee'].'
-AND score.Id_Score != 1
-and score.Id_Score != 2
-and avoir.Id_Score=score.Id_Score 
-GROUP BY score.Id_Score');
-/*$ecart= array();
-while ($ligne = $donnees3 ->fetch()) {
-	$ecart[] = $ligne[0];
-}
-$dcr1 = array();
-for($i=0; $i<count($ecart); $i++){
-	$dcr1[$i] = $valeurs[$i]/$ecart[$i];
-}*/
-
+	$score = array();
+	$valeurs = array();
+	while ($ligne = $donnees ->fetch()) {
+		$score[] = $ligne[0];
+		$valeurs[] = $ligne[1];
+	}
 }
 
 
@@ -96,15 +65,6 @@ $graph->xaxis->SetTickLabels($score);
 // Create a bar pot
 $bplot = new BarPlot($valeurs);
 $graph->Add($bplot);
-
-// Setup the titles
-//$graph->title->Set("A simple bar graph");
-//$graph->xaxis->title->Set("X-title");
-//$graph->yaxis->title->Set("Y-title");
-
-//$graph->title->SetFont(FF_FONT1,FS_BOLD);
-//$graph->yaxis->title->SetFont(FF_FONT1,FS_BOLD);
-//$graph->xaxis->title->SetFont(FF_FONT1,FS_BOLD);
 
 // Display the graph
 $graph->Stroke();
