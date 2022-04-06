@@ -1,5 +1,8 @@
+
 <!DOCTYPE html>
 <?php
+/*Cette page sert à comparer deux  pays, elle est accessible via le menu du site, ou via le bouton comparer que l'on retrouve
+sur les pages des pays dans l'onglet continent*/
 session_start();
 ?>
 <html>
@@ -31,10 +34,11 @@ session_start();
 					<li><a class="ici" href="comparer.php">Compare</a></li>
 					<li><a href="scores.php">Score</a></li>
 					<li><a href="apropos.html">About us</a></li>
-                    <!--Rajouter la fonction rechercher-->
+                    
                 </ul>
             </nav>
             <input  class="gsearchsimple3 form-control input-lg"  name="recherche" type = "text" placeholder="Research">
+            <!--Cette liste affiche la suggestion de pays lorsque l'on recherche-->
             <ul class="list-group3">
                 
             </ul>
@@ -45,23 +49,28 @@ session_start();
             $pays1 = "";
             $pays2 = "";
             $annee = "";
+
+            //si la variable existe les deux champs sont pleins, il faut les vider
             if(isset($_SESSION['plein'])){
                 echo '<meta http-equiv="refresh" content="0; url=deco.php">';
             }
-
+            //si le pays 1 n'existe pas, on met la valeur saisie dedans
             if(!isset($_SESSION['pays1'])){
                 if(isset($_GET['pays1'])){
                     $_SESSION['pays1']=array();
                     $_SESSION['pays1'][0]=$_GET['pays1'];
+                //le get pays provient d'une autre page, la page continent avec le bouton comparer
                 }elseif(isset($_GET['pays'])){
                     $_SESSION['pays1']=array();
                     $_SESSION['pays1'][0]=$_GET['pays'];
                 }
             }else{
+                //si le pays 2 n'existe pas, on met la valeur saisie dedans
                 if(!isset($_SESSION['pays2'])){
                     if(isset($_GET['pays1'])){
                         $_SESSION['pays2']=array();
                         $_SESSION['pays2'][0]=$_GET['pays1'];
+                    //le get pays provient d'une autre page, la page continent avec le bouton comparer
                     }elseif(isset($_GET['pays'])){
                         $_SESSION['pays2']=array();
                         $_SESSION['pays2'][0]=$_GET['pays'];
@@ -190,7 +199,7 @@ session_start();
         }
         
         
-        if($erreur == 0){
+        if($erreur == 0){ //on peut rentrer dans la suite du code
 
             echo'<form action="comparer.php" method="post" autocomplete="off">
             <div class = "conteneur1">
@@ -226,6 +235,7 @@ session_start();
                     echo '\''.$_GET['pays2'].'\''; 
                 else
                     echo "''";
+                    //les ul servent à afficher les pays de l'autocomplétion
                 echo '</p>
                 
             </div>
@@ -246,7 +256,7 @@ session_start();
         </form>';
 
 
-
+            //Cette partie du code gère les erreurs de champs vides ou incorrects
             if(isset($_GET['pays1']) && isset($_GET['pays2'])){
                 echo "<div class ='indication'>";
                 echo "<p>Please select the year for which you would like to make a comparison.</p>";
@@ -274,8 +284,11 @@ session_start();
             echo '<meta http-equiv="refresh" content="0; url=comparer.php?pays1='.$pays1.'&aff='.$pays2.'">';
         }elseif($erreur == 3){
             echo '<meta http-equiv="refresh" content="0; url=comparer.php?pays1='.$pays1.'&pays2='.$pays2.'">';
-        }else{
+        }else{ //ici tout est correct, on peut comparer les pays sélectionnés
+            //création d'une variable de session qui servira à vider pays1 et pays2 au lancement de la page
             $_SESSION['plein']=array();
+
+
             //recuperation vecteur nom des indices pays 1 :
             $req = $bdd->query('SELECT score.Nom_Score
             FROM pays, avoir, score, annee
@@ -323,6 +336,7 @@ session_start();
 	            array_push($val_pays2, $ligne['valeur_score']."<br/>\n");
 		    }
 
+            //Ce bloc vérifie  si les données existent pour tel pays à l'année choisie
             if($val_pays1==array()){
                 echo "<p class='indispo'>Data not available for ".$pays1." in ".$annee."</p>";
                 echo '<meta http-equiv="refresh" content="4; url=comparer.php">';
@@ -331,6 +345,8 @@ session_start();
                 echo '<meta http-equiv="refresh" content="4; url=comparer.php">';
             }else{
                 $req ->closeCursor();
+
+            //affichage du nom  des deux pays sélectionnés
             echo "<div class = 'conteneur2'>";
             echo "<p class = 'colp2' id = 'pays_gauche'>";
             echo $pays1;
@@ -339,6 +355,8 @@ session_start();
             echo "</p>";
             echo "</div>";
 
+            //fonctions pour l'affichage de la page :
+
             //Fonction pour afficher les elements d'un tableau :
             function afficher_tab($tab){
                 $taille = count($tab);
@@ -346,8 +364,9 @@ session_start();
                     echo $tab[$i];
                 }
             }
-            //fonction pour l'affichage de la page :
-            //Prend en parametres 3 tableaux et retourne un tableau
+
+            /
+            //Ces deux fonction affichent les flèches du bon côté pour chaque indicateur le plus élevé
             function affichage_gauche($libelle, $pays1, $pays2){
                 $taille = count($libelle);
                 $afficher = array();
@@ -390,6 +409,7 @@ session_start();
             }
             
 
+            //affichage des éléments de comparaison (scores des deux pays, lebellés et flèches)
             echo '<div id = "conteneur">';
             echo '<p class ="colp" id ="pays1">';
             afficher_tab($val_pays1);
@@ -408,7 +428,7 @@ session_start();
             echo '</p>';
             echo '</div>';
 
-           
+            //récupération des identifiants des deux pays (pour le graphe)
             $req = $bdd->query('SELECT pays.id_pays
             FROM pays
             WHERE pays.Nom_Pays ="'.$pays1.'"');
@@ -425,11 +445,14 @@ session_start();
 	            $id_pays2 = $ligne[0];
 		    }
 	        $req ->closeCursor();
+
+            //affichage du  graphe
         
         echo '<div id =  "graphe_comparer">';
         echo '<img id = "img_graphe_comp" src = "graphe_comparer.php?id_pays1='.$id_pays1.'&id_pays2='.$id_pays2.'&annee='.$annee.'">';
         echo '</div>';
 
+        //Lien pour sélectionner d'autres pays
         echo '<p class = "change"><a href = "deco.php">Select  other countries</a></p><br/><br/><br/>';
             }
 	        
@@ -443,6 +466,9 @@ session_start();
     </body>
 </html>
 <script>
+//Script JS pour appeler l'autocomplétion 
+
+//autocomplétion de la fonction de recherche :
 $(document).ready(function(){
  $('.gsearchsimple3').keyup(function(){
   var query3 = $('.gsearchsimple3').val();
@@ -460,6 +486,7 @@ $(document).ready(function(){
     }
    })
   }
+  //on lance l'appel à chque longueur de la chaine, donc on vérifie à chaque touche
   if(query3.length == 2)
   {
    $.ajax({
@@ -540,6 +567,8 @@ $(document).ready(function(){
 });
 </script>
 <script>
+
+//autocomplétion de l'input du pays 1 :
 $(document).ready(function(){
  $('#gsearchsimple').keyup(function(){
   var query = $('#gsearchsimple').val();
@@ -635,6 +664,7 @@ $(document).ready(function(){
   }
  });
 
+ //autocomplétion de l'input du pays 2 :
  $('#gsearchsimple2').keyup(function(){
   var query2 = $('#gsearchsimple2').val();
   $('#detail').html('');
