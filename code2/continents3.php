@@ -42,7 +42,7 @@
 		
 		<?php 	require ('bd.php');
 				$bdd = getBD();
-
+				//afficher le nom du pays
 				$nompays = "";
 
 				$pays = $_GET['id_pays'];
@@ -71,7 +71,7 @@
 		if(!in_array($pays,$tab)){
 			echo "<p class='indispo'>The selected country is not available</p>";
 			echo '<meta http-equiv="refresh" content="3; url=continents2.php?id_continent='.$_SESSION['continent'].'&annee='.$_GET['annee'].'">';
-		}else{
+		}else{ //Requête le résultat de chaque indice d'après années et id_pays puis les afficher
 			$rep = $bdd -> query('SELECT AVG(avoir.valeur_score) as moyenne, score.Nom_Score as nom
 								  FROM score, avoir, pays, continent, annee
 								  WHERE score.Id_Score = avoir.Id_Score

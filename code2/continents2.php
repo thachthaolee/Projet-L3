@@ -42,10 +42,10 @@
 		<?php 	require ('bd.php');
 				$bdd = getBD();
 
-				if($_GET['annee'] < 2015 || $_GET['annee'] > 2019){  //Si une année incorrecte est entrée dans l'URL
+				if($_GET['annee'] < 2015 || $_GET['annee'] > 2019){  //Si une année incorrecte est entrée dans l'URL, renvoie à la page précédante
 					echo '<meta http-equiv="refresh" content="0; url=continents1.php">';
 				}
-				if($_GET['id_continent'] < 1 || $_GET['id_continent'] > 6){ //Si un id_Continent incorrect est entré dans l'URL
+				if($_GET['id_continent'] < 1 || $_GET['id_continent'] > 6){ //Si un id_Continent incorrect est entré dans l'URL, renvoie à la page précédante
 					echo '<meta http-equiv="refresh" content="0; url=continents1.php?annee='.$_GET['annee'].'">';
 				}
 				
@@ -53,21 +53,21 @@
 
 				$rep = $bdd->query("SELECT * FROM continent WHERE Id_Continent=" .$_SESSION['continent']."");
 							
-				while ($mat=$rep-> fetch()){	
+				while ($mat=$rep-> fetch()){	//afficher le nom du continent choisi
 					echo "<br/><br/><h1>".$mat['Nom_Continent']."</h1><br/><br/>";
 				}
 		?>
 		
 		
 	<center>
-		<?php
+		<?php //afficher le graphe qui représente la moyenne de chaque indice du continent
 			echo '<div id =  "graphe">';
 			echo '<img id="img_graphe" src="graphe.php?id_continent='.$_GET["id_continent"].'&annee='.$_GET["annee"].'"><br/>'; // call the fonction graphe as photo
 			echo '</div>';
 		?>
 		
 		</br>		
-		<?php
+		<?php // Requête pour afficher la moyenne de chaque indice
 		$rep = $bdd -> query('SELECT AVG(avoir.valeur_score) as moyenne, score.Nom_Score as nom
 							  FROM score, avoir, pays, continent, annee
 						      WHERE score.Id_Score = avoir.Id_Score
@@ -96,7 +96,7 @@
 		</center>
 		<br/><br/>
 		
-		<?php			
+		<?php //afficher les pays dans le continent	et le lien vers ce pays-là		
 			echo '<div class="continents2">';
 			$rep = $bdd->query("SELECT Nom_Pays, Id_Pays FROM pays WHERE Id_Continent =" .$_SESSION['continent']."");
 			while ($ligne = $rep -> fetch()) {

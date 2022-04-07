@@ -37,7 +37,7 @@
 	
 		<div class="test">
 		<?php
-		if(!isset($_GET['annee'])){ //Si aucune année n'a été choisie
+		if(!isset($_GET['annee'])){ //Si aucune année n'a été choisie, ouvrir une forme pour saisir année
 		echo '
 		<form action="continents1.php" method="get" autocomplete="off">
 		<br/><br/><br/>
@@ -46,7 +46,7 @@
 		</form>
 		<img src="image/carte.png" alt="image de carte" >';
 		
-		}elseif($_GET['annee'] > 2019 || $_GET['annee'] < 2015){ //Si l'année choisie est incorrecte
+		}elseif($_GET['annee'] > 2019 || $_GET['annee'] < 2015){ //Si l'année choisie est incorrecte, forcer de rechoisir correctement
 		echo '
 		<form action="continents1.php" method="get" autocomplete="off">
 		<br/><br/><br/>
@@ -55,7 +55,7 @@
 		</form>';
 		}
 		
-		else{ //Quand une année a été choisie
+		else{ //Quand une année a été choisie, afficher les continents à choisir et envoyer vers la page de chaque continent
 		    echo '<div class="continents1">';
 			echo '<br/><br/><br/><br/><p id="t2">Please select the continent for the year '.$_GET['annee'].' :</p><br/><br/>';
 			
